@@ -7,7 +7,7 @@ interface LoginProps {
   onSignupClick: () => void;
 }
 
-const LoginForm: React.FC<LoginProps> = ({ onSignupClick }) => {
+const LoginForm: React.FC = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
