@@ -27,7 +27,7 @@ const NavigationDesktop = () => {
               <Text
                 fontSize="2xl"
                 fontWeight="black">
-                CASAZ{" "}
+                Tanjung Damai Lestari{" "}
               </Text>
             </Box>
           </Link>
