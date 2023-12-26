@@ -12,14 +12,17 @@ const SignupForm = () => {
   });
 
   // Function to handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: Record<string, any>) => {
     e.preventDefault();
     // You can add your signup logic here
     console.log("Form submitted:", formData);
   };
 
+  type eT = {
+    target: { name: string; value: string | number };
+  };
   // Function to handle input changes
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: eT) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
