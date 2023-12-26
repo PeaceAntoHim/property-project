@@ -22,10 +22,12 @@ import { FiMenu, FiHome, FiUsers, FiSettings } from "react-icons/fi";
 const AdminDashboard: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [isMobile, setIsMobile] = useState<boolean>(false);
+  const [isDesktop, setIsDesktop] = useState<boolean>(false);
 
   // Toggle the isMobile state based on the window width
   const handleResize = () => {
     setIsMobile(window.innerWidth <= 768);
+    setIsDesktop(window.innerWidth > 768);
   };
 
   // Add event listener for window resize
@@ -36,7 +38,7 @@ const AdminDashboard: React.FC = () => {
   }, []);
 
   const toggleSidebar = () => {
-    if (!isMobile) {
+    if (isMobile || isDesktop) {
       onOpen();
     }
   };
@@ -44,7 +46,7 @@ const AdminDashboard: React.FC = () => {
   return (
     <Flex height="100%">
       {/* Toggle Button for Larger Screens */}
-      {!isMobile && (
+      {(isMobile || isDesktop) && (
         <IconButton
           aria-label="Toggle Sidebar"
           icon={<FiMenu />}

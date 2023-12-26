@@ -63,7 +63,12 @@ const DashboardLayout: React.FC<{
           flex="1"
           p={{ base: 2, md: 4 }}>
           {/* Page Content */}
-          <Box flex="1">{children}</Box>
+          <Box
+            flex="1"
+            mx="auto" // Center the content horizontally
+          >
+            {children}
+          </Box>
         </Flex>
 
         {/* Footer */}
