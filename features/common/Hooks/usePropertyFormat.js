@@ -1,10 +1,10 @@
 export const usePropertyFormat = (property) => {
-  const address = property.location.map((item) => item.name).join(', ');
+  const address = property.location.map((item) => item.name).join(", ");
   const coverPhoto = property.coverPhoto.url;
   const propertyType = `${property.category[0].name} ${property.category[1].name}`;
-  const price = property.price.toLocaleString('en-US', {
-    style: 'currency',
-    currency: 'USD',
+  const price = property.price.toLocaleString("id-ID", {
+    style: "currency",
+    currency: "IDR",
     maximumFractionDigits: 0,
   });
   const title = property.title;
@@ -20,9 +20,7 @@ export const usePropertyFormat = (property) => {
   const coverVideo = coverVideoUrl.slice(coverVideoUrl.length - 11);
   const panorama = property.panoramas?.length ? property.panoramas[0].url : [];
 
-  const amenities = property.amenities?.flatMap(({ amenities }) =>
-    amenities?.map((item) => item.text)
-  );
+  const amenities = property.amenities?.flatMap(({ amenities }) => amenities?.map((item) => item.text));
 
   const furshied = property.furnishingStatus;
 

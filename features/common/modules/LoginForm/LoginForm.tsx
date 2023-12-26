@@ -1,7 +1,19 @@
 // Login.tsx
 import React, { useState } from "react";
-import { Box, Button, Flex, FormControl, FormErrorMessage, FormLabel, Input, Stack, Text } from "@chakra-ui/react";
-import Link from "next/link";
+import {
+  Box,
+  Button,
+  Flex,
+  FormControl,
+  FormErrorMessage,
+  FormLabel,
+  Input,
+  Stack,
+  Text,
+  Link,
+  Heading,
+} from "@chakra-ui/react";
+import NextLink from "next/link";
 
 interface LoginProps {
   onSignupClick: () => void;
@@ -47,6 +59,11 @@ const LoginForm: React.FC = () => {
         borderWidth={1}
         borderRadius={8}
         boxShadow="lg">
+        <Heading
+          mb={4}
+          textAlign="center">
+          Sign In
+        </Heading>
         <Stack spacing={4}>
           <FormControl isInvalid={!!error}>
             <FormLabel>Username</FormLabel>
@@ -79,7 +96,7 @@ const LoginForm: React.FC = () => {
           <Text>
             Don't have an account?{" "}
             <Link
-              color="blue"
+              as={NextLink}
               href="/signup">
               Sign up here
             </Link>
