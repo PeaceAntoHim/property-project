@@ -1,8 +1,8 @@
 import React from "react";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import DashboardLayout from "@/features/Layout/DashboardLayout";
-import { Box, SimpleGrid } from "@chakra-ui/react";
-import AdminDashboard from "@/features/common/modules/Dashboard/Admin/AdminDashboard";
+import { Box } from "@chakra-ui/react";
+import ClientDashboard from "@/features/common/modules/Dashboard/Client/ClientDashboard";
 import { getProperties } from "@/features/common/API/getProperties";
 
 const Properties = ({ properties }: InferGetStaticPropsType<typeof getStaticProps>) => {
@@ -16,7 +16,7 @@ const Properties = ({ properties }: InferGetStaticPropsType<typeof getStaticProp
         <Box
           maxWidth="2580px"
           margin="0 auto">
-          <AdminDashboard />
+          <ClientDashboard />
         </Box>
       </Box>
     </DashboardLayout>
