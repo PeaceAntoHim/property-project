@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Flex, Heading, Spacer, useColorMode, IconButton, Text } from "@chakra-ui/react";
 import { FaSun, FaMoon } from "react-icons/fa";
 import Head from "next/head";
+import { BiLogOut } from "react-icons/bi";
 import { HiHomeModern } from "react-icons/hi2";
 
 const DashboardLayout: React.FC<{
@@ -10,6 +11,10 @@ const DashboardLayout: React.FC<{
   description: string;
 }> = ({ children, title, description }) => {
   const { colorMode, toggleColorMode } = useColorMode();
+
+  const onLogout = () => {
+    alert("test");
+  };
 
   return (
     <>
@@ -54,6 +59,14 @@ const DashboardLayout: React.FC<{
               icon={colorMode === "light" ? <FaMoon /> : <FaSun />}
               aria-label="Toggle Dark Mode"
               onClick={toggleColorMode}
+            />
+            <IconButton
+              icon={<BiLogOut />}
+              aria-label="Logout"
+              onClick={onLogout}
+              fontSize="xl"
+              colorScheme="red" // Choose a color scheme that fits your design
+              variant="ghost" // You can use "solid" or other variants based on your design
             />
           </Flex>
         </Box>
