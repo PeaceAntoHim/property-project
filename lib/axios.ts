@@ -1,7 +1,7 @@
 import Axios from "axios";
 
 const headers = {
-  "X-RapidAPI-Key": "535007e754msh03ca26c636c947bp1b1591jsnc83eba5279bb",
+  "X-RapidAPI-Key": process.env.RAPID_API_KEY,
   "X-RapidAPI-Host": "bayut.p.rapidapi.com",
 };
 
