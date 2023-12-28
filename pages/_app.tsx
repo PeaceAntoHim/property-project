@@ -1,5 +1,6 @@
 import type { AppProps } from "next/app";
 import { ChakraProvider } from "@chakra-ui/react";
+import { SessionProvider } from "next-auth/react";
 import Router from "next/router";
 import { useEffect } from "react";
 import NProgress from "nprogress";
@@ -31,7 +32,9 @@ export default function App({ Component, pageProps }: AppProps) {
           referrerPolicy="no-referrer"
         />
       </Head>
-      <Component {...pageProps} />
+      <SessionProvider session={pageProps.session}>
+        <Component {...pageProps} />
+      </SessionProvider>
     </ChakraProvider>
   );
 }
