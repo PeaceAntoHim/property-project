@@ -78,6 +78,7 @@ model User {
   email         String?   @unique
   emailVerified DateTime? @default(now()) @map("email_verified")
   password      String
+  role          String    @default("client") 
   createdAt     DateTime  @default(now()) @map(name: "created_at")
   updatedAt     DateTime  @updatedAt @map(name: "updated_at")
   complaints    Complaint[]
