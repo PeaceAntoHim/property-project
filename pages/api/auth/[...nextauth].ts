@@ -1,7 +1,8 @@
-import NextAuth from "next-auth";
+import NextAuth, { AuthOptions } from "next-auth";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
-import GitHubProvider from "next-auth/providers/github";
+// import GitHubProvider from "next-auth/providers/github";
 import prisma from "../../../lib/prisma";
+import CredentialsProvider from "next-auth/providers/credentials";
 
 type TGitHubProvider = {
   clientId: string;
@@ -25,22 +26,23 @@ type TToken = {
   accessToken: string;
 };
 
-const authHandler = (req: any, res: any) => NextAuth(req, res, options);
-export default authHandler;
+const authOptions = (req: any, res: any) => NextAuth(req, res, options);
+export default authOptions;
 
 let userAccount;
 const options: any = {
   providers: [
-    GitHubProvider({
-      clientId: process.env.GITHUB_ID as string,
-      clientSecret: process.env.GITHUB_SECRET as string,
-      async authorize(credentials: Record<string, string>, req: Request) {
+    CredentialsProvider({
+      id: "credentials",
+      name: "Credentials",
+      credentials: {},
+      async authorize(credentials: any, req) {
         const userCredentials = {
           email: credentials.email,
           password: credentials.password,
         };
 
-        const res = await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/user/login`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/user/signin`, {
           method: "POST",
           body: JSON.stringify(userCredentials),
           headers: {
@@ -57,7 +59,7 @@ const options: any = {
           return null;
         }
       },
-    } as TGitHubProvider),
+    }),
   ],
   adapter: PrismaAdapter(prisma),
   secret: process.env.NEXTAUTH_SECRET,

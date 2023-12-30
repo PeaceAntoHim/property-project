@@ -7,55 +7,55 @@ export default async function handle(req: { method: string }, res: { status: (ar
   } else {
     return res.status(405);
   }
-}
 
-async function loginUserHandler(req: { method?: string; body?: any }, res: { status: any }) {
-  const { email, password } = req.body;
+  async function loginUserHandler(req: { method?: string; body?: any }, res: { status: any }) {
+    const { email, password } = req.body;
 
-  if (!email || !password) {
-    return res.status(400).json({ message: "invalid input" });
-  }
-
-  try {
-    const user = await prisma.user.findUnique({
-      where: { email: email },
-      select: {
-        id: true,
-        name: true,
-        email: true,
-        password: true,
-      },
-    });
-    if (user && user.password === hashPassword(password)) {
-      return res.status(200).json(exclude(user, ["password"]));
-    } else {
-      return res.status(401).json({ message: "invalid credentials" });
+    if (!email || !password) {
+      return res.status(400).json({ message: "invalid input" });
     }
-  } catch (e: any) {
-    console.error(e);
-    throw new Error(e);
-  }
-}
 
-const hashPassword = (password: string) => {
-  return sha256(password).toString();
-};
-
-function exclude(
-  user: {
-    [x: string]: any;
-    id?: string;
-    name?: string | null;
-    email?: string | null;
-    emailVerified?: Date | null;
-    image?: string | null;
-    createdAt?: Date;
-    updatedAt?: Date;
-  },
-  keys: string[]
-) {
-  for (let key of keys) {
-    delete user[key];
+    try {
+      const user = await prisma.user.findUnique({
+        where: { email: email },
+        select: {
+          id: true,
+          name: true,
+          email: true,
+          password: true,
+        },
+      });
+      if (user && user.password === hashPassword(password)) {
+        return res.status(200).json(exclude(user, ["password"]));
+      } else {
+        return res.status(401).json({ message: "invalid credentials" });
+      }
+    } catch (e: any) {
+      console.error(e);
+      throw new Error(e);
+    }
   }
-  return user;
+
+  const hashPassword = (password: string) => {
+    return sha256(password).toString();
+  };
+
+  function exclude(
+    user: {
+      [x: string]: any;
+      id?: string;
+      name?: string | null;
+      email?: string | null;
+      emailVerified?: Date | null;
+      image?: string | null;
+      createdAt?: Date;
+      updatedAt?: Date;
+    },
+    keys: string[]
+  ) {
+    for (let key of keys) {
+      delete user[key];
+    }
+    return user;
+  }
 }

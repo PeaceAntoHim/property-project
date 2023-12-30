@@ -12,14 +12,12 @@ import {
   Text,
   Link,
   Heading,
+  Spinner,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { validateEmail } from "@/lib/utils";
 import { useRouter } from "next/router";
-
-interface LoginProps {
-  onSignupClick: () => void;
-}
+import { SignInResponse, signIn } from "next-auth/react";
 
 const LoginForm: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -35,38 +33,49 @@ const LoginForm: React.FC = () => {
     validate();
   }, [email, password]);
 
-  async function handleSubmit(e) {
+  async function handleSubmit(e: any) {
     setIsLoading(true);
     e.preventDefault();
-    let res = await signIn("credentials", {
+
+    interface TRes extends SignInResponse {
+      error: string | null;
+      status: number;
+      ok: boolean;
+      url: string | null;
+      json(): Promise<Record<string, string>>;
+    }
+
+    const res = await signIn("credentials", {
       email,
       password,
       callbackUrl: `${process.env.NEXT_PUBLIC_NEXTAUTH_URL}`,
       redirect: false,
     });
-    setIsLoading(false);
 
+    console.log(res);
     if (res?.ok) {
       // toastsuccess
       console.info("success");
-      const data: Record<string, string> = await res.json();
-      const mappingUrl = {
-        client: `/dashboard/client/${data.id}`,
-        admin: `/dashboard/admin/${data.id}`,
-      };
-      router.push(mappingUrl[data.role]);
+      // const data: Record<string, string> = await res.json();
+      // const mappingUrl = {
+      //   client: `/dashboard/client/${data.id}`,
+      //   admin: `/dashboard/admin/${data.id}`,
+      // };
+      // router.push((mappingUrl as any)[data.role]);
+      alert("success");
       return;
     } else {
       // Toast failed
       setError("Failed! Check you input and try again.");
       // return;
-      console.log("Failed", res);
     }
+    console.log("Failed", res);
+    setIsLoading(false);
     return res;
   }
 
   function validate() {
-    let emailIsValid = validateEmail(email);
+    const emailIsValid = validateEmail(email);
 
     if (!emailIsValid) {
       setEmailInputError(true);
@@ -81,7 +90,14 @@ const LoginForm: React.FC = () => {
   }
 
   if (isLoading) {
-    return <p className="flex h-full">Loading...</p>;
+    return (
+      <Flex
+        align="center"
+        justify="center"
+        h="80vh">
+        <Spinner size="lg" />
+      </Flex>
+    );
   }
 
   return (
@@ -105,6 +121,7 @@ const LoginForm: React.FC = () => {
             <FormLabel>Email</FormLabel>
             <Input
               type="text"
+              borderColor={emailInPutError ? "red.500" : ""}
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -115,6 +132,7 @@ const LoginForm: React.FC = () => {
             <FormLabel>Password</FormLabel>
             <Input
               type="password"
+              borderColor={passwordInPutError ? "red.500" : ""}
               placeholder="Enter your password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -124,7 +142,7 @@ const LoginForm: React.FC = () => {
 
           <Button
             colorScheme="blue"
-            onClick={handleLogin}
+            onClick={handleSubmit}
             isLoading={isLoading}>
             Login
           </Button>
