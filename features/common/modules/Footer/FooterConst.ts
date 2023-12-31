@@ -1,7 +1,7 @@
 export const services = [
   { name: "Our Services", link: "/our-services" },
   { name: "Meet The Team", link: "/meet-the-team" },
-  { name: "Careers at Tanjung Damai Lestari", link: "/careers-at-Tanjung Damai Lestari" },
+  { name: "Careers at Perum TDL", link: "/careers-at-Perum TDL" },
   { name: "Latest News & Videos", link: "/latest-news" },
 ];
 

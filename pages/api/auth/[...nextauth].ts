@@ -42,7 +42,7 @@ const options: any = {
           password: credentials.password,
         };
 
-        const res = await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/user/signin`, {
+        const res = await fetch(`${process.env.HOSTNAME}/api/user/signin`, {
           method: "POST",
           body: JSON.stringify(userCredentials),
           headers: {

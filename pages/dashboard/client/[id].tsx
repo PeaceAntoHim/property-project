@@ -3,12 +3,11 @@ import { GetStaticProps, InferGetStaticPropsType } from "next";
 import DashboardLayout from "@/features/Layout/DashboardLayout";
 import { Box } from "@chakra-ui/react";
 import ClientDashboard from "@/features/common/modules/Dashboard/Client/ClientDashboard";
-import { getProperties } from "@/features/common/API/getProperties";
 
-const Properties = ({ properties }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const ClientDetails = () => {
   return (
     <DashboardLayout
-      title="Dashboard - Admin"
+      title="Dashboard - Client"
       description='"Find your dream home with our real estate website. Browse through thousands of listings, connect with expert agents, and discover the perfect property for your lifestyle. Start your search today and make your homeownership dreams a reality.'>
       <Box
         backgroundColor="#f7f8f9"
@@ -23,14 +22,4 @@ const Properties = ({ properties }: InferGetStaticPropsType<typeof getStaticProp
   );
 };
 
-export default Properties;
-
-export const getStaticProps: GetStaticProps = async () => {
-  const properties = await getProperties(20);
-
-  return {
-    props: {
-      properties: properties,
-    },
-  };
-};
+export default ClientDetails;

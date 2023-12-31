@@ -45,32 +45,40 @@ const LoginForm: React.FC = () => {
       json(): Promise<Record<string, string>>;
     }
 
-    const res = await signIn("credentials", {
-      email,
-      password,
-      callbackUrl: `${process.env.NEXT_PUBLIC_NEXTAUTH_URL}`,
-      redirect: false,
+    const res = await fetch(`${process.env.HOSTNAME}/api/user/signin`, {
+      method: "POST",
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
 
+    // const res = await signIn("credentials", {
+    //   email,
+    //   password,
+    //   callbackUrl: `${process.env.HOSTNAME}`,
+    //   redirect: false,
+    // });
+    setIsLoading(false);
     console.log(res);
     if (res?.ok) {
       // toastsuccess
       console.info("success");
-      // const data: Record<string, string> = await res.json();
-      // const mappingUrl = {
-      //   client: `/dashboard/client/${data.id}`,
-      //   admin: `/dashboard/admin/${data.id}`,
-      // };
-      // router.push((mappingUrl as any)[data.role]);
-      alert("success");
+      const data: Record<string, string> = await res.json();
+      const mappingUrl = {
+        client: `/dashboard/client/${data.id}`,
+        admin: `/dashboard/admin/${data.id}`,
+      };
+      router.push((mappingUrl as any)[data.role]);
       return;
     } else {
       // Toast failed
       setError("Failed! Check you input and try again.");
       // return;
     }
-    console.log("Failed", res);
-    setIsLoading(false);
     return res;
   }
 
