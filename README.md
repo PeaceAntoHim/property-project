@@ -7,6 +7,8 @@
 
 ## Table of contents
 
+- [Real Estate - CASAZ](#real-estate---casaz)
+- [Table of contents](#table-of-contents)
 - [Overview](#overview)
   - [Feature](#feature)
   - [Screenshot](#screenshot)
@@ -35,7 +37,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Live Site](https://casaz.vercel.app/)
+- Live Site URL: [Live Site](https://perumtdl.vercel.app/)
 
 ## My process
 
@@ -47,6 +49,6 @@ Users should be able to:
 
 ## Author
 
-- Website - [iqballa24](https://github.com/iqballa24)
+- Website - [PeaceAntoHim](https://github.com/PeaceAntoHim)
 
 
