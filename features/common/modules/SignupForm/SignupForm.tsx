@@ -22,7 +22,7 @@ const SignupForm = () => {
     setPassError(!isValid);
   }
 
-  async function handleSubmit(e) {
+  async function handleSubmit(e: any) {
     e.preventDefault();
 
     if (passError) {
