@@ -1,34 +1,58 @@
 // Import necessary dependencies
-import React, { useState } from "react";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
 import { Box, Button, FormControl, FormLabel, Input, Stack, Heading } from "@chakra-ui/react";
 
 // Functional component for SignupForm
 const SignupForm = () => {
-  // State variables to store form data
-  const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: "",
-  });
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [passError, setPassError] = useState(false);
 
-  // Function to handle form submission
-  const handleSubmit = (e: Record<string, any>) => {
+  const router = useRouter();
+
+  useEffect(() => {
+    validatePassword(password, confirmPassword);
+  }, [password, confirmPassword]);
+
+  function validatePassword(pass: String, confirmPass: String) {
+    let isValid = pass === confirmPass;
+    setPassError(!isValid);
+  }
+
+  async function handleSubmit(e: any) {
     e.preventDefault();
-    // You can add your signup logic here
-    console.log("Form submitted:", formData);
-  };
 
-  type eT = {
-    target: { name: string; value: string | number };
-  };
-  // Function to handle input changes
-  const handleInputChange = (e: eT) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
+    if (passError) {
+      // Handle password mismatch error
+      return;
+    }
+
+    let userData = {
+      name,
+      email,
+      password,
+    };
+
+    const res = await fetch(`${process.env.HOSTNAME}/api/user/signup`, {
+      method: "POST",
+      body: JSON.stringify(userData),
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
-  };
+
+    if (res.ok) {
+      const data = await res.json();
+      router.push("/login");
+      // Registration success
+    } else {
+      // Registration failed
+      alert(`Registrasi failed, got this err: ${res.statusText}`);
+    }
+  }
 
   return (
     <Box
@@ -53,8 +77,8 @@ const SignupForm = () => {
             <Input
               type="text"
               name="username"
-              value={formData.username}
-              onChange={handleInputChange}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               required
             />
           </FormControl>
@@ -65,8 +89,8 @@ const SignupForm = () => {
             <Input
               type="email"
               name="email"
-              value={formData.email}
-              onChange={handleInputChange}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
           </FormControl>
@@ -77,11 +101,35 @@ const SignupForm = () => {
             <Input
               type="password"
               name="password"
-              value={formData.password}
-              onChange={handleInputChange}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               required
             />
           </FormControl>
+
+          {/* Confirm Password Input */}
+          <FormControl>
+            <FormLabel>Confirm Password</FormLabel>
+            <Input
+              type="password"
+              name="confirmPassword"
+              value={confirmPassword}
+              onChange={(e) => {
+                setConfirmPassword(e.target.value);
+                validatePassword(password, e.target.value);
+              }}
+              required
+            />
+          </FormControl>
+
+          {/* Display password mismatch error */}
+          {passError && (
+            <Box
+              color="red.500"
+              fontSize="sm">
+              Passwords do not match.
+            </Box>
+          )}
 
           {/* Submit Button */}
           <Button

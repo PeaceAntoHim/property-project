@@ -75,14 +75,14 @@ const Footer = () => {
           <Text
             fontSize="lg"
             fontWeight="black">
-            Tanjung Damai Lestari
+            Perum TDL
           </Text>
         </Box>
         <Text
           marginTop="1rem"
           fontSize="xs"
           textAlign="center">
-          All rights reserved - Copyright Tanjung Damai Lestari
+          All rights reserved - Copyright Perum TDL
         </Text>
       </Box>
     </Box>

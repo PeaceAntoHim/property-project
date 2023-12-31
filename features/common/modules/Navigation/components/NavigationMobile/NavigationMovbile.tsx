@@ -24,7 +24,7 @@ const NavigationMovbile = () => {
             <Text
               fontSize="2xl"
               fontWeight="black">
-              Tanjung Damai Lestari
+              Perum TDL
             </Text>
           </Box>
         </Link>

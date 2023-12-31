@@ -1,6 +1,6 @@
+import React from "react";
 import SignupForm from "@/features/common/modules/SignupForm";
 import DefaultLayout from "@/features/Layout/DefaultLayout";
-import React from "react";
 
 const Signup = () => {
   return (

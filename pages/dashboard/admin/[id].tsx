@@ -1,11 +1,10 @@
-import React from "react";
-import { GetStaticProps, InferGetStaticPropsType } from "next";
+// /pages/dashboard/client/[id].tsx
+
 import DashboardLayout from "@/features/Layout/DashboardLayout";
 import { Box } from "@chakra-ui/react";
-import ClientDashboard from "@/features/common/modules/Dashboard/Client/ClientDashboard";
-import { getProperties } from "@/features/common/API/getProperties";
+import AdminDashboard from "@/features/common/modules/Dashboard/Admin/AdminDashboard";
 
-const Properties = ({ properties }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const AdminDetails = () => {
   return (
     <DashboardLayout
       title="Dashboard - Admin"
@@ -16,21 +15,11 @@ const Properties = ({ properties }: InferGetStaticPropsType<typeof getStaticProp
         <Box
           maxWidth="2580px"
           margin="0 auto">
-          <ClientDashboard />
+          <AdminDashboard />
         </Box>
       </Box>
     </DashboardLayout>
   );
 };
 
-export default Properties;
-
-export const getStaticProps: GetStaticProps = async () => {
-  const properties = await getProperties(20);
-
-  return {
-    props: {
-      properties: properties,
-    },
-  };
-};
+export default AdminDetails;

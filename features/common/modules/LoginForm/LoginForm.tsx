@@ -1,5 +1,5 @@
 // Login.tsx
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Box,
   Button,
@@ -12,41 +12,101 @@ import {
   Text,
   Link,
   Heading,
+  Spinner,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
-
-interface LoginProps {
-  onSignupClick: () => void;
-}
+import { validateEmail } from "@/lib/utils";
+import { useRouter } from "next/router";
+import { SignInResponse, signIn } from "next-auth/react";
 
 const LoginForm: React.FC = () => {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [emailInPutError, setEmailInputError] = useState(false);
+  const [passwordInPutError, setPasswordInputError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleLogin = async () => {
-    // Add your authentication logic here
-    // For example, you can make an API call to verify the credentials
-    try {
-      setIsLoading(true);
+  const router = useRouter();
 
-      // Simulating an API call
-      // Replace this with your actual authentication logic
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+  useEffect(() => {
+    validate();
+  }, [email, password]);
 
-      // If authentication is successful, you can navigate to another page or update state accordingly
-      // For now, just log in the console
-      console.log("Login successful");
+  async function handleSubmit(e: any) {
+    setIsLoading(true);
+    e.preventDefault();
 
-      setIsLoading(false);
-    } catch (error) {
-      // Handle authentication error
-      console.error("Login failed", error);
-      setError("Invalid username or password");
-      setIsLoading(false);
+    interface TRes extends SignInResponse {
+      error: string | null;
+      status: number;
+      ok: boolean;
+      url: string | null;
+      json(): Promise<Record<string, string>>;
     }
-  };
+
+    const res = await fetch(`${process.env.HOSTNAME}/api/user/signin`, {
+      method: "POST",
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    // const res = await signIn("credentials", {
+    //   email,
+    //   password,
+    //   callbackUrl: `${process.env.HOSTNAME}`,
+    //   redirect: false,
+    // });
+    setIsLoading(false);
+    console.log(res);
+    if (res?.ok) {
+      // toastsuccess
+      console.info("success");
+      const data: Record<string, string> = await res.json();
+      const mappingUrl = {
+        client: `/dashboard/client/${data.id}`,
+        admin: `/dashboard/admin/${data.id}`,
+      };
+      router.push((mappingUrl as any)[data.role]);
+      return;
+    } else {
+      // Toast failed
+      setError("Failed! Check you input and try again.");
+      // return;
+    }
+    return res;
+  }
+
+  function validate() {
+    const emailIsValid = validateEmail(email);
+
+    if (!emailIsValid) {
+      setEmailInputError(true);
+      return;
+    }
+    if (password.length < 6) {
+      setPasswordInputError(true);
+    } else {
+      setEmailInputError(false);
+      setPasswordInputError(false);
+    }
+  }
+
+  if (isLoading) {
+    return (
+      <Flex
+        align="center"
+        justify="center"
+        h="80vh">
+        <Spinner size="lg" />
+      </Flex>
+    );
+  }
 
   return (
     <Flex
@@ -66,12 +126,13 @@ const LoginForm: React.FC = () => {
         </Heading>
         <Stack spacing={4}>
           <FormControl isInvalid={!!error}>
-            <FormLabel>Username</FormLabel>
+            <FormLabel>Email</FormLabel>
             <Input
               type="text"
-              placeholder="Enter your username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              borderColor={emailInPutError ? "red.500" : ""}
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </FormControl>
 
@@ -79,6 +140,7 @@ const LoginForm: React.FC = () => {
             <FormLabel>Password</FormLabel>
             <Input
               type="password"
+              borderColor={passwordInPutError ? "red.500" : ""}
               placeholder="Enter your password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -88,7 +150,7 @@ const LoginForm: React.FC = () => {
 
           <Button
             colorScheme="blue"
-            onClick={handleLogin}
+            onClick={handleSubmit}
             isLoading={isLoading}>
             Login
           </Button>

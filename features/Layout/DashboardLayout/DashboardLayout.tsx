@@ -4,6 +4,7 @@ import { FaSun, FaMoon } from "react-icons/fa";
 import Head from "next/head";
 import { BiLogOut } from "react-icons/bi";
 import { HiHomeModern } from "react-icons/hi2";
+import router from "next/router";
 
 const DashboardLayout: React.FC<{
   children: React.ReactNode;
@@ -13,7 +14,7 @@ const DashboardLayout: React.FC<{
   const { colorMode, toggleColorMode } = useColorMode();
 
   const onLogout = () => {
-    alert("test");
+    router.push("/login");
   };
 
   return (
@@ -101,13 +102,13 @@ const DashboardLayout: React.FC<{
             <Text
               fontSize="md"
               fontWeight="black">
-              Tanjung Damai Lestari
+              Perum TDL
             </Text>
           </Box>
           <Text
             fontSize="xs"
             textAlign="center">
-            All rights reserved - Copyright Tanjung Damai Lestari
+            All rights reserved - Copyright Perum TDL
           </Text>
         </Box>
       </Flex>
