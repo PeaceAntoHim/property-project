@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Box,
   VStack,
@@ -31,7 +31,7 @@ const AdminDashboard: React.FC = () => {
   };
 
   // Add event listener for window resize
-  React.useEffect(() => {
+  useEffect(() => {
     handleResize(); // Initial check
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);

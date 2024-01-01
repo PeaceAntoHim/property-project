@@ -37,15 +37,7 @@ const LoginForm: React.FC = () => {
     setIsLoading(true);
     e.preventDefault();
 
-    interface TRes extends SignInResponse {
-      error: string | null;
-      status: number;
-      ok: boolean;
-      url: string | null;
-      json(): Promise<Record<string, string>>;
-    }
-
-    const res = await fetch(`${process.env.HOSTNAME}/api/user/signin`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/user/signin`, {
       method: "POST",
       body: JSON.stringify({
         email: email,
@@ -56,12 +48,6 @@ const LoginForm: React.FC = () => {
       },
     });
 
-    // const res = await signIn("credentials", {
-    //   email,
-    //   password,
-    //   callbackUrl: `${process.env.HOSTNAME}`,
-    //   redirect: false,
-    // });
     setIsLoading(false);
     console.log(res);
     if (res?.ok) {

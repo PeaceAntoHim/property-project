@@ -22,7 +22,7 @@ const SignupForm = () => {
     setPassError(!isValid);
   }
 
-  async function handleSubmit(e: any) {
+  async function handleSubmit(e: { preventDefault: () => void }) {
     e.preventDefault();
 
     if (passError) {
@@ -36,7 +36,7 @@ const SignupForm = () => {
       password,
     };
 
-    const res = await fetch(`${process.env.HOSTNAME}/api/user/signup`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/user/signup`, {
       method: "POST",
       body: JSON.stringify(userData),
       headers: {
