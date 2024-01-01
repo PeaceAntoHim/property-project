@@ -1,5 +1,6 @@
 import { SHA256 as sha256 } from "crypto-js";
 import prisma from "../../../lib/prisma";
+import { sign } from "jsonwebtoken";
 
 export default async function handle(req: { method: string }, res: { status: (arg0: number) => any }) {
   if (req.method === "POST") {
@@ -9,7 +10,7 @@ export default async function handle(req: { method: string }, res: { status: (ar
   }
 }
 
-async function loginUserHandler(req: { method?: string; body?: any }, res: { status: any }) {
+async function loginUserHandler(req: { method?: string; body?: any }, res: { status: any; setHeader: any }) {
   const { email, password } = req.body;
 
   if (!email || !password) {
@@ -33,6 +34,9 @@ async function loginUserHandler(req: { method?: string; body?: any }, res: { sta
     }
 
     if (user && user.password === hashPassword(password)) {
+      const tokenData = createToken(user);
+      const cookie = createCookies(tokenData);
+      res.setHeader("Set-Cookie", [cookie]);
       return res.status(200).json(exclude(user, ["password"]));
     } else {
       return res.status(401).json({ message: "invalid credentials" });
@@ -42,6 +46,17 @@ async function loginUserHandler(req: { method?: string; body?: any }, res: { sta
     throw new Error(e);
   }
 }
+
+const createToken = (user: any) => {
+  const dataStoredInToken = { _id: user.id };
+  const secretKey: string = process.env.NEXTAUTH_SECRET as string;
+  const expiresIn = 60 * 60;
+  return { expiresIn, token: sign(dataStoredInToken, secretKey, { expiresIn }) };
+};
+
+const createCookies = (tokenData: { expiresIn: number; token: string }) => {
+  return `Authorization=${tokenData.token}; HttpOnly; Max-Age=${tokenData.expiresIn} Secure; SameSite=None;`;
+};
 
 const hashPassword = (password: string) => {
   return sha256(password).toString();
