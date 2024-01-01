@@ -2,7 +2,10 @@ import { SHA256 as sha256 } from "crypto-js";
 import prisma from "../../../lib/prisma";
 import { sign } from "jsonwebtoken";
 
-export default async function handle(req: { method: string }, res: { status: (arg0: number) => any }) {
+export default async function handle(
+  req: { method: string },
+  res: { status: (arg0: number) => any; setHeader: (arg1: any) => any }
+) {
   if (req.method === "POST") {
     await loginUserHandler(req, res);
   } else {
