@@ -1,6 +1,7 @@
 // Import necessary libraries and components
-import { Box, VStack, Heading, Text } from "@chakra-ui/react";
+import { Box, VStack, Heading, Text, useDisclosure, Button } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
+import ComplaintForm from "./CompleinmentForm";
 
 // Interface for Complaint object
 interface Complaint {
@@ -21,6 +22,8 @@ const ComplainmentComponent: React.FC = () => {
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [isDesktop, setIsDesktop] = useState<boolean>(false);
   const [complaints, setComplaints] = useState<Complaint[]>([]);
+  // State variables for the new complaint form
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   // Dummy data for complaints
   const dummyComplaints: Complaint[] = [
@@ -85,6 +88,11 @@ const ComplainmentComponent: React.FC = () => {
           mb={10}>
           List Pengaduan
         </Heading>
+        <Button
+          onClick={onOpen}
+          colorScheme="green">
+          Create Complaint
+        </Button>
         {complaints.map((complaint) => (
           <VStack
             spacing={2}
@@ -102,6 +110,11 @@ const ComplainmentComponent: React.FC = () => {
               <Text>Cleanliness: {complaint.cleanliness}</Text>
               {/* Display other fields as needed */}
               <Text>Notes: {complaint.notes}</Text>
+              {/* New Complaint Form */}
+              <ComplaintForm
+                isOpen={isOpen}
+                onClose={onClose}
+              />
             </Box>
           </VStack>
         ))}
