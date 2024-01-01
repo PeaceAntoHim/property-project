@@ -4,7 +4,6 @@ import {
   VStack,
   Heading,
   Text,
-  Link,
   Spacer,
   Flex,
   IconButton,
@@ -17,12 +16,17 @@ import {
   useDisclosure,
   Icon,
 } from "@chakra-ui/react";
-import { FiMenu, FiHome, FiUsers, FiSettings } from "react-icons/fi";
+import { FiMenu, FiHome, FiUsers } from "react-icons/fi";
+import { AiOutlineNotification } from "react-icons/ai";
+import DashboardComponent from "./components/DashboardComponent";
+import UserComponent from "./components/UserComponent";
+import ComplainmentComponent from "./components/ComplainmentComponent";
 
 const AdminDashboard: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [isDesktop, setIsDesktop] = useState<boolean>(false);
+  const [selectedComponent, setSelectedComponent] = useState<string>("dashboard");
 
   // Toggle the isMobile state based on the window width
   const handleResize = () => {
@@ -40,6 +44,29 @@ const AdminDashboard: React.FC = () => {
   const toggleSidebar = () => {
     if (isMobile || isDesktop) {
       onOpen();
+    }
+  };
+
+  const handleComponentChange = (component: string) => {
+    setSelectedComponent(component);
+    onClose();
+  };
+
+  const renderSelectedComponent = () => {
+    switch (selectedComponent) {
+      case "dashboard":
+        return <DashboardComponent />;
+      case "users":
+        return (
+          <UserComponent
+            name={""}
+            role={""}
+          />
+        );
+      case "pengaduan":
+        return <ComplainmentComponent />;
+      default:
+        return <DashboardComponent />;
     }
   };
 
@@ -66,7 +93,7 @@ const AdminDashboard: React.FC = () => {
         <DrawerOverlay>
           <DrawerContent>
             <DrawerCloseButton />
-            <DrawerHeader>Admin Dashboard</DrawerHeader>
+            <DrawerHeader>List Sidebar</DrawerHeader>
             <DrawerBody>
               <VStack
                 spacing={4}
@@ -78,42 +105,45 @@ const AdminDashboard: React.FC = () => {
                   align="start"
                   spacing={2}
                   width="100%">
-                  <Link
-                    href="#"
+                  <Box
                     fontSize="xl"
                     display="flex"
-                    alignItems="center">
+                    alignItems="center"
+                    onClick={() => handleComponentChange("dashboard")}
+                    cursor="pointer">
                     <Icon
                       as={FiHome}
                       fontSize="xl"
                       mr={2}
                     />
                     Dashboard
-                  </Link>
-                  <Link
-                    href="#"
+                  </Box>
+                  <Box
                     fontSize="xl"
                     display="flex"
-                    alignItems="center">
+                    alignItems="center"
+                    onClick={() => handleComponentChange("users")}
+                    cursor="pointer">
                     <Icon
                       as={FiUsers}
                       fontSize="xl"
                       mr={2}
                     />
                     Users
-                  </Link>
-                  <Link
-                    href="#"
+                  </Box>
+                  <Box
                     fontSize="xl"
                     display="flex"
-                    alignItems="center">
+                    alignItems="center"
+                    onClick={() => handleComponentChange("pengaduan")}
+                    cursor="pointer">
                     <Icon
-                      as={FiSettings}
+                      as={AiOutlineNotification}
                       fontSize="xl"
                       mr={2}
                     />
-                    Settings
-                  </Link>
+                    Pengaduan
+                  </Box>
                 </VStack>
               </VStack>
             </DrawerBody>
@@ -122,57 +152,7 @@ const AdminDashboard: React.FC = () => {
       </Drawer>
 
       {/* Main Content */}
-      <VStack
-        spacing={4}
-        align="start"
-        width={isMobile ? "100%" : "80%"}
-        p={4}>
-        {/* User Statistics */}
-        <Box
-          p={4}
-          borderWidth="1px"
-          borderRadius="lg"
-          width="100%">
-          <Heading
-            size="lg"
-            mb={2}>
-            User Statistics
-          </Heading>
-          <Text>Total Users: 100</Text>
-          <Text>Active Users: 80</Text>
-          <Text>Inactive Users: 20</Text>
-        </Box>
-
-        {/* Recent Activities */}
-        <Box
-          p={4}
-          borderWidth="1px"
-          borderRadius="lg"
-          width="100%">
-          <Heading
-            size="lg"
-            mb={2}>
-            Recent Activities
-          </Heading>
-          <Text>User John Doe updated their profile.</Text>
-          <Text>New user registration: Jane Smith.</Text>
-        </Box>
-
-        {/* Settings Panel */}
-        <Box
-          p={4}
-          borderWidth="1px"
-          borderRadius="lg"
-          width="100%">
-          <Heading
-            size="lg"
-            mb={2}>
-            Settings
-          </Heading>
-          <Text>Change Password</Text>
-          <Text>Update Notification Preferences</Text>
-        </Box>
-      </VStack>
+      {renderSelectedComponent()}
     </Flex>
   );
 };
