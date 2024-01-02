@@ -49,20 +49,15 @@ model VerificationToken {
 }
 
 model Complaint {
-  id              String  @id @default(cuid())
-  compliant       User?  @relation(fields: [complaintId], references: [id])
-  complaintId     String?
-  addresses       String  
-  security        String?
-  cleanliness     String?
-  water           String? 
-  electricity     String? 
-  facilities      String? 
-  permitsOrEvent  String? 
-  notes           String
+  id                String  @id @default(cuid())
+  compliant         User?  @relation(fields: [complaintId], references: [id])
+  complaintId       String?
+  addresses         String  
+  categoryComplaint String
+  notes             String
 }
 
-model Payment {
+model Payment { 
   id                String    @id @default(cuid())
   name              String
   payment           User?  @relation(fields: [paymentId], references: [id])
