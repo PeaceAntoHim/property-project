@@ -1,7 +1,7 @@
 // Import necessary libraries and components
 import { Box, VStack, Heading, Text, useDisclosure, Button } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import ComplaintForm from "./CompleinmentForm";
+import ComplaintmentForm from "./ComplaintmentForm";
 
 // Interface for Complaint object
 interface Complaint {
@@ -111,7 +111,7 @@ const ComplainmentComponent: React.FC = () => {
               {/* Display other fields as needed */}
               <Text>Notes: {complaint.notes}</Text>
               {/* New Complaint Form */}
-              <ComplaintForm
+              <ComplaintmentForm
                 isOpen={isOpen}
                 onClose={onClose}
               />

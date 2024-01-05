@@ -17,7 +17,6 @@ import {
 import NextLink from "next/link";
 import { validateEmail } from "@/lib/utils";
 import { useRouter } from "next/router";
-import { SignInResponse, signIn } from "next-auth/react";
 
 const LoginForm: React.FC = () => {
   const [email, setEmail] = useState("");

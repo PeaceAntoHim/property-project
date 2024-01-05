@@ -17,7 +17,7 @@ import { FiMenu, FiHome, FiUsers } from "react-icons/fi";
 import { AiOutlineNotification } from "react-icons/ai";
 import DashboardComponent from "./components/DashboardComponent";
 import UserComponent from "./components/UserComponent";
-import ComplainmentComponent from "./components/ComplainmentComponent";
+import ComplainmentComponent from "./components/complainments/ComplainmentComponent";
 
 const ClientDashboard: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();

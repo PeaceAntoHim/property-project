@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   Button,
   Modal,
@@ -11,13 +12,10 @@ import {
   Input,
   Textarea,
   Select,
-  VStack,
+  Spinner, // Import Spinner component from Chakra UI
 } from "@chakra-ui/react";
-import { useState } from "react";
 
-// Interface for Complaint object
 interface Complaint {
-  id?: string;
   addresses: string;
   categoryComplaint: string;
   notes: string;
@@ -32,13 +30,14 @@ const categories = [
   { value: "permitsOrEvent", label: "Izin atau Event" },
 ];
 
-// ComplaintForm component
-const ComplaintForm: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen, onClose }) => {
+const ComplaintmentForm: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen, onClose }) => {
   const [newComplaint, setNewComplaint] = useState<Complaint>({
     addresses: "",
     categoryComplaint: "",
     notes: "",
   });
+
+  const [loading, setLoading] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -48,8 +47,32 @@ const ComplaintForm: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
     }));
   };
 
-  const handleSubmit = () => {
-    onClose();
+  const handleSubmit = async () => {
+    try {
+      setLoading(true); // Set loading to true when submitting
+
+      const res = await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/complainment/complainment.handler`, {
+        method: "POST",
+        body: JSON.stringify(newComplaint),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (res.ok) {
+        const data = await res.json();
+        alert(data.complaint);
+        onClose();
+      } else {
+        const errorData = await res.json();
+        alert(`Complaint submission failed. Error: ${errorData.message}`);
+      }
+    } catch (error) {
+      console.error("An error occurred while submitting the complaint:", error);
+      alert("Complaint submission failed. Please try again.");
+    } finally {
+      setLoading(false); // Set loading back to false when the operation is complete
+    }
   };
 
   return (
@@ -57,7 +80,6 @@ const ComplaintForm: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
       isOpen={isOpen}
       onClose={onClose}>
       <ModalOverlay />
-
       <ModalContent
         maxW="xl"
         top="15%"
@@ -75,11 +97,17 @@ const ComplaintForm: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
             />
           </FormControl>
           <FormControl mt={4}>
-            <FormLabel>Pilih Kategori Keluhan</FormLabel>
+            <FormLabel>List Kategori Keluhan</FormLabel>
             <Select
-              name="categoryComplaint" // Change "category" to "categoryComplaint"
+              name="categoryComplaint"
               value={newComplaint.categoryComplaint}
               onChange={handleInputChange}>
+              <option
+                value=""
+                disabled
+                hidden>
+                -- Pilih Kategori Keluhan --
+              </option>
               {categories.map((category) => (
                 <option
                   key={category.value}
@@ -101,8 +129,9 @@ const ComplaintForm: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
             mt={4}
             mb={8}
             colorScheme="blue"
-            onClick={handleSubmit}>
-            Submit
+            onClick={handleSubmit}
+            disabled={loading}>
+            {loading ? <Spinner size="md" /> : "Submit"}
           </Button>
         </ModalBody>
       </ModalContent>
@@ -110,4 +139,4 @@ const ComplaintForm: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
   );
 };
 
-export default ComplaintForm;
+export default ComplaintmentForm;

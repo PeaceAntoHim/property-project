@@ -55,6 +55,8 @@ model Complaint {
   addresses         String  
   categoryComplaint String
   notes             String
+
+  @@map(name: "complaints")
 }
 
 model Payment { 
@@ -65,6 +67,8 @@ model Payment {
   paymentHours      DateTime
   bankAccountNumber String?
   houseBlockNumber  String
+
+  @@map(name: "payments")
 }
 
 model User {
