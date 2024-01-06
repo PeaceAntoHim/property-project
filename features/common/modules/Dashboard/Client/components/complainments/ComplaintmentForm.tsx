@@ -14,6 +14,7 @@ import {
   Select,
   Spinner, // Import Spinner component from Chakra UI
 } from "@chakra-ui/react";
+import { categories } from "@/lib/utils";
 
 interface Complaint {
   userId: string;
@@ -21,15 +22,6 @@ interface Complaint {
   categoryComplaint: string;
   notes: string;
 }
-
-const categories = [
-  { value: "security", label: "Keamanan" },
-  { value: "cleanliness", label: "Kebersihan" },
-  { value: "water", label: "Air" },
-  { value: "electricity", label: "Listrik" },
-  { value: "facilities", label: "Fasilitas" },
-  { value: "permitsOrEvent", label: "Izin atau Event" },
-];
 
 interface ComplaintmentFormProps {
   isOpen: boolean;

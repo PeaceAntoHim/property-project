@@ -1,28 +1,37 @@
-// Import necessary libraries and components
 import { useState, useEffect } from "react";
 import { Box, VStack, Heading, Text, useDisclosure, Button } from "@chakra-ui/react";
+import { getCategoryLabel } from "@/lib/utils";
 
-// Interface for Complaint object
 interface Complaint {
   id: string;
   userId: string;
   addresses: string;
   categoryComplaint: string;
   notes: string;
-  // Add other fields as needed based on your API response
 }
 
-// ComplainmentComponent functional component
 const ComplainmentComponent: React.FC = () => {
-  // State variables
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [isDesktop, setIsDesktop] = useState<boolean>(false);
   const [complaints, setComplaints] = useState<Complaint[]>([]);
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
-  // Fetch data from the API
+  // Pagination
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const itemsPerPage = 3;
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentComplaints = complaints.slice(indexOfFirstItem, indexOfLastItem);
+
+  const pageNumbers = [];
+  for (let i = 1; i <= Math.ceil(complaints.length / itemsPerPage); i++) {
+    pageNumbers.push(i);
+  }
+
   const fetchData = async () => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/complainment/complainment.handler`); // Replace with your API endpoint
+      const response = await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/complainment/complainment.handler`);
       const data = await response.json();
       setComplaints(data);
     } catch (error) {
@@ -30,36 +39,31 @@ const ComplainmentComponent: React.FC = () => {
     }
   };
 
-  // Toggle the isMobile state based on the window width
   const handleResize = () => {
     setIsMobile(window.innerWidth <= 768);
     setIsDesktop(window.innerWidth > 768);
   };
 
-  // Add event listener for window resize
   useEffect(() => {
-    handleResize(); // Initial check
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Fetch data from the API on component mount
   useEffect(() => {
     fetchData();
   }, []);
 
-  const handleFormSubmit = () => {
-    fetchData(); // Update the list of complaints after creating a new complaint
+  const handlePageChange = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
   };
 
-  // Render component
   return (
     <VStack
       spacing={2}
       align="start"
       width={isMobile ? "100%" : "80%"}
       p={4}>
-      {/* Complaint List */}
       <Box
         p={4}
         borderWidth="1px"
@@ -70,10 +74,10 @@ const ComplainmentComponent: React.FC = () => {
           mb={10}>
           List Pengaduan
         </Heading>
-        {complaints.length === 0 ? (
+        {currentComplaints.length === 0 ? (
           <Text>Belum ada data komplen</Text>
         ) : (
-          complaints.map((complaint) => (
+          currentComplaints.map((complaint) => (
             <VStack
               spacing={2}
               align="start"
@@ -87,13 +91,24 @@ const ComplainmentComponent: React.FC = () => {
                 <Heading size="md">Complaint ID: {complaint.id}</Heading>
                 <Heading size="xm">User ID: {complaint.userId}</Heading>
                 <Text>Addresses: {complaint.addresses}</Text>
-                <Text>Category Complaint: {complaint.categoryComplaint}</Text>
-                {/* Display other fields as needed */}
+                <Text>Category Complaint: {getCategoryLabel(complaint.categoryComplaint)}</Text>
                 <Text>Notes: {complaint.notes}</Text>
               </Box>
             </VStack>
           ))
         )}
+        {/* Pagination Controls */}
+        <Box mt={4}>
+          {pageNumbers.map((pageNumber) => (
+            <Button
+              key={pageNumber}
+              variant={pageNumber === currentPage ? "solid" : "outline"}
+              colorScheme="teal"
+              onClick={() => handlePageChange(pageNumber)}>
+              {pageNumber}
+            </Button>
+          ))}
+        </Box>
       </Box>
     </VStack>
   );
