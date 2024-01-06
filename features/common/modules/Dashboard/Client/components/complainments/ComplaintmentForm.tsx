@@ -31,10 +31,19 @@ const categories = [
   { value: "permitsOrEvent", label: "Izin atau Event" },
 ];
 
-const ComplaintmentForm: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen, onClose }) => {
-  let userData = localStorage.getItem("user");
-  if (userData) {
-    userData = JSON.parse(userData);
+interface ComplaintmentFormProps {
+  isOpen: boolean;
+  onClose: () => void;
+  onFormSubmit: () => void;
+}
+
+const ComplaintmentForm: React.FC<ComplaintmentFormProps> = ({ isOpen, onClose, onFormSubmit }) => {
+  const tempUser = localStorage.getItem("user");
+  let userData = {
+    id: "",
+  };
+  if (tempUser) {
+    userData = JSON.parse(tempUser);
   }
   const [newComplaint, setNewComplaint] = useState<Complaint>({
     userId: "",
@@ -69,6 +78,7 @@ const ComplaintmentForm: React.FC<{ isOpen: boolean; onClose: () => void }> = ({
         const data = await res.json();
         alert(data.complaint);
         onClose();
+        onFormSubmit(); // Notify the parent component about the form submission
       } else {
         const errorData = await res.json();
         alert(`Complaint submission failed. Error: ${errorData.message}`);
