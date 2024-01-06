@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Box, Flex, Heading, Spacer, useColorMode, IconButton, Text } from "@chakra-ui/react";
 import { FaSun, FaMoon } from "react-icons/fa";
 import Head from "next/head";
@@ -13,7 +13,26 @@ const DashboardLayout: React.FC<{
 }> = ({ children, title, description }) => {
   const { colorMode, toggleColorMode } = useColorMode();
 
+  useEffect(() => {
+    // Check user data in local storage for auth token and expiration
+    const tempAuthData = localStorage.getItem("auth");
+    const authData = tempAuthData ? JSON.parse(tempAuthData) : "";
+    if (!authData?.token) {
+      // Auth token not found, redirect to login
+      router.push("/login");
+    } else {
+      const currentTime = new Date().getTime();
+      if (currentTime > authData.expiresIn) {
+        // Auth token expired, redirect to login
+        router.push("/login");
+      }
+    }
+  }, []); // Empty dependency array ensures this effect runs once on component mount
+
   const onLogout = () => {
+    // Remove items from local storage
+    localStorage.removeItem("auth");
+    localStorage.removeItem("user");
     router.push("/login");
   };
 
