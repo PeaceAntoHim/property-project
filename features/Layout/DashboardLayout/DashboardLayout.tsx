@@ -16,16 +16,10 @@ const DashboardLayout: React.FC<{
   useEffect(() => {
     // Check user data in local storage for auth token and expiration
     const tempAuthData = localStorage.getItem("auth");
-    const authData = tempAuthData ? JSON.parse(tempAuthData) : "";
+    const authData = !tempAuthData ? "" : JSON.parse(tempAuthData);
     if (!authData?.token) {
       // Auth token not found, redirect to login
       router.push("/login");
-    } else {
-      const currentTime = new Date().getTime();
-      if (currentTime > authData.expiresIn) {
-        // Auth token expired, redirect to login
-        router.push("/login");
-      }
     }
   }, []); // Empty dependency array ensures this effect runs once on component mount
 
