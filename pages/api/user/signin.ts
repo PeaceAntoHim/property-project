@@ -40,7 +40,11 @@ async function loginUserHandler(req: { method?: string; body?: any }, res: { sta
       const tokenData = createToken(user);
       const cookie = createCookies(tokenData);
       res.setHeader("Set-Cookie", [cookie]);
-      return res.status(200).json(exclude(user, ["password"]));
+      const payload = {
+        user: exclude(user, ["password"]),
+        auth: tokenData,
+      };
+      return res.status(200).json(payload);
     } else {
       return res.status(401).json({ message: "invalid credentials" });
     }

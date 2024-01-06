@@ -15,8 +15,8 @@ export default async function handle(
 
 async function createcomplaint(req: { method?: string; body?: any }, res: { status: any }) {
   let errors = [];
-  const { addresses, categoryComplaint, notes } = req.body;
-  if (!addresses || !categoryComplaint || !notes) {
+  const { userId, addresses, categoryComplaint, notes } = req.body;
+  if (!userId || !addresses || !categoryComplaint || !notes) {
     errors.push("invalid inputs, check again");
     return res.status(400).json({ status: 400, errors });
   }

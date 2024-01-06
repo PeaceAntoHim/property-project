@@ -1,6 +1,6 @@
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = env("DATABASE_URL") 
 }
 
 generator client {
@@ -50,8 +50,8 @@ model VerificationToken {
 
 model Complaint {
   id                String  @id @default(cuid())
-  compliant         User?  @relation(fields: [complaintId], references: [id])
-  complaintId       String?
+  user              User?  @relation(fields: [userId], references: [id])
+  userId            String?
   addresses         String  
   categoryComplaint String
   notes             String
@@ -62,8 +62,8 @@ model Complaint {
 model Payment { 
   id                String    @id @default(cuid())
   name              String
-  payment           User?  @relation(fields: [paymentId], references: [id])
-  paymentId         String?
+  user              User?  @relation(fields: [userId], references: [id])
+  userId            String?
   paymentHours      DateTime
   bankAccountNumber String?
   houseBlockNumber  String

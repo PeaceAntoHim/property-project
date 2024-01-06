@@ -16,6 +16,7 @@ import {
 } from "@chakra-ui/react";
 
 interface Complaint {
+  userId: string;
   addresses: string;
   categoryComplaint: string;
   notes: string;
@@ -31,7 +32,12 @@ const categories = [
 ];
 
 const ComplaintmentForm: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen, onClose }) => {
+  let userData = localStorage.getItem("user");
+  if (userData) {
+    userData = JSON.parse(userData);
+  }
   const [newComplaint, setNewComplaint] = useState<Complaint>({
+    userId: "",
     addresses: "",
     categoryComplaint: "",
     notes: "",
@@ -50,7 +56,7 @@ const ComplaintmentForm: React.FC<{ isOpen: boolean; onClose: () => void }> = ({
   const handleSubmit = async () => {
     try {
       setLoading(true); // Set loading to true when submitting
-
+      newComplaint.userId = userData.id;
       const res = await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/complainment/complainment.handler`, {
         method: "POST",
         body: JSON.stringify(newComplaint),

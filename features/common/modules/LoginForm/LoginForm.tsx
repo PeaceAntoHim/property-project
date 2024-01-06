@@ -25,7 +25,6 @@ const LoginForm: React.FC = () => {
   const [emailInPutError, setEmailInputError] = useState(false);
   const [passwordInPutError, setPasswordInputError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-
   const router = useRouter();
 
   useEffect(() => {
@@ -52,12 +51,20 @@ const LoginForm: React.FC = () => {
     if (res?.ok) {
       // toastsuccess
       console.info("success");
-      const data: Record<string, string> = await res.json();
-      const mappingUrl = {
-        client: `/dashboard/client/${data.id}`,
-        admin: `/dashboard/admin/${data.id}`,
+      type TData = {
+        user: Record<string, string>;
+        auth: Record<string, string>;
       };
-      router.push((mappingUrl as any)[data.role]);
+      const data: TData = await res.json();
+      const user = data.user;
+      const auth = data.auth;
+      localStorage.setItem("user", JSON.stringify(user));
+      localStorage.setItem("auth", JSON.stringify(auth));
+      const mappingUrl = {
+        client: `/dashboard/client/${user.id}`,
+        admin: `/dashboard/admin/${user.id}`,
+      };
+      router.push((mappingUrl as any)[user.role]);
       return;
     } else {
       // Toast failed
