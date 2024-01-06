@@ -1,80 +1,69 @@
-// Import necessary libraries and components
-import { Box, VStack, Heading, Text } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import { Box, VStack, Heading, Text, useDisclosure, Button } from "@chakra-ui/react";
+import { getCategoryLabel } from "@/lib/utils";
 
-// Interface for Complaint object
 interface Complaint {
   id: string;
+  userId: string;
   addresses: string;
-  security?: string;
-  cleanliness?: string;
-  water?: string;
-  electricity?: string;
-  facilities?: string;
-  permitsOrEvent?: string;
+  categoryComplaint: string;
   notes: string;
 }
 
-// ComplainmentComponent functional component
 const ComplainmentComponent: React.FC = () => {
-  // State variables
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [isDesktop, setIsDesktop] = useState<boolean>(false);
   const [complaints, setComplaints] = useState<Complaint[]>([]);
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
-  // Dummy data for complaints
-  const dummyComplaints: Complaint[] = [
-    {
-      id: "1",
-      addresses: "123 Main St",
-      security: "Good",
-      cleanliness: "Excellent",
-      water: "No issues",
-      electricity: "Stable",
-      facilities: "Satisfactory",
-      permitsOrEvent: "None",
-      notes: "Everything seems fine.",
-    },
-    {
-      id: "2",
-      addresses: "456 Oak St",
-      security: "Fair",
-      cleanliness: "Average",
-      water: "Low pressure",
-      electricity: "Intermittent",
-      facilities: "Needs improvement",
-      permitsOrEvent: "Upcoming event",
-      notes: "Some issues reported by residents.",
-    },
-    // Add more dummy complaints as needed
-  ];
+  // Pagination
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const itemsPerPage = 3;
 
-  // Toggle the isMobile state based on the window width
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentComplaints = complaints.slice(indexOfFirstItem, indexOfLastItem);
+
+  const pageNumbers = [];
+  for (let i = 1; i <= Math.ceil(complaints.length / itemsPerPage); i++) {
+    pageNumbers.push(i);
+  }
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/complainment/complainment.handler`);
+      const data = await response.json();
+      setComplaints(data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
   const handleResize = () => {
     setIsMobile(window.innerWidth <= 768);
     setIsDesktop(window.innerWidth > 768);
   };
 
-  // Add event listener for window resize
   useEffect(() => {
-    handleResize(); // Initial check
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Set dummy complaints data on component mount
   useEffect(() => {
-    setComplaints(dummyComplaints);
+    fetchData();
   }, []);
 
-  // Render component
+  const handlePageChange = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
+  };
+
   return (
     <VStack
       spacing={2}
       align="start"
       width={isMobile ? "100%" : "80%"}
       p={4}>
-      {/* Complaint List */}
       <Box
         p={4}
         borderWidth="1px"
@@ -85,26 +74,41 @@ const ComplainmentComponent: React.FC = () => {
           mb={10}>
           List Pengaduan
         </Heading>
-        {complaints.map((complaint) => (
-          <VStack
-            spacing={2}
-            align="start"
-            p={4}
-            key={complaint.id}>
-            <Box
-              borderWidth="1px"
-              borderRadius="lg"
-              width="60%"
-              p={2}>
-              <Heading size="md">Complaint ID: {complaint.id}</Heading>
-              <Text>Addresses: {complaint.addresses}</Text>
-              <Text>Security: {complaint.security}</Text>
-              <Text>Cleanliness: {complaint.cleanliness}</Text>
-              {/* Display other fields as needed */}
-              <Text>Notes: {complaint.notes}</Text>
-            </Box>
-          </VStack>
-        ))}
+        {currentComplaints.length === 0 ? (
+          <Text>Belum ada data komplen</Text>
+        ) : (
+          currentComplaints.map((complaint) => (
+            <VStack
+              spacing={2}
+              align="start"
+              p={4}
+              key={complaint.id}>
+              <Box
+                borderWidth="1px"
+                borderRadius="lg"
+                width="60%"
+                p={2}>
+                <Heading size="md">Complaint ID: {complaint.id}</Heading>
+                <Heading size="xm">User ID: {complaint.userId}</Heading>
+                <Text>Addresses: {complaint.addresses}</Text>
+                <Text>Category Complaint: {getCategoryLabel(complaint.categoryComplaint)}</Text>
+                <Text>Notes: {complaint.notes}</Text>
+              </Box>
+            </VStack>
+          ))
+        )}
+        {/* Pagination Controls */}
+        <Box mt={4}>
+          {pageNumbers.map((pageNumber) => (
+            <Button
+              key={pageNumber}
+              variant={pageNumber === currentPage ? "solid" : "outline"}
+              colorScheme="teal"
+              onClick={() => handlePageChange(pageNumber)}>
+              {pageNumber}
+            </Button>
+          ))}
+        </Box>
       </Box>
     </VStack>
   );
