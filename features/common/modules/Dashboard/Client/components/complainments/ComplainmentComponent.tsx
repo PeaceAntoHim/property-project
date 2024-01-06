@@ -12,12 +12,6 @@ interface Complaint {
   // Add other fields as needed based on your API response
 }
 
-interface ComplaintmentFormProps {
-  isOpen: boolean;
-  onClose: () => void;
-  onOpen: () => void;
-  onFormSubmit: () => void; // Callback function to update UI after form submission
-}
 // ComplainmentComponent functional component
 const ComplainmentComponent: React.FC = () => {
   // State variables

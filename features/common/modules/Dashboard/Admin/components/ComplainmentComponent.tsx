@@ -1,18 +1,15 @@
 // Import necessary libraries and components
-import { Box, VStack, Heading, Text } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import { Box, VStack, Heading, Text, useDisclosure, Button } from "@chakra-ui/react";
 
 // Interface for Complaint object
 interface Complaint {
   id: string;
+  userId: string;
   addresses: string;
-  security?: string;
-  cleanliness?: string;
-  water?: string;
-  electricity?: string;
-  facilities?: string;
-  permitsOrEvent?: string;
+  categoryComplaint: string;
   notes: string;
+  // Add other fields as needed based on your API response
 }
 
 // ComplainmentComponent functional component
@@ -22,32 +19,16 @@ const ComplainmentComponent: React.FC = () => {
   const [isDesktop, setIsDesktop] = useState<boolean>(false);
   const [complaints, setComplaints] = useState<Complaint[]>([]);
 
-  // Dummy data for complaints
-  const dummyComplaints: Complaint[] = [
-    {
-      id: "1",
-      addresses: "123 Main St",
-      security: "Good",
-      cleanliness: "Excellent",
-      water: "No issues",
-      electricity: "Stable",
-      facilities: "Satisfactory",
-      permitsOrEvent: "None",
-      notes: "Everything seems fine.",
-    },
-    {
-      id: "2",
-      addresses: "456 Oak St",
-      security: "Fair",
-      cleanliness: "Average",
-      water: "Low pressure",
-      electricity: "Intermittent",
-      facilities: "Needs improvement",
-      permitsOrEvent: "Upcoming event",
-      notes: "Some issues reported by residents.",
-    },
-    // Add more dummy complaints as needed
-  ];
+  // Fetch data from the API
+  const fetchData = async () => {
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/complainment/complainment.handler`); // Replace with your API endpoint
+      const data = await response.json();
+      setComplaints(data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
 
   // Toggle the isMobile state based on the window width
   const handleResize = () => {
@@ -62,10 +43,14 @@ const ComplainmentComponent: React.FC = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Set dummy complaints data on component mount
+  // Fetch data from the API on component mount
   useEffect(() => {
-    setComplaints(dummyComplaints);
+    fetchData();
   }, []);
+
+  const handleFormSubmit = () => {
+    fetchData(); // Update the list of complaints after creating a new complaint
+  };
 
   // Render component
   return (
@@ -85,26 +70,30 @@ const ComplainmentComponent: React.FC = () => {
           mb={10}>
           List Pengaduan
         </Heading>
-        {complaints.map((complaint) => (
-          <VStack
-            spacing={2}
-            align="start"
-            p={4}
-            key={complaint.id}>
-            <Box
-              borderWidth="1px"
-              borderRadius="lg"
-              width="60%"
-              p={2}>
-              <Heading size="md">Complaint ID: {complaint.id}</Heading>
-              <Text>Addresses: {complaint.addresses}</Text>
-              <Text>Security: {complaint.security}</Text>
-              <Text>Cleanliness: {complaint.cleanliness}</Text>
-              {/* Display other fields as needed */}
-              <Text>Notes: {complaint.notes}</Text>
-            </Box>
-          </VStack>
-        ))}
+        {complaints.length === 0 ? (
+          <Text>Belum ada data komplen</Text>
+        ) : (
+          complaints.map((complaint) => (
+            <VStack
+              spacing={2}
+              align="start"
+              p={4}
+              key={complaint.id}>
+              <Box
+                borderWidth="1px"
+                borderRadius="lg"
+                width="60%"
+                p={2}>
+                <Heading size="md">Complaint ID: {complaint.id}</Heading>
+                <Heading size="xm">User ID: {complaint.userId}</Heading>
+                <Text>Addresses: {complaint.addresses}</Text>
+                <Text>Category Complaint: {complaint.categoryComplaint}</Text>
+                {/* Display other fields as needed */}
+                <Text>Notes: {complaint.notes}</Text>
+              </Box>
+            </VStack>
+          ))
+        )}
       </Box>
     </VStack>
   );
