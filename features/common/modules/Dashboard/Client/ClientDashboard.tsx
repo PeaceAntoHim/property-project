@@ -54,12 +54,7 @@ const ClientDashboard: React.FC = () => {
       case "dashboard":
         return <DashboardComponent />;
       case "users":
-        return (
-          <UserComponent
-            name={""}
-            role={""}
-          />
-        );
+        return <UserComponent />;
       case "pengaduan":
         return <ComplainmentComponent />;
       default:
