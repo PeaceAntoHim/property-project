@@ -14,7 +14,7 @@ class Booking {
       await prisma.booking.create({
         data: { ...req.body },
       });
-      return res.status(201);
+      return res.status(201).json({ message: "Success create booking" });
     } catch (e) {
       if (e instanceof Prisma.PrismaClientKnownRequestError) {
         if (e.code === "P2002") {
