@@ -55,6 +55,8 @@ model Complaint {
   addresses         String  
   categoryComplaint String
   notes             String
+  createdAt         DateTime  @default(now()) @map(name: "created_at")
+  updatedAt         DateTime  @updatedAt @map(name: "updated_at")
 
   @@map(name: "complaints")
 }
@@ -67,8 +69,24 @@ model Payment {
   paymentHours      DateTime
   bankAccountNumber String?
   houseBlockNumber  String
+  createdAt         DateTime  @default(now()) @map(name: "created_at")
+  updatedAt         DateTime  @updatedAt @map(name: "updated_at")
 
   @@map(name: "payments")
+}
+
+model Booking {
+  id            String @id @default(cuid())
+  name          String
+  phoneNumber   String  
+  email         String
+  message       String
+  propertyId    Int?
+  agreement     Boolean?  @default(true)
+  createdAt     DateTime  @default(now()) @map(name: "created_at")
+  updatedAt     DateTime  @updatedAt @map(name: "updated_at")
+
+  @@map(name: "bookings")
 }
 
 model User {

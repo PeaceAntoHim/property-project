@@ -1,15 +1,16 @@
 // Import necessary dependencies
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import { Box, Button, FormControl, FormLabel, Input, Stack, Heading } from "@chakra-ui/react";
+import { Box, Button, FormControl, FormLabel, Input, Stack, Heading, Spinner, Flex } from "@chakra-ui/react";
 
 // Functional component for SignupForm
 const SignupForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const [passError, setPassError] = useState(false);
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const router = useRouter();
 
@@ -23,6 +24,7 @@ const SignupForm = () => {
   }
 
   async function handleSubmit(e: { preventDefault: () => void }) {
+    setIsLoading(true);
     e.preventDefault();
 
     if (passError) {
@@ -44,7 +46,8 @@ const SignupForm = () => {
       },
     });
 
-    if (res.ok) {
+    setIsLoading(false);
+    if (res?.ok) {
       const data = await res.json();
       router.push("/login");
       // Registration success
@@ -52,6 +55,17 @@ const SignupForm = () => {
       // Registration failed
       alert(`Registrasi failed, got this err: ${res.statusText}`);
     }
+  }
+
+  if (isLoading) {
+    return (
+      <Flex
+        align="center"
+        justify="center"
+        h="80vh">
+        <Spinner size="lg" />
+      </Flex>
+    );
   }
 
   return (
