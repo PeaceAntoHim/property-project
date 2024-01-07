@@ -26,8 +26,6 @@ const AdminDashboard: React.FC = () => {
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [isDesktop, setIsDesktop] = useState<boolean>(false);
   const [selectedComponent, setSelectedComponent] = useState<string>("dashboard");
-  const tempUserData = localStorage.getItem("user");
-  const userData = !tempUserData ? "" : JSON.parse(tempUserData);
 
   // Toggle the isMobile state based on the window width
   const handleResize = () => {
@@ -54,6 +52,8 @@ const AdminDashboard: React.FC = () => {
   };
 
   const renderSelectedComponent = () => {
+    const tempUserData = localStorage.getItem("user");
+    const userData = !tempUserData ? "" : JSON.parse(tempUserData);
     switch (selectedComponent) {
       case "dashboard":
         return <DashboardComponent />;
