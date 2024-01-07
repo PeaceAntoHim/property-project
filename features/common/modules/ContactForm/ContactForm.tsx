@@ -37,6 +37,8 @@ const ContactForm = () => {
     });
     setIsLoading(false);
     if (res?.ok) {
+      const data = await res.json();
+      alert(data.message);
       router.push("/");
       // Registration success
     } else {
@@ -74,7 +76,7 @@ const ContactForm = () => {
           />
           <Input
             marginTop="1.3rem"
-            id="phone"
+            id="phoneNumber"
             type="text"
             placeholder="Phone Number"
             required
