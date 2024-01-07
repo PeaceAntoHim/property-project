@@ -50,20 +50,11 @@ const ClientDashboard: React.FC = () => {
   };
 
   const renderSelectedComponent = () => {
-    const tempUserData = localStorage.getItem("user");
-    const userData = !tempUserData ? "" : JSON.parse(tempUserData);
     switch (selectedComponent) {
       case "dashboard":
         return <DashboardComponent />;
       case "users":
-        return (
-          <UserComponent
-            id={userData.id}
-            name={userData.name}
-            email={userData.email}
-            role={userData.role}
-          />
-        );
+        return <UserComponent />;
       case "pengaduan":
         return <ComplainmentComponent />;
       default:
