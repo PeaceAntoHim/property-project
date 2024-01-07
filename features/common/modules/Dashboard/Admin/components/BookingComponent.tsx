@@ -1,19 +1,20 @@
 import { useState, useEffect } from "react";
 import { Box, VStack, Heading, Text, Button } from "@chakra-ui/react";
-import { getCategoryLabel } from "@/lib/utils";
 
-interface Complaint {
+interface Booking {
   id: string;
-  userId: string;
-  addresses: string;
-  categoryComplaint: string;
-  notes: string;
+  name: string;
+  phoneNumber: string;
+  email: string;
+  message: string;
+  propertyId: number;
+  agreement: boolean;
 }
 
-const ComplainmentComponent: React.FC = () => {
+const BookingComponent: React.FC = () => {
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [isDesktop, setIsDesktop] = useState<boolean>(false);
-  const [complaints, setComplaints] = useState<Complaint[]>([]);
+  const [bookings, setBookings] = useState<Booking[]>([]);
 
   // Pagination
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -21,18 +22,18 @@ const ComplainmentComponent: React.FC = () => {
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentComplaints = complaints.slice(indexOfFirstItem, indexOfLastItem);
+  const currentBookings = bookings.slice(indexOfFirstItem, indexOfLastItem);
 
   const pageNumbers = [];
-  for (let i = 1; i <= Math.ceil(complaints.length / itemsPerPage); i++) {
+  for (let i = 1; i <= Math.ceil(bookings.length / itemsPerPage); i++) {
     pageNumbers.push(i);
   }
 
   const fetchData = async () => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/complainment/complainment.handler`);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/booking/booking.handler`);
       const data = await response.json();
-      setComplaints(data);
+      setBookings(data);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -71,27 +72,28 @@ const ComplainmentComponent: React.FC = () => {
         <Heading
           size="lg"
           mb={10}>
-          List Pengaduan
+          List Booking
         </Heading>
-        {currentComplaints.length === 0 ? (
-          <Text>Belum ada data komplen</Text>
+        {currentBookings.length === 0 ? (
+          <Text>Belum ada data booking</Text>
         ) : (
-          currentComplaints.map((complaint) => (
+          currentBookings.map((booking) => (
             <VStack
               spacing={2}
               align="start"
               p={4}
-              key={complaint.id}>
+              key={booking.id}>
               <Box
                 borderWidth="1px"
                 borderRadius="lg"
                 width="60%"
                 p={2}>
-                <Heading size="md">Complaint ID: {complaint.id}</Heading>
-                <Heading size="xm">User ID: {complaint.userId}</Heading>
-                <Text>Addresses: {complaint.addresses}</Text>
-                <Text>Category Complaint: {getCategoryLabel(complaint.categoryComplaint)}</Text>
-                <Text>Notes: {complaint.notes}</Text>
+                <Heading size="md">Booking ID: {booking.id}</Heading>
+                <Heading size="xm">Property ID: {booking.propertyId || "-"}</Heading>
+                <Text>Nama: {booking.name}</Text>
+                <Text>Nomor HP: {booking.phoneNumber}</Text>
+                <Text>Email: {booking.email}</Text>
+                <Text>Pesan: {booking.message}</Text>
               </Box>
             </VStack>
           ))
@@ -113,4 +115,4 @@ const ComplainmentComponent: React.FC = () => {
   );
 };
 
-export default ComplainmentComponent;
+export default BookingComponent;

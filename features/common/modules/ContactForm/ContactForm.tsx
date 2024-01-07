@@ -1,21 +1,15 @@
-import {
-  Box,
-  Button,
-  Checkbox,
-  FormControl,
-  Input,
-  Text,
-  Textarea,
-} from '@chakra-ui/react';
-import React from 'react';
-import { useForm } from 'react-hook-form';
+import { Box, Button, Checkbox, Flex, FormControl, Input, Spinner, Text, Textarea } from "@chakra-ui/react";
+import { useRouter } from "next/router";
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 
 type ContactFormType = {
   name: string;
   email: string;
-  phone: string;
+  phoneNumber: string;
   message: string;
-  gdpr: boolean;
+  agreement: boolean;
+  propertyId?: number;
 };
 
 const ContactForm = () => {
@@ -24,16 +18,50 @@ const ContactForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<ContactFormType>();
+  const router = useRouter();
+  const { propertyId } = router.query;
+  const [isLoading, setIsLoading] = useState(false);
 
-  const onSubmit = (data: ContactFormType) => console.log(data);
+  const onSubmit = async (data: ContactFormType) => {
+    setIsLoading(true);
+    if (propertyId) {
+      data.propertyId = parseInt(propertyId as string);
+    }
+
+    const res = await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/booking/booking.handler`, {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    setIsLoading(false);
+    if (res?.ok) {
+      router.push("/");
+      // Registration success
+    } else {
+      // Registration failed
+      alert(`Registrasi failed, got this err: ${res.statusText}`);
+    }
+  };
+
+  if (isLoading) {
+    return (
+      <Flex
+        align="center"
+        justify="center"
+        h="80vh">
+        <Spinner size="lg" />
+      </Flex>
+    );
+  }
 
   return (
     <Box
       width="100%"
       borderRadius="sm"
       backgroundColor="white"
-      color="gray.700"
-    >
+      color="gray.700">
       <form onSubmit={handleSubmit(onSubmit)}>
         <FormControl>
           <Input
@@ -41,39 +69,44 @@ const ContactForm = () => {
             id="name"
             type="text"
             placeholder="Name"
-            {...register('name', { required: true })}
+            required
+            {...register("name", { required: true })}
           />
           <Input
             marginTop="1.3rem"
             id="phone"
-            type="email"
-            placeholder="Phone"
-            {...register('phone', { required: true })}
+            type="text"
+            placeholder="Phone Number"
+            required
+            {...register("phoneNumber", { required: true })}
           />
           <Input
             marginTop="1.3rem"
             id="email"
-            type="text"
+            type="email"
             placeholder="Email"
-            {...register('email', { required: true })}
+            required
+            {...register("email", { required: true })}
           />
           <Textarea
             marginTop="1.3rem"
             id="message"
             placeholder="Message"
-            {...register('message', { required: true })}
+            required
+            {...register("message", { required: true })}
           />
           <Checkbox
             marginTop="1.3rem"
-            id="gdpr"
+            id="agreement"
             type="checkbox"
             width="100%"
-            placeholder="GDPR"
-            {...register('gdpr', { required: true })}
-          >
-            <Text fontSize="0.8rem" color="gray.500">
-              I consent to having this website store my details for future
-              communication
+            required
+            placeholder="agreement"
+            {...register("agreement", { required: true })}>
+            <Text
+              fontSize="0.8rem"
+              color="gray.500">
+              I consent to having this website store my details for future communication
             </Text>
           </Checkbox>
           <Button
@@ -83,8 +116,7 @@ const ContactForm = () => {
             fontSize="base"
             padding="1.6rem"
             marginTop="4rem"
-            marginLeft="auto"
-          >
+            marginLeft="auto">
             Send Message
           </Button>
         </FormControl>

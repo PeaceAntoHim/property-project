@@ -1,27 +1,18 @@
-import React from 'react';
-import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
-import { usePropertyFormat } from '@/features/common/Hooks/usePropertyFormat';
-import {
-  Badge,
-  Box,
-  Flex,
-  Grid,
-  GridItem,
-  SimpleGrid,
-  Text,
-} from '@chakra-ui/react';
-import DefaultLayout from '@/features/Layout/DefaultLayout';
-import { TbMapPin } from 'react-icons/tb';
-import PropertyThumbnailSlider from '@/features/Property/components/PropertyThumbnailSlider';
-import PropertyStats from '@/features/Property/components/PropertyStats';
-import TextContentBox from '@/features/common/modules/TextContentBox';
-import PropertyYoutubeEmbeded from '@/features/Property/components/PropertyYoutubeEmbeded';
-import PropertyMatterPortEmbed from '@/features/Property/components/PropertyMatterPortEmbed';
-import { getProperty } from '@/features/Property/API/getProperty';
+import React from "react";
+import { GetServerSideProps, InferGetServerSidePropsType } from "next";
+import { usePropertyFormat } from "@/features/common/Hooks/usePropertyFormat";
+import { Badge, Box, Flex, Grid, GridItem, SimpleGrid, Text, Button } from "@chakra-ui/react";
+import DefaultLayout from "@/features/Layout/DefaultLayout";
+import { TbMapPin } from "react-icons/tb";
+import PropertyThumbnailSlider from "@/features/Property/components/PropertyThumbnailSlider";
+import PropertyStats from "@/features/Property/components/PropertyStats";
+import TextContentBox from "@/features/common/modules/TextContentBox";
+import PropertyYoutubeEmbeded from "@/features/Property/components/PropertyYoutubeEmbeded";
+import PropertyMatterPortEmbed from "@/features/Property/components/PropertyMatterPortEmbed";
+import { getProperty } from "@/features/Property/API/getProperty";
+import router from "next/router";
 
-const PropertyDetail = ({
-  property,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+const PropertyDetail = ({ property }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   const {
     address,
     propertyType,
@@ -39,38 +30,51 @@ const PropertyDetail = ({
     amenities,
   } = usePropertyFormat(property);
 
+  const handleBookingClick = () => {
+    // Assuming your property ID is stored in externalID, adjust it accordingly
+    const propertyId = property.id;
+
+    // Redirect to the /contact page with the property ID as a query parameter
+    router.push(`/contact?propertyId=${propertyId}`);
+  };
+
   const images = photos as string[];
 
   return (
-    <DefaultLayout title={title} description={description}>
+    <DefaultLayout
+      title={title}
+      description={description}>
       <Box
         backgroundColor="#f7f8f9"
         paddingY="3rem"
-        paddingX={{ base: '1rem', md: '3rem' }}
-      >
+        paddingX={{ base: "1rem", md: "3rem" }}>
         <Grid
           templateColumns="repeat(6, 1fr)"
           gap="5"
           maxWidth="1280px"
-          margin="0 auto"
-        >
+          margin="0 auto">
+          <GridItem colSpan={6}>
+            <Button
+              onClick={handleBookingClick}
+              colorScheme="teal">
+              Book Now
+            </Button>
+          </GridItem>
           <GridItem colSpan={6}>
             <Text
               fontSize="3xl"
               fontWeight="medium"
               color="blue.800"
-              textAlign={{ base: 'center', md: 'left' }}
-            >
+              textAlign={{ base: "center", md: "left" }}>
               {propertyType} {title}
             </Text>
             <Flex
               fontSize="xl"
               color="blue.600"
               textAlign="center"
-              flexDirection={{ base: 'column', sm: 'row' }}
+              flexDirection={{ base: "column", sm: "row" }}
               gap="0.5rem"
-              marginY={{ base: '1rem', sm: '0' }}
-            >
+              marginY={{ base: "1rem", sm: "0" }}>
               <TbMapPin />
               <Text fontWeight="ligth">
                 {address} - ID:{externalID}
@@ -80,8 +84,7 @@ const PropertyDetail = ({
                 padding="0.4rem"
                 width="fit-content"
                 height="fit-content"
-                marginX={{ base: 'auto', lg: '0' }}
-              >
+                marginX={{ base: "auto", lg: "0" }}>
                 {purpose}
               </Badge>
             </Flex>
@@ -101,8 +104,7 @@ const PropertyDetail = ({
                 fontWeight="light"
                 color="gray.600"
                 fontSize="1rem"
-                noOfLines={4}
-              >
+                noOfLines={4}>
                 {description}
               </Text>
             </TextContentBox>
@@ -111,13 +113,10 @@ const PropertyDetail = ({
                 columns={{ base: 1, sm: 2 }}
                 fontWeight="light"
                 color="gray.600"
-                fontSize="1rem"
-              >
+                fontSize="1rem">
                 {amenities.length
-                  ? amenities.map((item: string) => (
-                      <Text key={item}>{item}</Text>
-                    ))
-                  : 'Please contact us for more info'}
+                  ? amenities.map((item: string) => <Text key={item}>{item}</Text>)
+                  : "Please contact us for more info"}
               </SimpleGrid>
             </TextContentBox>
           </GridItem>

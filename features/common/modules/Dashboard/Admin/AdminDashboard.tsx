@@ -18,6 +18,8 @@ import { AiOutlineNotification } from "react-icons/ai";
 import DashboardComponent from "./components/DashboardComponent";
 import UserComponent from "./components/UserComponent";
 import ComplainmentComponent from "./components/ComplainmentComponent";
+import { BiCalendar } from "react-icons/bi";
+import BookingComponent from "./components/BookingComponent";
 
 const AdminDashboard: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -62,6 +64,8 @@ const AdminDashboard: React.FC = () => {
         );
       case "pengaduan":
         return <ComplainmentComponent />;
+      case "booking":
+        return <BookingComponent />;
       default:
         return <DashboardComponent />;
     }
@@ -140,6 +144,19 @@ const AdminDashboard: React.FC = () => {
                       mr={2}
                     />
                     Pengaduan
+                  </Box>
+                  <Box
+                    fontSize="xl"
+                    display="flex"
+                    alignItems="center"
+                    onClick={() => handleComponentChange("booking")}
+                    cursor="pointer">
+                    <Icon
+                      as={BiCalendar}
+                      fontSize="xl"
+                      mr={2}
+                    />
+                    Booking
                   </Box>
                 </VStack>
               </VStack>

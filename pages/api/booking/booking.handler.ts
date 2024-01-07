@@ -11,10 +11,10 @@ class Booking {
     }
 
     try {
-      const booking = await prisma.booking.create({
+      await prisma.booking.create({
         data: { ...req.body },
       });
-      return res.status(201).json({ booking });
+      return res.status(201);
     } catch (e) {
       if (e instanceof Prisma.PrismaClientKnownRequestError) {
         if (e.code === "P2002") {

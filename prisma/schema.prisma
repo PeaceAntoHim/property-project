@@ -89,6 +89,17 @@ model Booking {
   @@map(name: "bookings")
 }
 
+model PdfGuide {
+  id            String @id @default(cuid())
+  name          String
+  phoneNumber   String  
+  email         String
+  createdAt     DateTime  @default(now()) @map(name: "created_at")
+  updatedAt     DateTime  @updatedAt @map(name: "updated_at")
+
+  @@map(name: "pdfguides")
+}
+
 model User {
   id            String    @id @default(uuid())
   name          String
