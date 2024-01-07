@@ -110,15 +110,16 @@ const ComplainmentComponent: React.FC = () => {
                 <Text>Addresses: {complaint.addresses}</Text>
                 <Text>Category Complaint: {getCategoryLabel(complaint.categoryComplaint)}</Text>
                 <Text>Notes: {complaint.notes}</Text>
-                <ComplaintmentForm
-                  onFormSubmit={handleFormSubmit}
-                  isOpen={isOpen}
-                  onClose={onClose}
-                />
               </Box>
             </VStack>
           ))
         )}
+        {/* Complaint form  */}
+        <ComplaintmentForm
+          onFormSubmit={handleFormSubmit}
+          isOpen={isOpen}
+          onClose={onClose}
+        />
         {/* Pagination Controls */}
         <Box mt={4}>
           {pageNumbers.map((pageNumber) => (
