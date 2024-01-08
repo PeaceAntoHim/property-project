@@ -14,10 +14,11 @@ import {
   Icon,
 } from "@chakra-ui/react";
 import { FiMenu, FiHome, FiUsers } from "react-icons/fi";
-import { AiOutlineNotification } from "react-icons/ai";
+import { AiOutlineDollar, AiOutlineNotification } from "react-icons/ai";
 import DashboardComponent from "./components/DashboardComponent";
 import UserComponent from "./components/UserComponent";
 import ComplainmentComponent from "./components/complainments/ComplainmentComponent";
+import PaymentComponent from "./components/payments/PaymentComponent";
 
 const ClientDashboard: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -55,8 +56,10 @@ const ClientDashboard: React.FC = () => {
         return <DashboardComponent />;
       case "users":
         return <UserComponent />;
-      case "pengaduan":
+      case "complainment":
         return <ComplainmentComponent />;
+      case "payment":
+        return <PaymentComponent />;
       default:
         return <DashboardComponent />;
     }
@@ -121,13 +124,13 @@ const ClientDashboard: React.FC = () => {
                       fontSize="xl"
                       mr={2}
                     />
-                    Users
+                    Pengguna
                   </Box>
                   <Box
                     fontSize="xl"
                     display="flex"
                     alignItems="center"
-                    onClick={() => handleComponentChange("pengaduan")}
+                    onClick={() => handleComponentChange("complainment")}
                     cursor="pointer">
                     <Icon
                       as={AiOutlineNotification}
@@ -135,6 +138,19 @@ const ClientDashboard: React.FC = () => {
                       mr={2}
                     />
                     Pengaduan
+                  </Box>
+                  <Box
+                    fontSize="xl"
+                    display="flex"
+                    alignItems="center"
+                    onClick={() => handleComponentChange("payment")}
+                    cursor="pointer">
+                    <Icon
+                      as={AiOutlineDollar}
+                      fontSize="xl"
+                      mr={2}
+                    />
+                    Pembayaran
                   </Box>
                 </VStack>
               </VStack>
