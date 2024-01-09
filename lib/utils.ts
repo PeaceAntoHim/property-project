@@ -12,7 +12,25 @@ export const categories = [
   { value: "permitsOrEvent", label: "Izin atau Event" },
 ];
 
+export const banks = [
+  { value: "BCA", label: "Bank Central Asia" },
+  { value: "BRI", label: "Bank Rakyat Indonesia" },
+  { value: "BNI", label: "Bank Negara Indonesia" },
+  { value: "CIMB", label: "CIMB Niaga" },
+  { value: "Mandiri", label: "Bank Mandiri" },
+  { value: "BTN", label: "Bank Tabungan Negara" },
+  { value: "HSBC", label: "HSBC Indonesia" },
+  { value: "Maybank", label: "Maybank Indonesia" },
+  { value: "Danamon", label: "Bank Danamon" },
+  { value: "Panin", label: "Bank Panin" },
+];
+
 export const getCategoryLabel = (categoryValue: string) => {
   const category = categories.find((cat) => cat.value === categoryValue);
+  return category ? category.label : "Unknown Category";
+};
+
+export const getCategoryBank = (categoryValue: string) => {
+  const category = banks.find((cat) => cat.value === categoryValue);
   return category ? category.label : "Unknown Category";
 };

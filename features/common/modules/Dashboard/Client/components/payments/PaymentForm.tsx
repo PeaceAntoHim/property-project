@@ -10,17 +10,18 @@ import {
   FormControl,
   FormLabel,
   Input,
-  Textarea,
   Select,
   Spinner, // Import Spinner component from Chakra UI
 } from "@chakra-ui/react";
-import { categories } from "@/lib/utils";
+import { banks } from "@/lib/utils";
 
-interface Complaint {
+interface Payment {
+  name: string;
   userId: string;
+  bankAccountNumber: string;
   addresses: string;
-  categoryComplaint: string;
-  notes: string;
+  bankName: string;
+  transferAmount: string;
 }
 
 interface ComplaintmentFormProps {
@@ -29,38 +30,42 @@ interface ComplaintmentFormProps {
   onFormSubmit: () => void;
 }
 
-const ComplaintmentForm: React.FC<ComplaintmentFormProps> = ({ isOpen, onClose, onFormSubmit }) => {
+const PaymentForm: React.FC<ComplaintmentFormProps> = ({ isOpen, onClose, onFormSubmit }) => {
   const tempUser = localStorage.getItem("user");
   let userData = {
+    name: "",
     id: "",
   };
   if (tempUser) {
     userData = JSON.parse(tempUser);
   }
-  const [newComplaint, setNewComplaint] = useState<Complaint>({
+  const [newPayment, setNewPayment] = useState<Payment>({
+    name: "",
     userId: "",
+    bankAccountNumber: "",
     addresses: "",
-    categoryComplaint: "",
-    notes: "",
+    bankName: "",
+    transferAmount: "",
   });
 
   const [loading, setLoading] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setNewComplaint((prevComplaint) => ({
+    setNewPayment((prevComplaint) => ({
       ...prevComplaint,
-      [name]: value,
+      [name]: name === "transferAmount" && /^\d+$/.test(value) ? Number(value) : value,
     }));
   };
 
   const handleSubmit = async () => {
     try {
       setLoading(true); // Set loading to true when submitting
-      newComplaint.userId = userData.id;
-      const res = await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/complainment/complainment.handler`, {
+      newPayment.name = userData.name;
+      newPayment.userId = userData.id;
+      const res = await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/payment/payment.handler`, {
         method: "POST",
-        body: JSON.stringify(newComplaint),
+        body: JSON.stringify(newPayment),
         headers: {
           "Content-Type": "application/json",
         },
@@ -68,16 +73,16 @@ const ComplaintmentForm: React.FC<ComplaintmentFormProps> = ({ isOpen, onClose, 
 
       if (res.ok) {
         const data = await res.json();
-        alert(data.complaint);
+        alert(data.payment);
         onClose();
         onFormSubmit(); // Notify the parent component about the form submission
       } else {
         const errorData = await res.json();
-        alert(`Complaint submission failed. Error: ${errorData.message}`);
+        alert(`Payment submission failed. Error: ${errorData.message}`);
       }
     } catch (error) {
-      console.error("An error occurred while submitting the complaint:", error);
-      alert("Complaint submission failed. Please try again.");
+      console.error("An error occurred while submitting the Payment:", error);
+      alert("Payment submission failed. Please try again.");
     } finally {
       setLoading(false); // Set loading back to false when the operation is complete
     }
@@ -90,46 +95,57 @@ const ComplaintmentForm: React.FC<ComplaintmentFormProps> = ({ isOpen, onClose, 
       <ModalOverlay />
       <ModalContent
         maxW="xl"
-        top="15%"
+        top="12%"
+        right="40"
         m={4}>
-        <ModalHeader mt={4}>Formulir Keluhan</ModalHeader>
+        <ModalHeader mt={4}>Formulir Pembayaran</ModalHeader>
         <ModalCloseButton />
         <ModalBody>
           <FormControl>
-            <FormLabel>Alamat</FormLabel>
+            <FormLabel>No. Akun Bank</FormLabel>
             <Input
               type="text"
-              name="addresses"
-              value={newComplaint.addresses}
+              name="bankAccountNumber"
+              value={newPayment.bankAccountNumber}
               onChange={handleInputChange}
             />
           </FormControl>
           <FormControl mt={4}>
-            <FormLabel>List Kategori Keluhan</FormLabel>
+            <FormLabel>Nama Bank</FormLabel>
             <Select
-              name="categoryComplaint"
-              value={newComplaint.categoryComplaint}
+              name="bankName"
+              value={newPayment.bankName}
               onChange={handleInputChange}>
               <option
                 value=""
                 disabled
                 hidden>
-                -- Pilih Kategori Keluhan --
+                -- Pilih Nama Bank --
               </option>
-              {categories.map((category) => (
+              {banks.map((bank) => (
                 <option
-                  key={category.value}
-                  value={category.value}>
-                  {category.label}
+                  key={bank.value}
+                  value={bank.value}>
+                  {bank.label}
                 </option>
               ))}
             </Select>
           </FormControl>
           <FormControl mt={4}>
-            <FormLabel>Pesan</FormLabel>
-            <Textarea
-              name="notes"
-              value={newComplaint.notes}
+            <FormLabel>Transfer Nominal</FormLabel>
+            <Input
+              name="transferAmount"
+              type="text"
+              value={newPayment.transferAmount}
+              onChange={handleInputChange}
+            />
+          </FormControl>
+          <FormControl mt={4}>
+            <FormLabel>Alamat</FormLabel>
+            <Input
+              name="addresses"
+              type="text"
+              value={newPayment.addresses}
               onChange={handleInputChange}
             />
           </FormControl>
@@ -147,4 +163,4 @@ const ComplaintmentForm: React.FC<ComplaintmentFormProps> = ({ isOpen, onClose, 
   );
 };
 
-export default ComplaintmentForm;
+export default PaymentForm;
