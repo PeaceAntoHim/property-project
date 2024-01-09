@@ -92,7 +92,7 @@ const ComplaintmentForm: React.FC<ComplaintmentFormProps> = ({ isOpen, onClose, 
         maxW="xl"
         top="15%"
         m={4}>
-        <ModalHeader mt={4}>Buat Keluhan Baru</ModalHeader>
+        <ModalHeader mt={4}>Formulir Keluhan</ModalHeader>
         <ModalCloseButton />
         <ModalBody>
           <FormControl>
