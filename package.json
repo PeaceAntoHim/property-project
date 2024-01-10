@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^17.4.4",
-    "@commitlint/config-conventional": "^17.4.4",
+    "@commitlint/config-conventional": "^18.4.4",
     "@types/jsonwebtoken": "^9.0.5",
     "@types/nprogress": "^0.2.0",
     "commitizen": "^4.3.0",
