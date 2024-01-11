@@ -61,17 +61,17 @@ model Complaint {
 }
 
 model Payment {
-  id                String   @id @default(cuid())
-  name              String
-  userId            String
-  paymentHours      DateTime @default(now())
-  bankAccountNumber String
-  createdAt         DateTime @default(now()) @map("created_at")
-  updatedAt         DateTime @updatedAt @map("updated_at")
-  addresses         String
-  bankName          String
-  transferAmount    Int
-  user              User     @relation(fields: [userId], references: [id])
+  id              String   @id @default(cuid())
+  name            String
+  userId          String
+  paymentHours    DateTime @default(now())
+  bankAccountName String
+  createdAt       DateTime @default(now()) @map("created_at")
+  updatedAt       DateTime @updatedAt @map("updated_at")
+  addresses       String
+  bankName        String
+  transferAmount  Int
+  user            User     @relation(fields: [userId], references: [id])
 
   @@map("payments")
 }

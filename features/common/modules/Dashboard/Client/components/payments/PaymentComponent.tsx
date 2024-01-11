@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import { Box, VStack, Heading, Text, useDisclosure, Button } from "@chakra-ui/react";
 import PaymentForm from "./PaymentForm";
-import { getCategoryBank } from "@/lib/utils";
+import { formatCurrency, formatDateTime, getCategoryBank } from "@/lib/utils";
 
 interface Payment {
   paymentHours: Date;
   id: string;
   name: string;
   userId: string;
-  bankAccountNumber: string;
+  bankAccountName: string;
   addresses: string;
   bankName: string;
   transferAmount: number;
@@ -26,26 +26,6 @@ const PaymentComponent: React.FC = () => {
   if (tempUser) {
     userData = JSON.parse(tempUser);
   }
-  const formatDateTime = (date: Date): string => {
-    const data = new Date(date);
-    return data.toLocaleDateString("id-ID", {
-      year: "numeric",
-      month: "2-digit",
-      day: "2-digit",
-      hour: "2-digit",
-      minute: "2-digit",
-      hour12: false, // 24-hour clock format
-      timeZone: "Asia/Jakarta", // Adjust the time zone to Indonesia's time zone
-    });
-  };
-
-  const formatCurrency = (amount: number): string => {
-    return amount.toLocaleString("id-ID", {
-      style: "currency",
-      currency: "IDR",
-      maximumFractionDigits: 0,
-    });
-  };
 
   // Pagination
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -132,7 +112,7 @@ const PaymentComponent: React.FC = () => {
                 p={2}>
                 <Heading size="md">Payment ID: {payment.id}</Heading>
                 <Text>Nama: {payment.name}</Text>
-                <Text>No Akun Bank: {payment.bankAccountNumber}</Text>
+                <Text>Nama Akun Bank: {payment.bankAccountName}</Text>
                 <Text>Nama Bank: {getCategoryBank(payment.bankName)}</Text>
                 <Text>Nominal Transfer: {formatCurrency(payment.transferAmount)}</Text>
                 <Text>Alamat: {payment.addresses}</Text>
