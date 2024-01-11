@@ -34,3 +34,23 @@ export const getCategoryBank = (categoryValue: string) => {
   const category = banks.find((cat) => cat.value === categoryValue);
   return category ? category.label : "Unknown Category";
 };
+
+export const formatDateTime = (date: Date): string => {
+  const data = new Date(date);
+  return data.toLocaleDateString("id-ID", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false, // 24-hour clock format
+    timeZone: "Asia/Jakarta", // Adjust the time zone to Indonesia's time zone
+  });
+};
+
+export const formatCurrency = (amount: number): string => {
+  return amount.toLocaleString("id-ID", {
+    style: "currency",
+    currency: "IDR",
+  });
+};

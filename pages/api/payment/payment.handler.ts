@@ -3,9 +3,9 @@ import { Prisma } from "@prisma/client";
 
 class Payment {
   async createPayment(req: { method?: string; body?: any }, res: { status: any }) {
-    let errors = [];
-    const { userId, name, bankAccountNumber, bankName, transferAmount, addresses } = req.body;
-    if (!userId || !name || !bankAccountNumber || !bankName || !transferAmount || !addresses) {
+    const errors = [];
+    const { userId, name, bankAccountName, bankName, transferAmount, addresses } = req.body;
+    if (!userId || !name || !bankAccountName || !bankName || !transferAmount || !addresses) {
       errors.push("invalid inputs, check again");
       return res.status(400).json({ status: 400, errors });
     }

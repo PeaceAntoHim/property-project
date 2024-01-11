@@ -10,15 +10,16 @@ import {
   FormControl,
   FormLabel,
   Input,
+  Text,
   Select,
-  Spinner, // Import Spinner component from Chakra UI
+  Spinner,
 } from "@chakra-ui/react";
 import { banks } from "@/lib/utils";
 
 interface Payment {
   name: string;
   userId: string;
-  bankAccountNumber: string;
+  bankAccountName: string;
   addresses: string;
   bankName: string;
   transferAmount: string;
@@ -42,7 +43,7 @@ const PaymentForm: React.FC<ComplaintmentFormProps> = ({ isOpen, onClose, onForm
   const [newPayment, setNewPayment] = useState<Payment>({
     name: "",
     userId: "",
-    bankAccountNumber: "",
+    bankAccountName: "",
     addresses: "",
     bankName: "",
     transferAmount: "",
@@ -54,7 +55,7 @@ const PaymentForm: React.FC<ComplaintmentFormProps> = ({ isOpen, onClose, onForm
     const { name, value } = e.target;
     setNewPayment((prevComplaint) => ({
       ...prevComplaint,
-      [name]: name === "transferAmount" && /^\d+$/.test(value) ? Number(value) : value,
+      [name]: name === "transferAmount" && /^\d+$/.test(value) ? parseInt(value) : value,
     }));
   };
 
@@ -95,18 +96,41 @@ const PaymentForm: React.FC<ComplaintmentFormProps> = ({ isOpen, onClose, onForm
       <ModalOverlay />
       <ModalContent
         maxW="xl"
-        top="12%"
-        right="40"
+        top="5%"
         m={4}>
         <ModalHeader mt={4}>Formulir Pembayaran</ModalHeader>
         <ModalCloseButton />
         <ModalBody>
-          <FormControl>
-            <FormLabel>No. Akun Bank</FormLabel>
+          <Text
+            fontWeight="bold"
+            fontSize="18"
+            mb={2} // You can adjust the margin-bottom as needed
+          >
+            Silahkan transfer ke rekening berikut sesuai dengan nominal yang anda terima
+          </Text>
+
+          <Text
+            fontWeight="bold"
+            fontSize="18"
+            color="primary.500" // You can use your preferred color
+          >
+            BCA: 0201720540
+          </Text>
+
+          <Text
+            fontWeight="bold"
+            fontSize="18"
+            color="primary.500" // You can use your preferred color
+          >
+            A/N: Wiliam Kurniawan
+          </Text>
+
+          <FormControl mt={4}>
+            <FormLabel>Nama Akun Bank</FormLabel>
             <Input
               type="text"
-              name="bankAccountNumber"
-              value={newPayment.bankAccountNumber}
+              name="bankAccountName"
+              value={newPayment.bankAccountName}
               onChange={handleInputChange}
             />
           </FormControl>
