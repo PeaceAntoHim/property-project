@@ -14,13 +14,14 @@ import {
   Icon,
 } from "@chakra-ui/react";
 import { FiMenu, FiHome, FiUsers } from "react-icons/fi";
-import { AiOutlineDollar, AiOutlineNotification } from "react-icons/ai";
+import { AiOutlineDollar, AiOutlineFilePdf, AiOutlineNotification } from "react-icons/ai";
 import DashboardComponent from "./components/DashboardComponent";
 import UserComponent from "./components/UserComponent";
 import ComplainmentComponent from "./components/ComplainmentComponent";
 import { BiCalendar } from "react-icons/bi";
 import BookingComponent from "./components/BookingComponent";
 import PaymentComponent from "./components/PaymentComponent";
+import PropertyGuideComponent from "./components/PropertyGuideComponent";
 
 const AdminDashboard: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -64,6 +65,8 @@ const AdminDashboard: React.FC = () => {
         return <BookingComponent />;
       case "payment":
         return <PaymentComponent />;
+      case "propertyGuide":
+        return <PropertyGuideComponent />;
       default:
         return <DashboardComponent />;
     }
@@ -167,7 +170,20 @@ const AdminDashboard: React.FC = () => {
                       fontSize="xl"
                       mr={2}
                     />
-                  List Pembayaran
+                    List Pembayaran
+                  </Box>
+                  <Box
+                    fontSize="xl"
+                    display="flex"
+                    alignItems="center"
+                    onClick={() => handleComponentChange("propertyGuide")}
+                    cursor="pointer">
+                    <Icon
+                      as={AiOutlineFilePdf} // Assuming AiOutlineFilePdf is the icon for a PDF file
+                      fontSize="xl"
+                      mr={2}
+                    />
+                    List Property Guide
                   </Box>
                 </VStack>
               </VStack>

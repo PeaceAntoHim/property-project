@@ -2,20 +2,18 @@ import { useState, useEffect } from "react";
 import { Box, VStack, Heading, Text, Button } from "@chakra-ui/react";
 import { formatAgreement } from "@/lib/utils";
 
-interface Booking {
+interface propertyGuide {
   id: string;
   name: string;
-  phoneNumber: string;
   email: string;
-  message: string;
-  propertyId: number;
+  phoneNumber: string;
   agreement: boolean;
 }
 
-const BookingComponent: React.FC = () => {
+const PropertyGuideComponent: React.FC = () => {
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [isDesktop, setIsDesktop] = useState<boolean>(false);
-  const [bookings, setBookings] = useState<Booking[]>([]);
+  const [propertyGuides, setpropertyGuides] = useState<propertyGuide[]>([]);
 
   // Pagination
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -23,18 +21,18 @@ const BookingComponent: React.FC = () => {
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentBookings = bookings.slice(indexOfFirstItem, indexOfLastItem);
+  const currentPropertyGuides = propertyGuides.slice(indexOfFirstItem, indexOfLastItem);
 
   const pageNumbers = [];
-  for (let i = 1; i <= Math.ceil(bookings.length / itemsPerPage); i++) {
+  for (let i = 1; i <= Math.ceil(propertyGuides.length / itemsPerPage); i++) {
     pageNumbers.push(i);
   }
 
   const fetchData = async () => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/booking/booking.handler`);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/property-guide/property-guide.handler`);
       const data = await response.json();
-      setBookings(data);
+      setpropertyGuides(data);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -73,29 +71,27 @@ const BookingComponent: React.FC = () => {
         <Heading
           size="lg"
           mb={10}>
-          List Booking
+          List Property Guide
         </Heading>
-        {currentBookings.length === 0 ? (
-          <Text>Belum ada data booking</Text>
+        {currentPropertyGuides.length === 0 ? (
+          <Text>Belum ada data property guide</Text>
         ) : (
-          currentBookings.map((booking) => (
+          currentPropertyGuides.map((propertyGuide) => (
             <VStack
               spacing={2}
               align="start"
               p={4}
-              key={booking.id}>
+              key={propertyGuide.id}>
               <Box
                 borderWidth="1px"
                 borderRadius="lg"
                 width="60%"
                 p={2}>
-                <Heading size="md">Booking ID: {booking.id}</Heading>
-                <Heading size="xm">Property ID: {booking.propertyId || "-"}</Heading>
-                <Text>Nama: {booking.name}</Text>
-                <Text>Nomor HP: {booking.phoneNumber}</Text>
-                <Text>Email: {booking.email}</Text>
-                <Text>Pesan: {booking.message}</Text>
-                <Text>Agreement: {formatAgreement(booking.agreement)}</Text>
+                <Heading size="md">Property Guide ID: {propertyGuide.id}</Heading>
+                <Text>Nama: {propertyGuide.name}</Text>
+                <Text>Email: {propertyGuide.email}</Text>
+                <Text>No. Telphone: {propertyGuide.phoneNumber}</Text>
+                <Text>Agreement: {formatAgreement(propertyGuide.agreement)}</Text>
               </Box>
             </VStack>
           ))
@@ -117,4 +113,4 @@ const BookingComponent: React.FC = () => {
   );
 };
 
-export default BookingComponent;
+export default PropertyGuideComponent;
