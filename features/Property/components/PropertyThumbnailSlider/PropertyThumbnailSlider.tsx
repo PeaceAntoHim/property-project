@@ -1,18 +1,20 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import FreeMode from "swiper";
-import Navigation from "swiper";
-import Thumbs from "swiper";
-
+import { FreeMode, Navigation, Thumbs } from "swiper/modules";
+import { Divider } from "@chakra-ui/react";
+import SwiperCore from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
-import { Divider } from "@chakra-ui/react";
+import "swiper/css/pagination"; // Add pagination styles if you use pagination
+
+SwiperCore.use([FreeMode, Navigation, Thumbs]);
 
 const PropertyThumbnailSlider = ({ photos }: { photos: string[] }) => {
   const [thumbsSwiper, setThumbsSlider] = useState<any>(null);
+
   return (
     <>
       <Swiper
@@ -21,7 +23,6 @@ const PropertyThumbnailSlider = ({ photos }: { photos: string[] }) => {
         thumbs={{
           swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
         }}
-        modules={[FreeMode, Navigation, Thumbs]}
         className="mySwiper2">
         {photos.map((photo: string) => (
           <SwiperSlide key={photo}>
@@ -32,14 +33,15 @@ const PropertyThumbnailSlider = ({ photos }: { photos: string[] }) => {
           </SwiperSlide>
         ))}
       </Swiper>
+
       <Divider marginY="1rem" />
+
       <Swiper
         onSwiper={setThumbsSlider}
         loop={true}
         spaceBetween={10}
         slidesPerView={5}
         watchSlidesProgress={true}
-        modules={[FreeMode, Navigation, Thumbs]}
         className="mySwiper">
         {photos.map((photo: string) => (
           <SwiperSlide key={photo}>
