@@ -88,6 +88,7 @@ const DashboardLayout: React.FC<{
         {/* Main Content */}
         <Flex
           flex="1"
+          height="100%"
           p={{ base: 2, md: 4 }}>
           {/* Page Content */}
           <Box

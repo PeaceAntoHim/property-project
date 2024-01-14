@@ -1,5 +1,5 @@
-import { Box, Button, Checkbox, Flex, FormControl, Input, Text, VStack } from "@chakra-ui/react";
-import React from "react";
+import { Box, Button, Checkbox, Flex, FormControl, Input, Spinner, Text, VStack } from "@chakra-ui/react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
 type HeroFormType = {
@@ -10,6 +10,7 @@ type HeroFormType = {
 };
 
 const HeroForm = () => {
+  const [loading, setLoading] = useState(false);
   const {
     register,
     handleSubmit,
@@ -18,6 +19,7 @@ const HeroForm = () => {
 
   const onSubmit = async (data: HeroFormType) => {
     try {
+      setLoading(true); // Set loading to true when submitting
       const res = await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/property-guide/property-guide.handler`, {
         method: "POST",
         body: JSON.stringify(data),
@@ -42,6 +44,8 @@ const HeroForm = () => {
     } catch (error: any) {
       alert(`Got Err: ${error.message}`);
       console.error("An error occurred:", error);
+    } finally {
+      setLoading(false); // Set loading back to false when the operation is complete
     }
   };
 
@@ -138,8 +142,9 @@ const HeroForm = () => {
             width="100%"
             fontSize="xl"
             padding="2rem"
-            marginTop="2rem">
-            Download Now
+            marginTop="2rem"
+            disabled={loading}>
+            {loading ? <Spinner size="md" /> : "Download Now"}
           </Button>
         </form>
       </Box>
