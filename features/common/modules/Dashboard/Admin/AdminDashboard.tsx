@@ -154,7 +154,7 @@ const AdminDashboard: React.FC = () => {
                       fontSize="xl"
                       mr={2}
                     />
-                    Booking
+                    List Booking
                   </Box>
                   <Box
                     fontSize="xl"
@@ -167,7 +167,7 @@ const AdminDashboard: React.FC = () => {
                       fontSize="xl"
                       mr={2}
                     />
-                    Pembayaran
+                  List Pembayaran
                   </Box>
                 </VStack>
               </VStack>

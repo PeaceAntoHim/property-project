@@ -91,6 +91,7 @@ const PaymentComponent: React.FC = () => {
                 width="60%"
                 p={2}>
                 <Heading size="md">Payment ID: {payment.id}</Heading>
+                <Heading size="sm">User ID: {payment.userId}</Heading>
                 <Text>Nama: {payment.name}</Text>
                 <Text>Nama Akun Bank: {payment.bankAccountName}</Text>
                 <Text>Nama Bank: {getCategoryBank(payment.bankName)}</Text>
