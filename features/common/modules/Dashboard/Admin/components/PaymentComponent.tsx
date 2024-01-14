@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Box, VStack, Heading, Text, Button } from "@chakra-ui/react";
+import { Box, VStack, Heading, Text, Button, SimpleGrid } from "@chakra-ui/react";
 import { formatCurrency, formatDateTime, getCategoryBank } from "@/lib/utils";
 
 interface Payment {
@@ -79,13 +79,12 @@ const PaymentComponent: React.FC = () => {
         {currentPayments.length === 0 ? (
           <Text>Belum ada data pembayaran</Text>
         ) : (
-          currentPayments.map((payment) => (
-            <VStack
-              spacing={2}
-              align="start"
-              p={4}
-              key={payment.id}>
+          <SimpleGrid
+            columns={{ base: 1, md: 2 }}
+            spacing={4}>
+            {currentPayments.map((payment) => (
               <Box
+                key={payment.id}
                 borderWidth="1px"
                 borderRadius="lg"
                 width="60%"
@@ -99,8 +98,8 @@ const PaymentComponent: React.FC = () => {
                 <Text>Alamat: {payment.addresses}</Text>
                 <Text>Jam Transfer: {formatDateTime(payment.paymentHours)}</Text>
               </Box>
-            </VStack>
-          ))
+            ))}
+          </SimpleGrid>
         )}
         {/* Pagination Controls */}
         <Box mt={4}>

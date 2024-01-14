@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Box, VStack, Heading, Text, Button } from "@chakra-ui/react";
+import { Box, VStack, Heading, Text, Button, SimpleGrid } from "@chakra-ui/react";
 import { formatAgreement } from "@/lib/utils";
 
 interface propertyGuide {
@@ -56,13 +56,11 @@ const PropertyGuideComponent: React.FC = () => {
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
   };
-
   return (
     <VStack
       spacing={2}
       align="start"
-      width={isMobile ? "100%" : "80%"}
-      p={4}>
+      width={isMobile ? "100%" : "80%"}>
       <Box
         p={4}
         borderWidth="1px"
@@ -70,22 +68,22 @@ const PropertyGuideComponent: React.FC = () => {
         width="100%">
         <Heading
           size="lg"
-          mb={10}>
+          mb={isMobile ? 4 : 10} // Adjusted margin for mobile
+        >
           List Property Guide
         </Heading>
         {currentPropertyGuides.length === 0 ? (
           <Text>Belum ada data property guide</Text>
         ) : (
-          currentPropertyGuides.map((propertyGuide) => (
-            <VStack
-              spacing={2}
-              align="start"
-              p={4}
-              key={propertyGuide.id}>
+          <SimpleGrid
+            columns={{ base: 1, md: 2 }}
+            spacing={4}>
+            {currentPropertyGuides.map((propertyGuide) => (
               <Box
+                key={propertyGuide.id}
                 borderWidth="1px"
                 borderRadius="lg"
-                width="60%"
+                width="100%"
                 p={2}>
                 <Heading size="md">Property Guide ID: {propertyGuide.id}</Heading>
                 <Text>Nama: {propertyGuide.name}</Text>
@@ -93,8 +91,8 @@ const PropertyGuideComponent: React.FC = () => {
                 <Text>No. Telphone: {propertyGuide.phoneNumber}</Text>
                 <Text>Agreement: {formatAgreement(propertyGuide.agreement)}</Text>
               </Box>
-            </VStack>
-          ))
+            ))}
+          </SimpleGrid>
         )}
         {/* Pagination Controls */}
         <Box mt={4}>
@@ -111,6 +109,62 @@ const PropertyGuideComponent: React.FC = () => {
       </Box>
     </VStack>
   );
+
+  // return (
+  //   <VStack
+  //     spacing={2}
+  //     align="start"
+  //     width={isMobile ? "100%" : "80%"}
+  //     p={4}>
+  //     <Box
+  //       p={4}
+  //       borderWidth="1px"
+  //       borderRadius="lg"
+  //       width="100%">
+  //       <Heading
+  //         size="lg"
+  //         mb={10}>
+  //         List Property Guide
+  //       </Heading>
+  //       {currentPropertyGuides.length === 0 ? (
+  //         <Text>Belum ada data property guide</Text>
+  //       ) : (
+  //         currentPropertyGuides.map((propertyGuide) => (
+  //           <VStack
+  //             spacing={2}
+  //             align="start"
+  //             p={4}
+  //             key={propertyGuide.id}>
+  //             <Box
+  //               borderWidth="1px"
+  //               borderRadius="lg"
+  //               width="100%"
+  //               p={2}
+  //               key={propertyGuide.id}>
+  //               <Heading size="md">Property Guide ID: {propertyGuide.id}</Heading>
+  //               <Text>Nama: {propertyGuide.name}</Text>
+  //               <Text>Email: {propertyGuide.email}</Text>
+  //               <Text>No. Telphone: {propertyGuide.phoneNumber}</Text>
+  //               <Text>Agreement: {formatAgreement(propertyGuide.agreement)}</Text>
+  //             </Box>
+  //           </VStack>
+  //         ))
+  //       )}
+  //       {/* Pagination Controls */}
+  //       <Box mt={4}>
+  //         {pageNumbers.map((pageNumber) => (
+  //           <Button
+  //             key={pageNumber}
+  //             variant={pageNumber === currentPage ? "solid" : "outline"}
+  //             colorScheme="teal"
+  //             onClick={() => handlePageChange(pageNumber)}>
+  //             {pageNumber}
+  //           </Button>
+  //         ))}
+  //       </Box>
+  //     </Box>
+  //   </VStack>
+  // );
 };
 
 export default PropertyGuideComponent;

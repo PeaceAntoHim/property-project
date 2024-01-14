@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Box, VStack, Heading, Text, Button } from "@chakra-ui/react";
+import { Box, VStack, Heading, Text, Button, SimpleGrid } from "@chakra-ui/react";
 import { formatAgreement } from "@/lib/utils";
 
 interface Booking {
@@ -78,16 +78,15 @@ const BookingComponent: React.FC = () => {
         {currentBookings.length === 0 ? (
           <Text>Belum ada data booking</Text>
         ) : (
-          currentBookings.map((booking) => (
-            <VStack
-              spacing={2}
-              align="start"
-              p={4}
-              key={booking.id}>
+          <SimpleGrid
+            columns={{ base: 1, md: 2 }}
+            spacing={4}>
+            {currentBookings.map((booking) => (
               <Box
+                key={booking.id}
                 borderWidth="1px"
                 borderRadius="lg"
-                width="60%"
+                width="100%"
                 p={2}>
                 <Heading size="md">Booking ID: {booking.id}</Heading>
                 <Heading size="xm">Property ID: {booking.propertyId || "-"}</Heading>
@@ -97,8 +96,8 @@ const BookingComponent: React.FC = () => {
                 <Text>Pesan: {booking.message}</Text>
                 <Text>Agreement: {formatAgreement(booking.agreement)}</Text>
               </Box>
-            </VStack>
-          ))
+            ))}
+          </SimpleGrid>
         )}
         {/* Pagination Controls */}
         <Box mt={4}>

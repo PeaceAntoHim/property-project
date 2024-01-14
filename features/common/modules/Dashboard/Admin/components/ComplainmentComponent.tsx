@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Box, VStack, Heading, Text, Button } from "@chakra-ui/react";
+import { Box, VStack, Heading, Text, Button, SimpleGrid } from "@chakra-ui/react";
 import { getCategoryLabel } from "@/lib/utils";
 
 interface Complaint {
@@ -76,16 +76,15 @@ const ComplainmentComponent: React.FC = () => {
         {currentComplaints.length === 0 ? (
           <Text>Belum ada data komplen</Text>
         ) : (
-          currentComplaints.map((complaint) => (
-            <VStack
-              spacing={2}
-              align="start"
-              p={4}
-              key={complaint.id}>
+          <SimpleGrid
+            columns={{ base: 1, md: 2 }}
+            spacing={4}>
+            {currentComplaints.map((complaint) => (
               <Box
+                key={complaint.id}
                 borderWidth="1px"
                 borderRadius="lg"
-                width="60%"
+                width="100%"
                 p={2}>
                 <Heading size="md">Complaint ID: {complaint.id}</Heading>
                 <Heading size="xm">User ID: {complaint.userId}</Heading>
@@ -93,8 +92,8 @@ const ComplainmentComponent: React.FC = () => {
                 <Text>Category Complaint: {getCategoryLabel(complaint.categoryComplaint)}</Text>
                 <Text>Notes: {complaint.notes}</Text>
               </Box>
-            </VStack>
-          ))
+            ))}
+          </SimpleGrid>
         )}
         {/* Pagination Controls */}
         <Box mt={4}>
