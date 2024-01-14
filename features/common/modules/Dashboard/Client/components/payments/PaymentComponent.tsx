@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { Box, VStack, Heading, Text, useDisclosure, Button } from "@chakra-ui/react";
+import { useState, useEffect, useRef } from "react";
+import { Box, Heading, Text, useDisclosure, Button, SimpleGrid } from "@chakra-ui/react";
 import PaymentForm from "./PaymentForm";
 import { formatCurrency, formatDateTime, getCategoryBank } from "@/lib/utils";
 
@@ -29,7 +29,8 @@ const PaymentComponent: React.FC = () => {
 
   // Pagination
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const itemsPerPage = 3;
+  const itemsPerPageRef = useRef<number>(3);
+  const itemsPerPage = itemsPerPageRef.current;
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -64,6 +65,14 @@ const PaymentComponent: React.FC = () => {
   }, []);
 
   useEffect(() => {
+    if (isDesktop) {
+      itemsPerPageRef.current = 6;
+    } else {
+      itemsPerPageRef.current = 3; //Reset to the default value if not in desktop mode
+    }
+  }, [isDesktop]);
+
+  useEffect(() => {
     fetchData();
   }, []);
 
@@ -76,71 +85,66 @@ const PaymentComponent: React.FC = () => {
   };
 
   return (
-    <VStack
-      spacing={2}
-      align="start"
-      width={isMobile ? "100%" : "80%"}
-      p={4}>
-      <Box
-        p={4}
-        borderWidth="1px"
-        borderRadius="lg"
-        width="100%">
-        <Heading
-          size="lg"
-          mb={10}>
-          List Pembayaran
-        </Heading>
-        <Button
-          onClick={onOpen}
-          colorScheme="green">
-          Buat Pembayaran Baru
-        </Button>
-        {currentPayments.length === 0 ? (
-          <Text>Belum ada data pembayaran</Text>
-        ) : (
-          currentPayments.map((payment) => (
-            <VStack
-              spacing={2}
-              align="start"
-              p={4}
-              key={payment.id}>
-              <Box
-                borderWidth="1px"
-                borderRadius="lg"
-                width="60%"
-                p={2}>
-                <Heading size="md">Payment ID: {payment.id}</Heading>
-                <Text>Nama: {payment.name}</Text>
-                <Text>Nama Akun Bank: {payment.bankAccountName}</Text>
-                <Text>Nama Bank: {getCategoryBank(payment.bankName)}</Text>
-                <Text>Nominal Transfer: {formatCurrency(payment.transferAmount)}</Text>
-                <Text>Alamat: {payment.addresses}</Text>
-                <Text>Jam Transfer: {formatDateTime(payment.paymentHours)}</Text>
-              </Box>
-            </VStack>
-          ))
-        )}
-        {/* payment form  */}
-        <PaymentForm
-          onFormSubmit={handleFormSubmit}
-          isOpen={isOpen}
-          onClose={onClose}
-        />
-        {/* Pagination Controls */}
-        <Box mt={4}>
-          {pageNumbers.map((pageNumber) => (
-            <Button
-              key={pageNumber}
-              variant={pageNumber === currentPage ? "solid" : "outline"}
-              colorScheme="teal"
-              onClick={() => handlePageChange(pageNumber)}>
-              {pageNumber}
-            </Button>
+    <Box
+      p={4}
+      borderWidth="1px"
+      borderRadius="lg"
+      width="100%">
+      <Heading
+        size="lg"
+        mb={isMobile ? 4 : 10} // Adjusted margin for mobile
+      >
+        List Pembayaran
+      </Heading>
+      <Button
+        onClick={onOpen}
+        colorScheme="green"
+        mb="10">
+        Buat Pembayaran Baru
+      </Button>
+      {currentPayments.length === 0 ? (
+        <Text>Belum ada data pembayaran</Text>
+      ) : (
+        <SimpleGrid
+          columns={{ base: 1, md: 3 }}
+          spacing={4}>
+          {currentPayments.map((payment) => (
+            <Box
+              key={payment.id}
+              borderWidth="1px"
+              borderRadius="lg"
+              width="100%"
+              p={2}>
+              <Heading size="md">Payment ID: {payment.id}</Heading>
+              <Text>Nama: {payment.name}</Text>
+              <Text>Nama Akun Bank: {payment.bankAccountName}</Text>
+              <Text>Nama Bank: {getCategoryBank(payment.bankName)}</Text>
+              <Text>Nominal Transfer: {formatCurrency(payment.transferAmount)}</Text>
+              <Text>Alamat: {payment.addresses}</Text>
+              <Text>Jam Transfer: {formatDateTime(payment.paymentHours)}</Text>
+            </Box>
           ))}
-        </Box>
+        </SimpleGrid>
+      )}
+      {/* payment form  */}
+      <PaymentForm
+        onFormSubmit={handleFormSubmit}
+        isOpen={isOpen}
+        onClose={onClose}
+      />
+      {/* Pagination Controls */}
+      <Box mt={4}>
+        {pageNumbers.map((pageNumber) => (
+          <Button
+            key={pageNumber}
+            variant={pageNumber === currentPage ? "solid" : "outline"}
+            colorScheme="teal"
+            onClick={() => handlePageChange(pageNumber)}>
+            {pageNumber}
+          </Button>
+        ))}
       </Box>
-    </VStack>
+    </Box>
   );
 };
 

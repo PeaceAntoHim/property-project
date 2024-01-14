@@ -73,7 +73,10 @@ const AdminDashboard: React.FC = () => {
   };
 
   return (
-    <Flex height="100%">
+    <Flex
+      height="100%"
+      align="center"
+      justify="center">
       {/* Toggle Button for Larger Screens */}
       {(isMobile || isDesktop) && (
         <IconButton
