@@ -28,12 +28,12 @@ class PropertyGuide {
   async getPropertyGuides(req: { method?: string; query?: any }, res: { status: any }) {
     try {
       // Retrieve complaints based on the user ID (if provided)
-      const payments = await prisma.payment.findMany({
+      const propertyGuides = await prisma.pdfGuide.findMany({
         where: {},
       });
       // You can add more logic here, like handling different HTTP methods, error checking, etc.
 
-      res.status(200).json(payments);
+      res.status(200).json(propertyGuides);
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: "Internal Server Error" });

@@ -54,3 +54,10 @@ export const formatCurrency = (amount: number): string => {
     currency: "IDR",
   });
 };
+
+export const formatAgreement = (param: boolean) => {
+  if (param) {
+    return "Setuju";
+  }
+  ("Tidak Setuju");
+};
