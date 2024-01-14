@@ -14,12 +14,13 @@ import {
   Icon,
 } from "@chakra-ui/react";
 import { FiMenu, FiHome, FiUsers } from "react-icons/fi";
-import { AiOutlineNotification } from "react-icons/ai";
+import { AiOutlineDollar, AiOutlineNotification } from "react-icons/ai";
 import DashboardComponent from "./components/DashboardComponent";
 import UserComponent from "./components/UserComponent";
 import ComplainmentComponent from "./components/ComplainmentComponent";
 import { BiCalendar } from "react-icons/bi";
 import BookingComponent from "./components/BookingComponent";
+import PaymentComponent from "./components/PaymentComponent";
 
 const AdminDashboard: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -61,6 +62,8 @@ const AdminDashboard: React.FC = () => {
         return <ComplainmentComponent />;
       case "booking":
         return <BookingComponent />;
+      case "payment":
+        return <PaymentComponent />;
       default:
         return <DashboardComponent />;
     }
@@ -152,6 +155,19 @@ const AdminDashboard: React.FC = () => {
                       mr={2}
                     />
                     Booking
+                  </Box>
+                  <Box
+                    fontSize="xl"
+                    display="flex"
+                    alignItems="center"
+                    onClick={() => handleComponentChange("payment")}
+                    cursor="pointer">
+                    <Icon
+                      as={AiOutlineDollar}
+                      fontSize="xl"
+                      mr={2}
+                    />
+                    Pembayaran
                   </Box>
                 </VStack>
               </VStack>

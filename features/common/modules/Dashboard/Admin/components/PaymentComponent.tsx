@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import { Box, VStack, Heading, Text, useDisclosure, Button } from "@chakra-ui/react";
-import PaymentForm from "./PaymentForm";
+import { Box, VStack, Heading, Text, Button } from "@chakra-ui/react";
 import { formatCurrency, formatDateTime, getCategoryBank } from "@/lib/utils";
 
 interface Payment {
@@ -18,14 +17,6 @@ const PaymentComponent: React.FC = () => {
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [isDesktop, setIsDesktop] = useState<boolean>(false);
   const [payments, setPayments] = useState<Payment[]>([]);
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const tempUser = localStorage.getItem("user");
-  let userData = {
-    id: "",
-  };
-  if (tempUser) {
-    userData = JSON.parse(tempUser);
-  }
 
   // Pagination
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -42,9 +33,7 @@ const PaymentComponent: React.FC = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/payment/payment.handler?userId=${userData.id}`
-      );
+      const response = await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/payment/payment.handler`);
       const data = await response.json();
       setPayments(data);
     } catch (error) {
@@ -67,10 +56,6 @@ const PaymentComponent: React.FC = () => {
     fetchData();
   }, []);
 
-  const handleFormSubmit = () => {
-    fetchData();
-  };
-
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
   };
@@ -91,11 +76,6 @@ const PaymentComponent: React.FC = () => {
           mb={10}>
           List Pembayaran
         </Heading>
-        <Button
-          onClick={onOpen}
-          colorScheme="green">
-          Buat Pembayaran Baru
-        </Button>
         {currentPayments.length === 0 ? (
           <Text>Belum ada data pembayaran</Text>
         ) : (
@@ -121,12 +101,6 @@ const PaymentComponent: React.FC = () => {
             </VStack>
           ))
         )}
-        {/* payment form  */}
-        <PaymentForm
-          onFormSubmit={handleFormSubmit}
-          isOpen={isOpen}
-          onClose={onClose}
-        />
         {/* Pagination Controls */}
         <Box mt={4}>
           {pageNumbers.map((pageNumber) => (
