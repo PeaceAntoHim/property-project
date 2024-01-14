@@ -95,9 +95,9 @@ model PdfGuide {
   name        String
   phoneNumber String
   email       String
-  agreement   Boolean? @default(true)
   createdAt   DateTime @default(now()) @map("created_at")
   updatedAt   DateTime @updatedAt @map("updated_at")
+  agreement   Boolean? @default(true)
 
   @@map("pdfguides")
 }

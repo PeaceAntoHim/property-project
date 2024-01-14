@@ -77,7 +77,7 @@ const ContactForm = () => {
           <Input
             marginTop="1.3rem"
             id="phoneNumber"
-            type="text"
+            type="tel"
             placeholder="Phone Number"
             required
             {...register("phoneNumber", { required: true })}

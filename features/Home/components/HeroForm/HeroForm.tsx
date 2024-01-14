@@ -30,7 +30,7 @@ const HeroForm = () => {
       if (res.ok) {
         // Assuming the API returns the file path or name
         // Construct the public URL of the PDF file
-        const pdfUrl = `${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/public/Brosur-Perumahan.pdf`;
+        const pdfUrl = `${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/property-guide/Brosur-Perumahan.pdf`;
 
         // Trigger the file download
         window.location.href = pdfUrl;
@@ -68,6 +68,7 @@ const HeroForm = () => {
                 marginTop="1.3rem"
                 id="name"
                 type="text"
+                required
                 placeholder="Name"
                 {...register("name", { required: true })}
               />
@@ -89,6 +90,7 @@ const HeroForm = () => {
                   marginTop="1.3rem"
                   id="email"
                   type="text"
+                  required
                   placeholder="Email"
                   {...register("email", { required: true })}
                 />
@@ -106,7 +108,8 @@ const HeroForm = () => {
                 <Input
                   marginTop="1.3rem"
                   id="phoneNumber"
-                  type="phone"
+                  type="tel"
+                  required
                   placeholder="Phone Number"
                   {...register("phoneNumber", { required: true })}
                 />
@@ -123,7 +126,8 @@ const HeroForm = () => {
               marginTop="1.3rem"
               id="agreement"
               type="checkbox"
-              placeholder="GDPR"
+              required
+              placeholder="Agreement"
               {...register("agreement", { required: true })}>
               I consent to having this website store my submitted info
             </Checkbox>
