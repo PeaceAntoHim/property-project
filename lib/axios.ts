@@ -9,3 +9,7 @@ export const axios = Axios.create({
   baseURL: "https://bayut.p.rapidapi.com/",
   headers: headers,
 });
+
+export const axiosOwnServer = Axios.create({
+  baseURL: `${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api`,
+});
