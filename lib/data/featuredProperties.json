@@ -1,0 +1,1778 @@
+{
+  "hits": [
+    {
+      "id": 3201633,
+      "ownerID": 713291,
+      "userExternalID": "713291",
+      "sourceID": 1,
+      "state": "active",
+      "_geoloc": {
+        "lat": 25.066713079701,
+        "lng": 55.2032152496
+      },
+      "geography": {
+        "lat": 25.066713079701,
+        "lng": 55.2032152496
+      },
+      "purpose": "for-rent",
+      "price": 1700000000,
+      "product": "superhot",
+      "productLabel": "default",
+      "productScore": 0,
+      "rentFrequency": "monthly",
+      "referenceNumber": "2504",
+      "permitNumber": "JUMPANIIQG1",
+      "projectNumber": null,
+      "title": "Elegantly Decorated 1 Bedroom Apartment| Brand New | Skyline View",
+      "title_l1": "شقة في برج بلوم A،ابراج بلووم،المنطقة 10،قرية جميرا الدائرية 1 غرفة 10499 درهم - 5920792",
+      "title_l2": "位于朱美拉环形村(JVC)，JVC第10区，绽放大厦，绽放大厦A座 1 卧室的公寓 10499 AED - 5920792",
+      "title_l3": "Квартира в Джумейра Вилладж Серкл (ДЖВС)，ДжейВиСи Дистрикт 10，Блум Тауэрс，Тауэр Блум А, 1 спальня, 10499 AED - 5920792",
+      "externalID": "5920792",
+      "slug": "elegantly-decorated-1-bedroom-apartment-brand-new-skyline-view-5920792",
+      "slug_l1": "elegantly-decorated-1-bedroom-apartment-brand-new-skyline-view-5920792",
+      "slug_l2": "elegantly-decorated-1-bedroom-apartment-brand-new-skyline-view-5920792",
+      "slug_l3": "elegantly-decorated-1-bedroom-apartment-brand-new-skyline-view-5920792",
+      "location": [
+        {
+          "id": 1,
+          "level": 0,
+          "externalID": "5001",
+          "name": "UAE",
+          "name_l1": "الإمارات",
+          "name_l2": "阿联酋",
+          "name_l3": "ОАЭ",
+          "slug": "/uae",
+          "slug_l1": "/uae",
+          "slug_l2": "/uae",
+          "slug_l3": "/uae"
+        },
+        {
+          "id": 2,
+          "level": 1,
+          "externalID": "5002",
+          "name": "Dubai",
+          "name_l1": "دبي",
+          "name_l2": "迪拜",
+          "name_l3": "Дубай",
+          "slug": "/dubai",
+          "slug_l1": "/dubai",
+          "slug_l2": "/dubai",
+          "slug_l3": "/dubai"
+        },
+        {
+          "id": 59,
+          "level": 2,
+          "externalID": "5416",
+          "name": "Jumeirah Village Circle (JVC)",
+          "name_l1": "قرية جميرا الدائرية",
+          "name_l2": "朱美拉环形村(JVC)",
+          "name_l3": "Джумейра Вилладж Серкл (ДЖВС)",
+          "slug": "/dubai/jumeirah-village-circle-jvc",
+          "slug_l1": "/dubai/jumeirah-village-circle-jvc",
+          "slug_l2": "/dubai/jumeirah-village-circle-jvc",
+          "slug_l3": "/dubai/jumeirah-village-circle-jvc",
+          "type": "neighbourhood"
+        },
+        {
+          "id": 2478,
+          "level": 3,
+          "externalID": "11840",
+          "name": "JVC District 10",
+          "name_l1": "المنطقة 10",
+          "name_l2": "JVC第10区",
+          "name_l3": "ДжейВиСи Дистрикт 10",
+          "slug": "/dubai/jumeirah-village-circle-jvc/jvc-district-10",
+          "slug_l1": "/dubai/jumeirah-village-circle-jvc/jvc-district-10",
+          "slug_l2": "/dubai/jumeirah-village-circle-jvc/jvc-district-10",
+          "slug_l3": "/dubai/jumeirah-village-circle-jvc/jvc-district-10",
+          "type": "neighbourhood"
+        },
+        {
+          "id": 1547,
+          "level": 4,
+          "externalID": "9140",
+          "name": "Bloom Towers",
+          "name_l1": "ابراج بلووم",
+          "name_l2": "绽放大厦",
+          "name_l3": "Блум Тауэрс",
+          "slug": "/dubai/jumeirah-village-circle-jvc/jvc-district-10/bloom-towers",
+          "slug_l1": "/dubai/jumeirah-village-circle-jvc/jvc-district-10/bloom-towers",
+          "slug_l2": "/dubai/jumeirah-village-circle-jvc/jvc-district-10/bloom-towers",
+          "slug_l3": "/dubai/jumeirah-village-circle-jvc/jvc-district-10/bloom-towers"
+        },
+        {
+          "id": 80559,
+          "level": 5,
+          "externalID": "16666",
+          "name": "Bloom Tower A",
+          "name_l1": "برج بلوم A",
+          "name_l2": "绽放大厦A座",
+          "name_l3": "Тауэр Блум А",
+          "slug": "/dubai/jumeirah-village-circle-jvc/jvc-district-10/bloom-towers/bloom-tower-a",
+          "slug_l1": "/dubai/jumeirah-village-circle-jvc/jvc-district-10/bloom-towers/bloom-tower-a",
+          "slug_l2": "/dubai/jumeirah-village-circle-jvc/jvc-district-10/bloom-towers/bloom-tower-a",
+          "slug_l3": "/dubai/jumeirah-village-circle-jvc/jvc-district-10/bloom-towers/bloom-tower-a",
+          "type": "condo-building"
+        }
+      ],
+      "category": [
+        {
+          "id": 1,
+          "level": 0,
+          "externalID": "1",
+          "name": "Tipe",
+          "name_l1": "سكني",
+          "name_l2": "居住物业",
+          "name_l3": "Жилые",
+          "slug": "tipe",
+          "slug_l1": "tipe",
+          "slug_l2": "tipe",
+          "slug_l3": "tipe",
+          "nameSingular": "Tipe",
+          "nameSingular_l1": "سكني",
+          "nameSingular_l2": "居住物业",
+          "nameSingular_l3": "Жилые"
+        },
+        {
+          "id": 2,
+          "level": 1,
+          "externalID": "4",
+          "name": "150",
+          "name_l1": "شقق",
+          "name_l2": "公寓",
+          "name_l3": "Апартаменты",
+          "slug": "apartments",
+          "slug_l1": "apartments",
+          "slug_l2": "apartments",
+          "slug_l3": "apartments",
+          "nameSingular": "Apartment",
+          "nameSingular_l1": "شقة",
+          "nameSingular_l2": "公寓",
+          "nameSingular_l3": "Квартира"
+        }
+      ],
+      "createdAt": 1651149236,
+      "updatedAt": 1705410392,
+      "reactivatedAt": 1703764733.356253,
+      "rooms": 1,
+      "baths": 1,
+      "area": 73.8096072192,
+      "score": 75,
+      "score_l1": 75,
+      "score_l2": 75,
+      "score_l3": 75,
+      "coverPhoto": {
+        "id": 236901797,
+        "externalID": "122405049",
+        "title": null,
+        "orderIndex": 0,
+        "nimaScore": 9.80742459156214,
+        "url": "https://i.postimg.cc/1tMjPCFv/IMG20231227100454.jpg",
+        "main": true
+      },
+      "coverVideo": {
+        "externalID": 519014,
+        "title": "BLOOM TOWER",
+        "host": "youtube",
+        "url": "https://www.youtube.com/watch?v=X8hgy8O4ddU&t=1s",
+        "orderIndex": 0
+      },
+      "photoCount": 29,
+      "videoCount": 1,
+      "panoramaCount": 1,
+      "phoneNumber": {
+        "mobile": "+971521838437",
+        "phone": "+97145802357",
+        "whatsapp": "971545695868",
+        "phoneNumbers": ["+97145802357"],
+        "mobileNumbers": ["+971521838437"]
+      },
+      "contactName": "Rami Mrassi",
+      "agency": {
+        "id": 29589916,
+        "objectID": 29589916,
+        "name": "B L V D Holiday Homes",
+        "name_l1": "-",
+        "name_l2": "B L V D Holiday Homes",
+        "name_l3": "B L V D Holiday Homes",
+        "externalID": "10204",
+        "product": "premium",
+        "productScore": 2,
+        "licenses": [
+          {
+            "number": "906876",
+            "authority": "DED"
+          }
+        ],
+        "logo": {
+          "id": 99895298,
+          "url": "https://bayut-production.s3.eu-central-1.amazonaws.com/image/99895298/9fc421847605425f9f3227a49d9db7f9"
+        },
+        "slug": "b-l-v-d-holiday-homes-10204",
+        "slug_l1": "b-l-v-d-holiday-homes-10204",
+        "slug_l2": "b-l-v-d-holiday-homes-10204",
+        "slug_l3": "b-l-v-d-holiday-homes-10204",
+        "tr": 3,
+        "tier": 3,
+        "roles": [],
+        "active": true,
+        "createdAt": "2021-01-03T01:52:43+00:00",
+        "commercialNumber": null,
+        "shortNumber": null,
+        "performanceCohort": "overachieving"
+      },
+      "hash": "6de3a96",
+      "keywords": [
+        "غرفة واحدة",
+        "اول ساكن",
+        "بلكونة",
+        "ساكن اول",
+        "modern",
+        "kitchen",
+        "balcony",
+        "new",
+        "حديثة",
+        "ايجار جديد",
+        "1 bedroom",
+        "brand new",
+        "مطبخ",
+        "جديدة اول ساكن",
+        "مودرن",
+        "جديدة"
+      ],
+      "isVerified": true,
+      "verification": {
+        "updatedAt": 1705406019.687537,
+        "eligible": true,
+        "status": "verified",
+        "verifiedAt": 1705405994,
+        "trucheckedAt": 1705405994
+      },
+      "verifiedScore": 0,
+      "completionStatus": "completed",
+      "occupancyStatus": "vacant",
+      "randBoostScore": 544,
+      "randBoostScore_l1": 456,
+      "randBoostScore_l2": 544,
+      "randBoostScore_l3": 544,
+      "floorPlanID": 3518,
+      "furnishingStatus": "furnished",
+      "extraFields": {
+        "dldBuildingNK": "tabu-101896089",
+        "dldPropertySK": "dld|mea|ae|tabu+ejari-101908957",
+        "hasSaleTransactions": true
+      },
+      "type": "property",
+      "hasTransactionHistory": true,
+      "hasDldBuildingNk": true,
+      "ownerAgent": {
+        "externalID": "713291",
+        "name": "Rami Mrassi",
+        "name_l1": "Rami Mrassi",
+        "name_l2": "Rami Mrassi",
+        "name_l3": "Rami Mrassi",
+        "user_image": "https://bayut-production.s3.eu-central-1.amazonaws.com/image/234460420/5802969b044d4d7d9c09de1e5f625ae4",
+        "user_image_id": 234460420,
+        "isTruBroker": false
+      },
+      "amenities": [
+        "Maintenance Staff",
+        "Sauna",
+        "Swimming Pool",
+        "Broadband Internet",
+        "Central Heating",
+        "Furnished",
+        "Kids Play Area",
+        "Storage Areas",
+        "Balcony or Terrace",
+        "Double Glazed Windows",
+        "Day Care Center",
+        "Cleaning Services",
+        "Waste Disposal",
+        "Intercom",
+        "Electricity Backup",
+        "Lobby in Building",
+        "Reception/Waiting Room",
+        "Freehold",
+        "Parking Spaces",
+        "Centrally Air-Conditioned",
+        "Lawn or Garden",
+        "Gym or Health Club",
+        "Laundry Facility",
+        "Security Staff",
+        "CCTV Security",
+        "Facilities for Disabled",
+        "Satellite/Cable TV"
+      ],
+      "amenities_l1": [
+        "خدمات صيانة",
+        "ساونا",
+        "مسبح",
+        "انترنت واسع النطاق",
+        "تدفئة مركزية",
+        "مفروشة",
+        "منطقة لعب للأطفال",
+        "مناطق تخزين",
+        "شرفة أو تراس",
+        "نوافذ زجاجية مزدوجة",
+        "مركز رعاية أطفال",
+        "خدمات تنظيف",
+        "مكبّ نفايات",
+        "اتصال داخلي",
+        "نظام كهرباء احتياطي للطوارئ",
+        "ردهة إستقبال",
+        "غرفة استقبال /انتظار",
+        "التملك الحر",
+        "مواقف سيارات",
+        "نظام تبريد مركزي",
+        "حديقة",
+        "صالة رياضية أو نادي صحي",
+        "خدمة غسيل ملابس",
+        "أمن و حماية",
+        "نظام كاميرات مراقبة",
+        "تسهيلات لأصحاب الهمم",
+        "كابل قنوات تلفزيونية"
+      ],
+      "amenities_l2": [
+        "清洁服务",
+        "汗蒸房",
+        "附近医院",
+        "宽带网络",
+        "中央供暖",
+        "配备家具",
+        "儿童娱乐区",
+        "储物区",
+        "阳台",
+        "双层玻璃窗",
+        "日托中心",
+        "清洁服务",
+        "垃圾处理",
+        "对讲电话",
+        "备用电力",
+        "入户大堂",
+        "桑拿",
+        "永久产权",
+        "泊车位",
+        "中央空调",
+        "绿化",
+        "健身房或健身俱乐部",
+        "洗衣设施",
+        "全部楼层",
+        "闭路电视安全",
+        "残障人士设施",
+        "卫星电视/有线电视"
+      ],
+      "amenities_l3": [
+        "Обслуживающий персонал",
+        "Сауна",
+        "Бассейн",
+        "Широкополосный интернет",
+        "Центральное отопление",
+        "Меблированный",
+        "Детская игровая площадка",
+        "Складские помещения",
+        "Балкон или терраса",
+        "Окна с двойным остеклением",
+        "Детский сад",
+        "Услуги по уборке",
+        "Утилизация отходов",
+        "Внутренняя связь",
+        "Резервное электричество",
+        "Лобби в здании",
+        "Прием/Зал ожидания",
+        "Право собственности",
+        "Парковочные места",
+        "Центральное кондиционирование",
+        "Газон или сад",
+        "Тренажерный зал или оздоровительный клуб",
+        "прачечная",
+        "Сотрудники безопасности",
+        "Безопасность видеонаблюдения",
+        "Услуги для инвалидов",
+        "Спутниковое/кабельное телевидение"
+      ],
+      "cityLevelScore": 1,
+      "indyScore": 544,
+      "indyScore_l1": 456,
+      "indyScore_l2": 544,
+      "indyScore_l3": 544,
+      "hasMatchingFloorPlans": false,
+      "photoIDs": [
+        236901797, 234800085, 236948583, 237985127, 229835870, 210676664, 236901800, 229835872, 229835873, 232706396,
+        229835875, 229835876, 262446867, 240641191, 210676673, 229835879, 234800091, 236948587, 236948588, 234800094,
+        229835884, 229835885, 254286621, 229835887, 234800096, 229835889, 229835890, 229835891, 236901807
+      ],
+      "hidePrice": false,
+      "locationPurposeTier": 1,
+      "plotArea": null,
+      "objectID": "3201633",
+      "_highlightResult": {
+        "referenceNumber": {
+          "value": "2504",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "title": {
+          "value": "Elegantly Decorated 1 Bedroom Apartment| Brand New | Skyline View",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "title_l1": {
+          "value": "شقة في برج بلوم A،ابراج بلووم،المنطقة 10،قرية جميرا الدائرية 1 غرفة 10499 درهم - 5920792",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "title_l2": {
+          "value": "位于朱美拉环形村(JVC)，JVC第10区，绽放大厦，绽放大厦A座 1 卧室的公寓 10499 AED - 5920792",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "title_l3": {
+          "value": "Квартира в Джумейра Вилладж Серкл (ДЖВС)，ДжейВиСи Дистрикт 10，Блум Тауэрс，Тауэр Блум А, 1 спальня, 10499 AED - 5920792",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "externalID": {
+          "value": "5920792",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "agency": {
+          "name": {
+            "value": "B L V D Holiday Homes",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          "name_l1": {
+            "value": "-",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          "name_l2": {
+            "value": "B L V D Holiday Homes",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          "name_l3": {
+            "value": "B L V D Holiday Homes",
+            "matchLevel": "none",
+            "matchedWords": []
+          }
+        },
+        "keywords": [
+          {
+            "value": "غرفة واحدة",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "اول ساكن",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "بلكونة",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "ساكن اول",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "modern",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "kitchen",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "balcony",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "new",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "حديثة",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "ايجار جديد",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "1 bedroom",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "brand new",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "مطبخ",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "جديدة اول ساكن",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "مودرن",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "جديدة",
+            "matchLevel": "none",
+            "matchedWords": []
+          }
+        ]
+      }
+    },
+    {
+      "id": 2205838,
+      "ownerID": 713291,
+      "userExternalID": "713291",
+      "sourceID": 1,
+      "state": "active",
+      "_geoloc": {
+        "lat": 25.050708,
+        "lng": 55.213872
+      },
+      "geography": {
+        "lat": 25.050708,
+        "lng": 55.213872
+      },
+      "purpose": "for-rent",
+      "price": 2000000000,
+      "product": "superhot",
+      "productLabel": "default",
+      "productScore": 0,
+      "rentFrequency": "monthly",
+      "referenceNumber": "107",
+      "permitNumber": "JUMPANKMZSO",
+      "projectNumber": null,
+      "title": "Fantastic Offer!! Brand New 2 Bedroom Apartment With  An Expansive Balcony | All Inclusive",
+      "title_l1": "عرض رائع !! شقة جديدة من غرفتي نوم مع شرفة واسعة | الجميع مشمول",
+      "title_l2": "位于朱美拉环形村(JVC)，JVC第13区，万神殿大道住宅楼 2 卧室的公寓 11999 AED - 4939165",
+      "title_l3": "Квартира в Джумейра Вилладж Серкл (ДЖВС)，JVC Дистрикт 13，Пантеон Бульвар, 2 cпальни, 11999 AED - 4939165",
+      "externalID": "4939165",
+      "slug": "fantastic-offer-brand-new-2-bedroom-apartment-with-an-expansive-balcony-all-inclusive-4939165",
+      "slug_l1": "fantastic-offer-brand-new-2-bedroom-apartment-with-an-expansive-balcony-all-inclusive-4939165",
+      "slug_l2": "fantastic-offer-brand-new-2-bedroom-apartment-with-an-expansive-balcony-all-inclusive-4939165",
+      "slug_l3": "fantastic-offer-brand-new-2-bedroom-apartment-with-an-expansive-balcony-all-inclusive-4939165",
+      "location": [
+        {
+          "id": 1,
+          "level": 0,
+          "externalID": "5001",
+          "name": "UAE",
+          "name_l1": "الإمارات",
+          "name_l2": "阿联酋",
+          "name_l3": "ОАЭ",
+          "slug": "/uae",
+          "slug_l1": "/uae",
+          "slug_l2": "/uae",
+          "slug_l3": "/uae"
+        },
+        {
+          "id": 2,
+          "level": 1,
+          "externalID": "5002",
+          "name": "Dubai",
+          "name_l1": "دبي",
+          "name_l2": "迪拜",
+          "name_l3": "Дубай",
+          "slug": "/dubai",
+          "slug_l1": "/dubai",
+          "slug_l2": "/dubai",
+          "slug_l3": "/dubai"
+        },
+        {
+          "id": 59,
+          "level": 2,
+          "externalID": "5416",
+          "name": "Jumeirah Village Circle (JVC)",
+          "name_l1": "قرية جميرا الدائرية",
+          "name_l2": "朱美拉环形村(JVC)",
+          "name_l3": "Джумейра Вилладж Серкл (ДЖВС)",
+          "slug": "/dubai/jumeirah-village-circle-jvc",
+          "slug_l1": "/dubai/jumeirah-village-circle-jvc",
+          "slug_l2": "/dubai/jumeirah-village-circle-jvc",
+          "slug_l3": "/dubai/jumeirah-village-circle-jvc",
+          "type": "neighbourhood"
+        },
+        {
+          "id": 1935,
+          "level": 3,
+          "externalID": "11385",
+          "name": "JVC District 13",
+          "name_l1": "الضاحية 13",
+          "name_l2": "JVC第13区",
+          "name_l3": "JVC Дистрикт 13",
+          "slug": "/dubai/jumeirah-village-circle-jvc/jvc-district-13",
+          "slug_l1": "/dubai/jumeirah-village-circle-jvc/jvc-district-13",
+          "slug_l2": "/dubai/jumeirah-village-circle-jvc/jvc-district-13",
+          "slug_l3": "/dubai/jumeirah-village-circle-jvc/jvc-district-13",
+          "type": "neighbourhood"
+        },
+        {
+          "id": 1967,
+          "level": 4,
+          "externalID": "11298",
+          "name": "Pantheon Boulevard",
+          "name_l1": "بانثيون بوليفارد",
+          "name_l2": "万神殿大道住宅楼",
+          "name_l3": "Пантеон Бульвар",
+          "slug": "/dubai/jumeirah-village-circle-jvc/jvc-district-13/pantheon-boulevard",
+          "slug_l1": "/dubai/jumeirah-village-circle-jvc/jvc-district-13/pantheon-boulevard",
+          "slug_l2": "/dubai/jumeirah-village-circle-jvc/jvc-district-13/pantheon-boulevard",
+          "slug_l3": "/dubai/jumeirah-village-circle-jvc/jvc-district-13/pantheon-boulevard",
+          "type": "condo-building"
+        }
+      ],
+      "category": [
+        {
+          "id": 1,
+          "level": 0,
+          "externalID": "1",
+          "name": "Tipe",
+          "name_l1": "سكني",
+          "name_l2": "居住物业",
+          "name_l3": "Жилые",
+          "slug": "tipe",
+          "slug_l1": "tipe",
+          "slug_l2": "tipe",
+          "slug_l3": "tipe",
+          "nameSingular": "Tipe",
+          "nameSingular_l1": "سكني",
+          "nameSingular_l2": "居住物业",
+          "nameSingular_l3": "Жилые"
+        },
+        {
+          "id": 2,
+          "level": 1,
+          "externalID": "4",
+          "name": "175",
+          "name_l1": "شقق",
+          "name_l2": "公寓",
+          "name_l3": "Апартаменты",
+          "slug": "apartments",
+          "slug_l1": "apartments",
+          "slug_l2": "apartments",
+          "slug_l3": "apartments",
+          "nameSingular": "Apartment",
+          "nameSingular_l1": "شقة",
+          "nameSingular_l2": "公寓",
+          "nameSingular_l3": "Квартира"
+        }
+      ],
+      "createdAt": 1609691763,
+      "updatedAt": 1705410311,
+      "reactivatedAt": 1703764732.673336,
+      "rooms": 2,
+      "baths": 2,
+      "area": 88.67037749760001,
+      "score": 75,
+      "score_l1": 75,
+      "score_l2": 75,
+      "score_l3": 75,
+      "coverPhoto": {
+        "id": 268623510,
+        "externalID": "128415090",
+        "title": null,
+        "orderIndex": 0,
+        "nimaScore": 9.862398389737688,
+        "url": "https://i.postimg.cc/qR3K2hbd/IMG20231227100224.jpg",
+        "main": true
+      },
+      "coverVideo": {
+        "externalID": 519002,
+        "title": "PANTHEON VIDEO",
+        "host": "youtube",
+        "url": "https://www.youtube.com/watch?v=sV_XdZl4ouA",
+        "orderIndex": 0
+      },
+      "photoCount": 42,
+      "videoCount": 1,
+      "panoramaCount": 2,
+      "phoneNumber": {
+        "mobile": "+971521838437",
+        "phone": "+97145802357",
+        "whatsapp": "971545695868",
+        "phoneNumbers": ["+97145802357"],
+        "mobileNumbers": ["+971521838437"]
+      },
+      "contactName": "Rami Mrassi",
+      "agency": {
+        "id": 29589916,
+        "objectID": 29589916,
+        "name": "B L V D Holiday Homes",
+        "name_l1": "-",
+        "name_l2": "B L V D Holiday Homes",
+        "name_l3": "B L V D Holiday Homes",
+        "externalID": "10204",
+        "product": "premium",
+        "productScore": 2,
+        "licenses": [
+          {
+            "number": "906876",
+            "authority": "DED"
+          }
+        ],
+        "logo": {
+          "id": 99895298,
+          "url": "https://bayut-production.s3.eu-central-1.amazonaws.com/image/99895298/9fc421847605425f9f3227a49d9db7f9"
+        },
+        "slug": "b-l-v-d-holiday-homes-10204",
+        "slug_l1": "b-l-v-d-holiday-homes-10204",
+        "slug_l2": "b-l-v-d-holiday-homes-10204",
+        "slug_l3": "b-l-v-d-holiday-homes-10204",
+        "tr": 3,
+        "tier": 3,
+        "roles": [],
+        "active": true,
+        "createdAt": "2021-01-03T01:52:43+00:00",
+        "commercialNumber": null,
+        "shortNumber": null,
+        "performanceCohort": "overachieving"
+      },
+      "hash": "5b7fc4e",
+      "keywords": [
+        "مطار",
+        "جديدة",
+        "with balcony",
+        "اول ساكن",
+        "new",
+        "lounge",
+        "صالة",
+        "سعر جيد",
+        "2 غرفة",
+        "balcony",
+        "مطبخ",
+        "ساكن اول",
+        "spacious",
+        "مع شرفة",
+        "واسعة",
+        "مودرن",
+        "مول",
+        "حديثة",
+        "1 bedroom",
+        "بلكونة",
+        "غرفة واحدة",
+        "غرفتين نوم",
+        "نظيف",
+        "brand new",
+        "clean",
+        "mall",
+        "affordable",
+        "غرفتين",
+        "modern",
+        "kitchen",
+        "جديدة اول ساكن",
+        "2 bedroom",
+        "ايجار جديد",
+        "airport"
+      ],
+      "isVerified": true,
+      "verification": {
+        "updatedAt": 1705384874.115945,
+        "eligible": true,
+        "status": "verified",
+        "verifiedAt": 1705384860,
+        "trucheckedAt": 1705384860
+      },
+      "verifiedScore": 0,
+      "completionStatus": "completed",
+      "occupancyStatus": "vacant",
+      "randBoostScore": 397,
+      "randBoostScore_l1": 397,
+      "randBoostScore_l2": 397,
+      "randBoostScore_l3": 397,
+      "floorPlanID": 11793,
+      "furnishingStatus": "furnished",
+      "extraFields": {
+        "dldBuildingNK": "tabu-104544945",
+        "dldPropertySK": "dld|mea|ae|tabu-104549051",
+        "hasSaleTransactions": true
+      },
+      "type": "property",
+      "hasTransactionHistory": true,
+      "hasDldBuildingNk": true,
+      "ownerAgent": {
+        "externalID": "713291",
+        "name": "Rami Mrassi",
+        "name_l1": "Rami Mrassi",
+        "name_l2": "Rami Mrassi",
+        "name_l3": "Rami Mrassi",
+        "user_image": "https://bayut-production.s3.eu-central-1.amazonaws.com/image/234460420/5802969b044d4d7d9c09de1e5f625ae4",
+        "user_image_id": 234460420,
+        "isTruBroker": false
+      },
+      "amenities": [
+        "Reception/Waiting Room",
+        "Intercom",
+        "Cleaning Services",
+        "24 Hours Concierge",
+        "Centrally Air-Conditioned",
+        "Electricity Backup",
+        "Distance From Airport (kms)",
+        "Facilities for Disabled",
+        "Furnished",
+        "Laundry Facility",
+        "Lobby in Building",
+        "Freehold",
+        "Gym or Health Club",
+        "Satellite/Cable TV",
+        "Maintenance Staff",
+        "Balcony or Terrace",
+        "Maids Room",
+        "Number of Bathrooms",
+        "Double Glazed Windows",
+        "Broadband Internet",
+        "Security Staff",
+        "Parking Spaces",
+        "Swimming Pool",
+        "CCTV Security",
+        "Nearby Public Transport",
+        "Waste Disposal",
+        "Floor",
+        "Kids Play Area"
+      ],
+      "amenities_l1": [
+        "غرفة استقبال /انتظار",
+        "اتصال داخلي",
+        "خدمات تنظيف",
+        "حراسة 24 ساعة",
+        "نظام تبريد مركزي",
+        "نظام كهرباء احتياطي للطوارئ",
+        "المسافة من المطار (كم)",
+        "تسهيلات لأصحاب الهمم",
+        "مفروشة",
+        "خدمة غسيل ملابس",
+        "ردهة إستقبال",
+        "التملك الحر",
+        "صالة رياضية أو نادي صحي",
+        "كابل قنوات تلفزيونية",
+        "خدمات صيانة",
+        "شرفة أو تراس",
+        "غرفة خدم",
+        "عدد دورات المياه",
+        "نوافذ زجاجية مزدوجة",
+        "انترنت واسع النطاق",
+        "أمن و حماية",
+        "مواقف سيارات",
+        "مسبح",
+        "نظام كاميرات مراقبة",
+        "مواصلات نقل عامة قريبة",
+        "مكبّ نفايات",
+        "طابق",
+        "منطقة لعب للأطفال"
+      ],
+      "amenities_l2": [
+        "桑拿",
+        "对讲电话",
+        "清洁服务",
+        "24小时礼宾服务",
+        "中央空调",
+        "备用电力",
+        "储物区",
+        "残障人士设施",
+        "配备家具",
+        "洗衣设施",
+        "入户大堂",
+        "永久产权",
+        "健身房或健身俱乐部",
+        "卫星电视/有线电视",
+        "清洁服务",
+        "阳台",
+        "保姆房",
+        "卫浴数",
+        "双层玻璃窗",
+        "宽带网络",
+        "全部楼层",
+        "泊车位",
+        "附近医院",
+        "闭路电视安全",
+        "书房",
+        "垃圾处理",
+        "楼层",
+        "儿童娱乐区"
+      ],
+      "amenities_l3": [
+        "Прием/Зал ожидания",
+        "Внутренняя связь",
+        "Услуги по уборке",
+        "Круглосуточный консьерж",
+        "Центральное кондиционирование",
+        "Резервное электричество",
+        "Расстояние от аэропорта (км)",
+        "Услуги для инвалидов",
+        "Меблированный",
+        "прачечная",
+        "Лобби в здании",
+        "Право собственности",
+        "Тренажерный зал или оздоровительный клуб",
+        "Спутниковое/кабельное телевидение",
+        "Обслуживающий персонал",
+        "Балкон или терраса",
+        "Комната для прислуги",
+        "Количество ванных комнат",
+        "Окна с двойным остеклением",
+        "Широкополосный интернет",
+        "Сотрудники безопасности",
+        "Парковочные места",
+        "Бассейн",
+        "Безопасность видеонаблюдения",
+        "Ближайший общественный транспорт",
+        "Утилизация отходов",
+        "Пол",
+        "Детская игровая площадка"
+      ],
+      "cityLevelScore": 1,
+      "indyScore": 397,
+      "indyScore_l1": 397,
+      "indyScore_l2": 397,
+      "indyScore_l3": 397,
+      "hasMatchingFloorPlans": false,
+      "photoIDs": [
+        268623510, 280929408, 297620188, 268623513, 474899049, 271617217, 268623516, 288514605, 280929412, 474899050,
+        305267941, 280929415, 287305404, 268623523, 307524531, 287723618, 295311193, 474899051, 271617228, 280929421,
+        474899052, 280929423, 254304958, 287305416, 271617235, 280929426, 305267945, 254319208, 288514613, 271617239,
+        280929429, 271617241, 271617242, 271617243, 288514614, 268623549, 278008825, 268623552, 307524540, 271617247,
+        287321030, 288514616
+      ],
+      "hidePrice": false,
+      "locationPurposeTier": 1,
+      "plotArea": null,
+      "objectID": "2205838",
+      "_highlightResult": {
+        "referenceNumber": {
+          "value": "107",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "title": {
+          "value": "Fantastic Offer!! Brand New 2 Bedroom Apartment With  An Expansive Balcony | All Inclusive",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "title_l1": {
+          "value": "عرض رائع !! شقة جديدة من غرفتي نوم مع شرفة واسعة | الجميع مشمول",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "title_l2": {
+          "value": "位于朱美拉环形村(JVC)，JVC第13区，万神殿大道住宅楼 2 卧室的公寓 11999 AED - 4939165",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "title_l3": {
+          "value": "Квартира в Джумейра Вилладж Серкл (ДЖВС)，JVC Дистрикт 13，Пантеон Бульвар, 2 cпальни, 11999 AED - 4939165",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "externalID": {
+          "value": "4939165",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "agency": {
+          "name": {
+            "value": "B L V D Holiday Homes",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          "name_l1": {
+            "value": "-",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          "name_l2": {
+            "value": "B L V D Holiday Homes",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          "name_l3": {
+            "value": "B L V D Holiday Homes",
+            "matchLevel": "none",
+            "matchedWords": []
+          }
+        },
+        "keywords": [
+          {
+            "value": "مطار",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "جديدة",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "with balcony",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "اول ساكن",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "new",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "lounge",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "صالة",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "سعر جيد",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "2 غرفة",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "balcony",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "مطبخ",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "ساكن اول",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "spacious",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "مع شرفة",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "واسعة",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "مودرن",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "مول",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "حديثة",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "1 bedroom",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "بلكونة",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "غرفة واحدة",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "غرفتين نوم",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "نظيف",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "brand new",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "clean",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "mall",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "affordable",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "غرفتين",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "modern",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "kitchen",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "جديدة اول ساكن",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "2 bedroom",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "ايجار جديد",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "airport",
+            "matchLevel": "none",
+            "matchedWords": []
+          }
+        ]
+      }
+    },
+    {
+      "id": 2214408,
+      "ownerID": 713291,
+      "userExternalID": "713291",
+      "sourceID": 1,
+      "state": "active",
+      "_geoloc": {
+        "lat": 25.050708,
+        "lng": 55.213872
+      },
+      "geography": {
+        "lat": 25.050708,
+        "lng": 55.213872
+      },
+      "purpose": "for-rent",
+      "price": 1375000000,
+      "product": "superhot",
+      "productLabel": "default",
+      "productScore": 0,
+      "rentFrequency": "monthly",
+      "referenceNumber": "133",
+      "permitNumber": "JUMPANB2U9S",
+      "projectNumber": null,
+      "title": "Amazing 1 BR/ Fully Furnished/Balcony/WI-FI",
+      "title_l1": "غرفه واحده رائعه / مفروشه بالكامل / بلكونه / WI-FI",
+      "title_l2": "位于朱美拉环形村(JVC)，JVC第13区，万神殿大道住宅楼 1 卧室的公寓 8400 AED - 4947528",
+      "title_l3": "Квартира в Джумейра Вилладж Серкл (ДЖВС)，JVC Дистрикт 13，Пантеон Бульвар, 1 спальня, 8400 AED - 4947528",
+      "externalID": "4947528",
+      "slug": "amazing-1-br-fully-furnished-balcony-wi-fi-4947528",
+      "slug_l1": "amazing-1-br-fully-furnished-balcony-wi-fi-4947528",
+      "slug_l2": "amazing-1-br-fully-furnished-balcony-wi-fi-4947528",
+      "slug_l3": "amazing-1-br-fully-furnished-balcony-wi-fi-4947528",
+      "location": [
+        {
+          "id": 1,
+          "level": 0,
+          "externalID": "5001",
+          "name": "UAE",
+          "name_l1": "الإمارات",
+          "name_l2": "阿联酋",
+          "name_l3": "ОАЭ",
+          "slug": "/uae",
+          "slug_l1": "/uae",
+          "slug_l2": "/uae",
+          "slug_l3": "/uae"
+        },
+        {
+          "id": 2,
+          "level": 1,
+          "externalID": "5002",
+          "name": "Dubai",
+          "name_l1": "دبي",
+          "name_l2": "迪拜",
+          "name_l3": "Дубай",
+          "slug": "/dubai",
+          "slug_l1": "/dubai",
+          "slug_l2": "/dubai",
+          "slug_l3": "/dubai"
+        },
+        {
+          "id": 59,
+          "level": 2,
+          "externalID": "5416",
+          "name": "Jumeirah Village Circle (JVC)",
+          "name_l1": "قرية جميرا الدائرية",
+          "name_l2": "朱美拉环形村(JVC)",
+          "name_l3": "Джумейра Вилладж Серкл (ДЖВС)",
+          "slug": "/dubai/jumeirah-village-circle-jvc",
+          "slug_l1": "/dubai/jumeirah-village-circle-jvc",
+          "slug_l2": "/dubai/jumeirah-village-circle-jvc",
+          "slug_l3": "/dubai/jumeirah-village-circle-jvc",
+          "type": "neighbourhood"
+        },
+        {
+          "id": 1935,
+          "level": 3,
+          "externalID": "11385",
+          "name": "JVC District 13",
+          "name_l1": "الضاحية 13",
+          "name_l2": "JVC第13区",
+          "name_l3": "JVC Дистрикт 13",
+          "slug": "/dubai/jumeirah-village-circle-jvc/jvc-district-13",
+          "slug_l1": "/dubai/jumeirah-village-circle-jvc/jvc-district-13",
+          "slug_l2": "/dubai/jumeirah-village-circle-jvc/jvc-district-13",
+          "slug_l3": "/dubai/jumeirah-village-circle-jvc/jvc-district-13",
+          "type": "neighbourhood"
+        },
+        {
+          "id": 1967,
+          "level": 4,
+          "externalID": "11298",
+          "name": "Pantheon Boulevard",
+          "name_l1": "بانثيون بوليفارد",
+          "name_l2": "万神殿大道住宅楼",
+          "name_l3": "Пантеон Бульвар",
+          "slug": "/dubai/jumeirah-village-circle-jvc/jvc-district-13/pantheon-boulevard",
+          "slug_l1": "/dubai/jumeirah-village-circle-jvc/jvc-district-13/pantheon-boulevard",
+          "slug_l2": "/dubai/jumeirah-village-circle-jvc/jvc-district-13/pantheon-boulevard",
+          "slug_l3": "/dubai/jumeirah-village-circle-jvc/jvc-district-13/pantheon-boulevard",
+          "type": "condo-building"
+        }
+      ],
+      "category": [
+        {
+          "id": 1,
+          "level": 0,
+          "externalID": "1",
+          "name": "Tipe",
+          "name_l1": "سكني",
+          "name_l2": "居住物业",
+          "name_l3": "Жилые",
+          "slug": "tipe",
+          "slug_l1": "tipe",
+          "slug_l2": "tipe",
+          "slug_l3": "tipe",
+          "nameSingular": "Tipe",
+          "nameSingular_l1": "سكني",
+          "nameSingular_l2": "居住物业",
+          "nameSingular_l3": "Жилые"
+        },
+        {
+          "id": 2,
+          "level": 1,
+          "externalID": "4",
+          "name": "120",
+          "name_l1": "شقق",
+          "name_l2": "公寓",
+          "name_l3": "Апартаменты",
+          "slug": "apartments",
+          "slug_l1": "apartments",
+          "slug_l2": "apartments",
+          "slug_l3": "apartments",
+          "nameSingular": "Apartment",
+          "nameSingular_l1": "شقة",
+          "nameSingular_l2": "公寓",
+          "nameSingular_l3": "Квартира"
+        }
+      ],
+      "createdAt": 1610179972,
+      "updatedAt": 1705384824,
+      "reactivatedAt": 1703764732.965582,
+      "rooms": 1,
+      "baths": 2,
+      "area": 92.87981424,
+      "score": 75,
+      "score_l1": 75,
+      "score_l2": 75,
+      "score_l3": 75,
+      "coverPhoto": {
+        "id": 260914424,
+        "externalID": "126807441",
+        "title": null,
+        "orderIndex": 0,
+        "nimaScore": 8.56475899868019,
+        "url": "https://i.postimg.cc/zGkwtgFw/IMG20231227095907.jpg",
+        "main": true
+      },
+      "coverVideo": {
+        "externalID": 389466,
+        "title": "Pantheon boulevard",
+        "host": "youtube",
+        "url": "https://www.youtube.com/watch?v=sV_XdZl4ouA",
+        "orderIndex": 0
+      },
+      "photoCount": 18,
+      "videoCount": 1,
+      "panoramaCount": 1,
+      "phoneNumber": {
+        "mobile": "+971521838437",
+        "phone": "+97145802357",
+        "whatsapp": "971545695868",
+        "phoneNumbers": ["+97145802357"],
+        "mobileNumbers": ["+971521838437"]
+      },
+      "contactName": "Rami Mrassi",
+      "agency": {
+        "id": 29589916,
+        "objectID": 29589916,
+        "name": "B L V D Holiday Homes",
+        "name_l1": "-",
+        "name_l2": "B L V D Holiday Homes",
+        "name_l3": "B L V D Holiday Homes",
+        "externalID": "10204",
+        "product": "premium",
+        "productScore": 2,
+        "licenses": [
+          {
+            "number": "906876",
+            "authority": "DED"
+          }
+        ],
+        "logo": {
+          "id": 99895298,
+          "url": "https://bayut-production.s3.eu-central-1.amazonaws.com/image/99895298/9fc421847605425f9f3227a49d9db7f9"
+        },
+        "slug": "b-l-v-d-holiday-homes-10204",
+        "slug_l1": "b-l-v-d-holiday-homes-10204",
+        "slug_l2": "b-l-v-d-holiday-homes-10204",
+        "slug_l3": "b-l-v-d-holiday-homes-10204",
+        "tr": 3,
+        "tier": 3,
+        "roles": [],
+        "active": true,
+        "createdAt": "2021-01-03T01:52:43+00:00",
+        "commercialNumber": null,
+        "shortNumber": null,
+        "performanceCohort": "overachieving"
+      },
+      "hash": "aa74842",
+      "keywords": [
+        "weekly",
+        "سعر جيد",
+        "مطار",
+        "guest",
+        "نظيف",
+        "بلكونة",
+        "كبيرة",
+        "اسبوعي",
+        "مفروش",
+        "airport",
+        "عوائل",
+        "kitchen",
+        "families",
+        "affordable",
+        "يومي",
+        "balcony",
+        "فاخرة",
+        "مول",
+        "مؤثثة",
+        "مفروشة",
+        "furnished",
+        "luxury",
+        "واسعة",
+        "spacious",
+        "mall",
+        "مجلس",
+        "clean",
+        "daily",
+        "مطبخ"
+      ],
+      "isVerified": true,
+      "verification": {
+        "updatedAt": 1705384831.258217,
+        "eligible": true,
+        "status": "verified",
+        "verifiedAt": 1705384824,
+        "trucheckedAt": 1705384824
+      },
+      "verifiedScore": 0,
+      "completionStatus": "completed",
+      "occupancyStatus": "vacant",
+      "randBoostScore": 429,
+      "randBoostScore_l1": 429,
+      "randBoostScore_l2": 429,
+      "randBoostScore_l3": 429,
+      "floorPlanID": 11793,
+      "furnishingStatus": "furnished",
+      "extraFields": {
+        "dldBuildingNK": "tabu-104544945",
+        "dldPropertySK": "dld|mea|ae|tabu-104551495",
+        "hasSaleTransactions": true
+      },
+      "type": "property",
+      "hasTransactionHistory": true,
+      "hasDldBuildingNk": true,
+      "ownerAgent": {
+        "externalID": "713291",
+        "name": "Rami Mrassi",
+        "name_l1": "Rami Mrassi",
+        "name_l2": "Rami Mrassi",
+        "name_l3": "Rami Mrassi",
+        "user_image": "https://bayut-production.s3.eu-central-1.amazonaws.com/image/234460420/5802969b044d4d7d9c09de1e5f625ae4",
+        "user_image_id": 234460420,
+        "isTruBroker": false
+      },
+      "amenities": [
+        "Elevators in Building",
+        "Satellite/Cable TV",
+        "Security Staff",
+        "Balcony or Terrace",
+        "Gym or Health Club",
+        "Freehold",
+        "Reception/Waiting Room",
+        "CCTV Security",
+        "Laundry Facility",
+        "Furnished",
+        "Cleaning Services",
+        "Intercom",
+        "Number of Bathrooms",
+        "Broadband Internet",
+        "Double Glazed Windows",
+        "Parking Spaces",
+        "Centrally Air-Conditioned",
+        "Storage Areas",
+        "Electricity Backup",
+        "Maintenance Staff",
+        "Waste Disposal",
+        "Swimming Pool"
+      ],
+      "amenities_l1": [
+        "مصاعد",
+        "كابل قنوات تلفزيونية",
+        "أمن و حماية",
+        "شرفة أو تراس",
+        "صالة رياضية أو نادي صحي",
+        "التملك الحر",
+        "غرفة استقبال /انتظار",
+        "نظام كاميرات مراقبة",
+        "خدمة غسيل ملابس",
+        "مفروشة",
+        "خدمات تنظيف",
+        "اتصال داخلي",
+        "عدد دورات المياه",
+        "انترنت واسع النطاق",
+        "نوافذ زجاجية مزدوجة",
+        "مواقف سيارات",
+        "نظام تبريد مركزي",
+        "مناطق تخزين",
+        "نظام كهرباء احتياطي للطوارئ",
+        "خدمات صيانة",
+        "مكبّ نفايات",
+        "مسبح"
+      ],
+      "amenities_l2": [
+        "电梯",
+        "卫星电视/有线电视",
+        "全部楼层",
+        "阳台",
+        "健身房或健身俱乐部",
+        "永久产权",
+        "桑拿",
+        "闭路电视安全",
+        "洗衣设施",
+        "配备家具",
+        "清洁服务",
+        "对讲电话",
+        "卫浴数",
+        "宽带网络",
+        "双层玻璃窗",
+        "泊车位",
+        "中央空调",
+        "储物区",
+        "备用电力",
+        "清洁服务",
+        "垃圾处理",
+        "附近医院"
+      ],
+      "amenities_l3": [
+        "Лифты в здании",
+        "Спутниковое/кабельное телевидение",
+        "Сотрудники безопасности",
+        "Балкон или терраса",
+        "Тренажерный зал или оздоровительный клуб",
+        "Право собственности",
+        "Прием/Зал ожидания",
+        "Безопасность видеонаблюдения",
+        "прачечная",
+        "Меблированный",
+        "Услуги по уборке",
+        "Внутренняя связь",
+        "Количество ванных комнат",
+        "Широкополосный интернет",
+        "Окна с двойным остеклением",
+        "Парковочные места",
+        "Центральное кондиционирование",
+        "Складские помещения",
+        "Резервное электричество",
+        "Обслуживающий персонал",
+        "Утилизация отходов",
+        "Бассейн"
+      ],
+      "cityLevelScore": 1,
+      "indyScore": 429,
+      "indyScore_l1": 429,
+      "indyScore_l2": 429,
+      "indyScore_l3": 429,
+      "hasMatchingFloorPlans": true,
+      "photoIDs": [
+        260914424, 241501900, 241501904, 241501902, 241501906, 241501908, 241501910, 241501912, 264334826, 254249192,
+        271617230, 259473082, 268623548, 249619882, 260914429, 262432395, 260914432, 254249200
+      ],
+      "hidePrice": false,
+      "locationPurposeTier": 1,
+      "plotArea": null,
+      "objectID": "2214408",
+      "_highlightResult": {
+        "referenceNumber": {
+          "value": "133",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "title": {
+          "value": "Amazing 1 BR/ Fully Furnished/Balcony/WI-FI",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "title_l1": {
+          "value": "غرفه واحده رائعه / مفروشه بالكامل / بلكونه / WI-FI",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "title_l2": {
+          "value": "位于朱美拉环形村(JVC)，JVC第13区，万神殿大道住宅楼 1 卧室的公寓 8400 AED - 4947528",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "title_l3": {
+          "value": "Квартира в Джумейра Вилладж Серкл (ДЖВС)，JVC Дистрикт 13，Пантеон Бульвар, 1 спальня, 8400 AED - 4947528",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "externalID": {
+          "value": "4947528",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "agency": {
+          "name": {
+            "value": "B L V D Holiday Homes",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          "name_l1": {
+            "value": "-",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          "name_l2": {
+            "value": "B L V D Holiday Homes",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          "name_l3": {
+            "value": "B L V D Holiday Homes",
+            "matchLevel": "none",
+            "matchedWords": []
+          }
+        },
+        "keywords": [
+          {
+            "value": "weekly",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "سعر جيد",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "مطار",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "guest",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "نظيف",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "بلكونة",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "كبيرة",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "اسبوعي",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "مفروش",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "airport",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "عوائل",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "kitchen",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "families",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "affordable",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "يومي",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "balcony",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "فاخرة",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "مول",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "مؤثثة",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "مفروشة",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "furnished",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "luxury",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "واسعة",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "spacious",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "mall",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "مجلس",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "clean",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "daily",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "مطبخ",
+            "matchLevel": "none",
+            "matchedWords": []
+          }
+        ]
+      }
+    }
+  ]
+}

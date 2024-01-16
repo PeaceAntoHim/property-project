@@ -1,3 +1,4 @@
+import { getFeaturedProperties } from "@/features/common/API/getFeaturedProperties";
 import { getProperties } from "@/features/common/API/getProperties";
 import FeaturedProperties from "@/features/Home/components/FeaturedProperties";
 import HeroBanner from "@/features/Home/components/HeroBanner";
@@ -8,6 +9,7 @@ import DefaultLayout from "@/features/Layout/DefaultLayout";
 import { InferGetStaticPropsType, GetStaticProps } from "next";
 
 export default function Home({ featuredProperties }: InferGetStaticPropsType<typeof getStaticProps>) {
+  console.log("featuredProperties", featuredProperties);
   return (
     <DefaultLayout
       title="Perum TDL"
@@ -22,7 +24,7 @@ export default function Home({ featuredProperties }: InferGetStaticPropsType<typ
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const properties = await getProperties(3);
+  const properties = await getFeaturedProperties();
   return {
     props: {
       featuredProperties: properties,
