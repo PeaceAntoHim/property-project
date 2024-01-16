@@ -30,7 +30,6 @@ const PropertyDetail = ({ property }: InferGetServerSidePropsType<typeof getServ
     amenities,
   } = usePropertyFormat(property);
 
-  console.log("property", property);
   const handleBookingClick = () => {
     // Assuming your property ID is stored in externalID, adjust it accordingly
     const propertyId = property.id;

@@ -6,7 +6,6 @@ import PropertyCard from "@/features/common/modules/PropertyCard";
 import { getProperties } from "@/features/common/API/getProperties";
 
 const Properties = ({ properties }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  console.log("properties", properties);
   return (
     <DefaultLayout
       title="Properties"

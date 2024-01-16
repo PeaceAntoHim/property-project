@@ -9,7 +9,6 @@ import DefaultLayout from "@/features/Layout/DefaultLayout";
 import { InferGetStaticPropsType, GetStaticProps } from "next";
 
 export default function Home({ featuredProperties }: InferGetStaticPropsType<typeof getStaticProps>) {
-  console.log("featuredProperties", featuredProperties);
   return (
     <DefaultLayout
       title="Perum TDL"
