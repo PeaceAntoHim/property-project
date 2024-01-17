@@ -9,7 +9,7 @@ type Property = {
 type ResponseData = Property | { message: string };
 
 export default function handler(req: NextApiRequest, res: NextApiResponse<ResponseData>) {
-  const externalID = req.query?.externalID;
+  const externalID = req.query?.externalID || "4947528";
 
   if (!externalID) {
     return res.status(400).json({ message: "External ID not provided" });
