@@ -10,8 +10,8 @@
       "lat": 25.050708,
       "lng": 55.213872
     },
-    "purpose": "",
-    "price": 8400,
+    "purpose": "for-sale",
+    "price": 1375000000,
     "product": "superhot",
     "productLabel": "default",
     "rentFrequency": "monthly",
@@ -40,33 +40,33 @@
         "id": 1,
         "level": 0,
         "externalID": "5001",
-        "name": "UAE",
+        "name": "ID",
         "name_l1": "الإمارات",
         "name_l2": "阿联酋",
         "name_l3": "ОАЭ",
-        "slug": "/uae",
-        "slug_l1": "/uae",
-        "slug_l2": "/uae",
-        "slug_l3": "/uae"
+        "slug": "/id",
+        "slug_l1": "/id",
+        "slug_l2": "/id",
+        "slug_l3": "/id"
       },
       {
         "id": 2,
         "level": 1,
         "externalID": "5002",
-        "name": "Dubai",
+        "name": "Lampung",
         "name_l1": "دبي",
         "name_l2": "迪拜",
         "name_l3": "Дубай",
-        "slug": "/dubai",
-        "slug_l1": "/dubai",
-        "slug_l2": "/dubai",
-        "slug_l3": "/dubai"
+        "slug": "/lampung",
+        "slug_l1": "/lampung",
+        "slug_l2": "/lampung",
+        "slug_l3": "/lampung"
       },
       {
         "id": 59,
         "level": 2,
         "externalID": "5416",
-        "name": "Jumeirah Village Circle (JVC)",
+        "name": "Perumahan Tanjung Damai Lestari (TDL)",
         "name_l1": "قرية جميرا الدائرية",
         "name_l2": "朱美拉环形村(JVC)",
         "name_l3": "Джумейра Вилладж Серкл (ДЖВС)",
@@ -127,7 +127,7 @@
         "id": 2,
         "level": 1,
         "externalID": "4",
-        "name": "Apartments",
+        "name": "House",
         "name_l1": "شقق",
         "name_l2": "公寓",
         "name_l3": "Апартаменты",
@@ -146,9 +146,9 @@
     "updatedAt": 1705384824,
     "touchedAt": 1705385540.889104,
     "reactivatedAt": 1703764732.965582,
-    "rooms": 1,
+    "rooms": 3,
     "baths": 2,
-    "area": 92.87981424,
+    "area": 112,
     "score": 75,
     "score_l1": 75,
     "score_l2": 75,
@@ -773,7 +773,7 @@
       "lng": 55.278035
     },
     "purpose": "for-sale",
-    "price": 800000.0,
+    "price": 1700000000,
     "product": "hot",
     "productLabel": "default",
     "rentFrequency": null,
@@ -857,7 +857,7 @@
         "id": 2,
         "level": 1,
         "externalID": "4",
-        "name": "Apartments",
+        "name": "House",
         "name_l1": "\u0634\u0642\u0642",
         "name_l2": "Apartments",
         "slug": "apartments",
@@ -873,9 +873,9 @@
     "updatedAt": 1673581818.0,
     "touchedAt": 1673582325.354743,
     "reactivatedAt": 1671710699.0,
-    "rooms": 1,
-    "baths": 1,
-    "area": 58.15730304,
+    "rooms": 4,
+    "baths": 4,
+    "area": 120,
     "score": 75,
     "score_l1": 75,
     "score_l2": 75,
@@ -1288,8 +1288,8 @@
       "lat": 25.050708,
       "lng": 55.213872
     },
-    "purpose": "for-rent",
-    "price": 11999,
+    "purpose": "for-sale",
+    "price": 2000000000,
     "product": "superhot",
     "productLabel": "default",
     "rentFrequency": "monthly",
@@ -1318,7 +1318,7 @@
         "id": 1,
         "level": 0,
         "externalID": "5001",
-        "name": "UAE",
+        "name": "ID",
         "name_l1": "الإمارات",
         "name_l2": "阿联酋",
         "name_l3": "ОАЭ",
@@ -1331,7 +1331,7 @@
         "id": 2,
         "level": 1,
         "externalID": "5002",
-        "name": "Dubai",
+        "name": "Lampung",
         "name_l1": "دبي",
         "name_l2": "迪拜",
         "name_l3": "Дубай",
@@ -1344,7 +1344,7 @@
         "id": 59,
         "level": 2,
         "externalID": "5416",
-        "name": "Jumeirah Village Circle (JVC)",
+        "name": "Perumahan Tanjung Damai Lestari (TDL)",
         "name_l1": "قرية جميرا الدائرية",
         "name_l2": "朱美拉环形村(JVC)",
         "name_l3": "Джумейра Вилладж Серкл (ДЖВС)",
@@ -1405,7 +1405,7 @@
         "id": 2,
         "level": 1,
         "externalID": "4",
-        "name": "Apartments",
+        "name": "House",
         "name_l1": "شقق",
         "name_l2": "公寓",
         "name_l3": "Апартаменты",
@@ -1424,9 +1424,9 @@
     "updatedAt": 1705410311,
     "touchedAt": 1705411387.658966,
     "reactivatedAt": 1703764732.673336,
-    "rooms": 2,
-    "baths": 2,
-    "area": 88.67037749760001,
+    "rooms": 5,
+    "baths": 4,
+    "area": 140,
     "score": 75,
     "score_l1": 75,
     "score_l2": 75,
@@ -2093,6 +2093,918 @@
     "indyScore_l1": 397,
     "indyScore_l2": 397,
     "indyScore_l3": 397,
+    "hasMatchingFloorPlans": false,
+    "hidePrice": false,
+    "locationPurposeTier": 1,
+    "plotArea": null
+  },
+  "6679108": {
+    "id": 3201633,
+    "objectID": 3201633,
+    "ownerID": 706060,
+    "userExternalID": "706060",
+    "sourceID": 1,
+    "state": "active",
+    "geography": {
+      "lat": 25.066713079701,
+      "lng": 55.2032152496
+    },
+    "purpose": "for-sale",
+    "price": 2500000000,
+    "product": "superhot",
+    "productLabel": "default",
+    "rentFrequency": "monthly",
+    "referenceNumber": "2504",
+    "permitNumber": "JUMPANIIQG1",
+    "projectNumber": null,
+    "title": "Tipe 200",
+    "title_l1": "شقة في برج بلوم A،ابراج بلووم،المنطقة 10،قرية جميرا الدائرية 1 غرفة 10499 درهم - 5920792",
+    "title_l2": "位于朱美拉环形村(JVC)，JVC第10区，绽放大厦，绽放大厦A座 1 卧室的公寓 10499 AED - 5920792",
+    "title_l3": "Квартира в Джумейра Вилладж Серкл (ДЖВС)，ДжейВиСи Дистрикт 10，Блум Тауэрс，Тауэр Блум А, 1 спальня, 10499 AED - 5920792",
+    "description": "Boulevard Holiday Homes offers unparalleled craftsmanship and exceptional modern amenities! \n\nThis Scandinavian inspired design is truly remarkable inside and out. \nFeatures include; \n\n- Keyless entry into the apartment, \n-Fully equipped kitchen, \n- The home also features a heavy duty refrigerator, coffee maker, microwave, washing/drying machine, \n- Expansive balcony, \n- Gourmet kitchen, \n- High speed Wi-Fi \n-Swimming pool and fully equipped gym area, \n- Direct access to Al-Khail Road, \n- Sauna room, \n- Steam room. \n\nHoliday Boulevard offers the best stays with a proven track record of full occupancies!",
+    "description_l1": "Boulevard Holiday Homes offers unparalleled craftsmanship and exceptional modern amenities! \n\nThis Scandinavian inspired design is truly remarkable inside and out. \nFeatures include; \n\n- Keyless entry into the apartment, \n-Fully equipped kitchen, \n- The home also features a heavy duty refrigerator, coffee maker, microwave, washing/drying machine, \n- Expansive balcony, \n- Gourmet kitchen, \n- High speed Wi-Fi \n-Swimming pool and fully equipped gym area, \n- Direct access to Al-Khail Road, \n- Sauna room, \n- Steam room. \n\nHoliday Boulevard offers the best stays with a proven track record of full occupancies!",
+    "description_l2": "Boulevard Holiday Homes offers unparalleled craftsmanship and exceptional modern amenities! \n\nThis Scandinavian inspired design is truly remarkable inside and out. \nFeatures include; \n\n- Keyless entry into the apartment, \n-Fully equipped kitchen, \n- The home also features a heavy duty refrigerator, coffee maker, microwave, washing/drying machine, \n- Expansive balcony, \n- Gourmet kitchen, \n- High speed Wi-Fi \n-Swimming pool and fully equipped gym area, \n- Direct access to Al-Khail Road, \n- Sauna room, \n- Steam room. \n\nHoliday Boulevard offers the best stays with a proven track record of full occupancies!",
+    "description_l3": "Boulevard Holiday Homes offers unparalleled craftsmanship and exceptional modern amenities! \n\nThis Scandinavian inspired design is truly remarkable inside and out. \nFeatures include; \n\n- Keyless entry into the apartment, \n-Fully equipped kitchen, \n- The home also features a heavy duty refrigerator, coffee maker, microwave, washing/drying machine, \n- Expansive balcony, \n- Gourmet kitchen, \n- High speed Wi-Fi \n-Swimming pool and fully equipped gym area, \n- Direct access to Al-Khail Road, \n- Sauna room, \n- Steam room. \n\nHoliday Boulevard offers the best stays with a proven track record of full occupancies!",
+    "descriptionTranslated": false,
+    "descriptionTranslated_l1": true,
+    "descriptionTranslated_l2": null,
+    "descriptionTranslated_l3": null,
+    "externalID": "6679108",
+    "slug": "elegantly-decorated-1-bedroom-apartment-brand-new-skyline-view-5920792",
+    "slug_l1": "elegantly-decorated-1-bedroom-apartment-brand-new-skyline-view-5920792",
+    "slug_l2": "elegantly-decorated-1-bedroom-apartment-brand-new-skyline-view-5920792",
+    "slug_l3": "elegantly-decorated-1-bedroom-apartment-brand-new-skyline-view-5920792",
+    "location": [
+      {
+        "id": 1,
+        "level": 0,
+        "externalID": "5001",
+        "name": "ID",
+        "name_l1": "الإمارات",
+        "name_l2": "阿联酋",
+        "name_l3": "ОАЭ",
+        "slug": "/uae",
+        "slug_l1": "/uae",
+        "slug_l2": "/uae",
+        "slug_l3": "/uae"
+      },
+      {
+        "id": 2,
+        "level": 1,
+        "externalID": "5002",
+        "name": "Lampung",
+        "name_l1": "دبي",
+        "name_l2": "迪拜",
+        "name_l3": "Дубай",
+        "slug": "/dubai",
+        "slug_l1": "/dubai",
+        "slug_l2": "/dubai",
+        "slug_l3": "/dubai"
+      },
+      {
+        "id": 59,
+        "level": 2,
+        "externalID": "5416",
+        "name": "Perumahan Tanjung Damai Lestari (TDL)",
+        "name_l1": "قرية جميرا الدائرية",
+        "name_l2": "朱美拉环形村(JVC)",
+        "name_l3": "Джумейра Вилладж Серкл (ДЖВС)",
+        "slug": "/dubai/jumeirah-village-circle-jvc",
+        "slug_l1": "/dubai/jumeirah-village-circle-jvc",
+        "slug_l2": "/dubai/jumeirah-village-circle-jvc",
+        "slug_l3": "/dubai/jumeirah-village-circle-jvc",
+        "type": "neighbourhood"
+      },
+      {
+        "id": 2478,
+        "level": 3,
+        "externalID": "11840",
+        "name": "JVC District 10",
+        "name_l1": "المنطقة 10",
+        "name_l2": "JVC第10区",
+        "name_l3": "ДжейВиСи Дистрикт 10",
+        "slug": "/dubai/jumeirah-village-circle-jvc/jvc-district-10",
+        "slug_l1": "/dubai/jumeirah-village-circle-jvc/jvc-district-10",
+        "slug_l2": "/dubai/jumeirah-village-circle-jvc/jvc-district-10",
+        "slug_l3": "/dubai/jumeirah-village-circle-jvc/jvc-district-10",
+        "type": "neighbourhood"
+      },
+      {
+        "id": 1547,
+        "level": 4,
+        "externalID": "9140",
+        "name": "Bloom Towers",
+        "name_l1": "ابراج بلووم",
+        "name_l2": "绽放大厦",
+        "name_l3": "Блум Тауэрс",
+        "slug": "/dubai/jumeirah-village-circle-jvc/jvc-district-10/bloom-towers",
+        "slug_l1": "/dubai/jumeirah-village-circle-jvc/jvc-district-10/bloom-towers",
+        "slug_l2": "/dubai/jumeirah-village-circle-jvc/jvc-district-10/bloom-towers",
+        "slug_l3": "/dubai/jumeirah-village-circle-jvc/jvc-district-10/bloom-towers"
+      },
+      {
+        "id": 80559,
+        "level": 5,
+        "externalID": "16666",
+        "name": "Bloom Tower A",
+        "name_l1": "برج بلوم A",
+        "name_l2": "绽放大厦A座",
+        "name_l3": "Тауэр Блум А",
+        "slug": "/dubai/jumeirah-village-circle-jvc/jvc-district-10/bloom-towers/bloom-tower-a",
+        "slug_l1": "/dubai/jumeirah-village-circle-jvc/jvc-district-10/bloom-towers/bloom-tower-a",
+        "slug_l2": "/dubai/jumeirah-village-circle-jvc/jvc-district-10/bloom-towers/bloom-tower-a",
+        "slug_l3": "/dubai/jumeirah-village-circle-jvc/jvc-district-10/bloom-towers/bloom-tower-a",
+        "type": "condo-building"
+      }
+    ],
+    "category": [
+      {
+        "id": 1,
+        "level": 0,
+        "externalID": "1",
+        "name": "Residential",
+        "name_l1": "سكني",
+        "name_l2": "居住物业",
+        "name_l3": "Жилые",
+        "slug": "residential",
+        "slug_l1": "residential",
+        "slug_l2": "residential",
+        "slug_l3": "residential",
+        "nameSingular": "Residential",
+        "nameSingular_l1": "سكني",
+        "nameSingular_l2": "居住物业",
+        "nameSingular_l3": "Жилые"
+      },
+      {
+        "id": 2,
+        "level": 1,
+        "externalID": "4",
+        "name": "House",
+        "name_l1": "شقق",
+        "name_l2": "公寓",
+        "name_l3": "Апартаменты",
+        "slug": "apartments",
+        "slug_l1": "apartments",
+        "slug_l2": "apartments",
+        "slug_l3": "apartments",
+        "nameSingular": "Apartment",
+        "nameSingular_l1": "شقة",
+        "nameSingular_l2": "公寓",
+        "nameSingular_l3": "Квартира"
+      }
+    ],
+    "createdAt": 1651149236,
+    "approvedAt": 1651149236,
+    "updatedAt": 1705372268,
+    "touchedAt": 1705373484.610407,
+    "reactivatedAt": 1703764733.356253,
+    "rooms": 6,
+    "baths": 7,
+    "area": 170,
+    "score": 75,
+    "score_l1": 75,
+    "score_l2": 75,
+    "score_l3": 75,
+    "coverPhoto": {
+      "id": 236901797,
+      "externalID": "122405049",
+      "title": null,
+      "orderIndex": 0,
+      "nimaScore": 9.80742459156214,
+      "url": "https://bayut-production.s3.eu-central-1.amazonaws.com/image/236901797/f149fa83441c4eba99b4368d0c4078ce",
+      "main": true
+    },
+    "coverVideo": {
+      "externalID": 519014,
+      "title": "BLOOM TOWER",
+      "host": "youtube",
+      "url": "https://www.youtube.com/watch?v=X8hgy8O4ddU&t=1s",
+      "orderIndex": 0
+    },
+    "photoCount": 29,
+    "videoCount": 1,
+    "panoramaCount": 1,
+    "photos": [
+      {
+        "id": 236901797,
+        "externalID": "122405049",
+        "title": null,
+        "orderIndex": 0,
+        "nimaScore": 9.80742459156214,
+        "url": "https://i.postimg.cc/tJXmdh4J/IMG20231227095021.jpg"
+      },
+      {
+        "id": 234800085,
+        "externalID": "122405050",
+        "title": null,
+        "orderIndex": 1,
+        "nimaScore": 9.290457292545113,
+        "url": "https://i.postimg.cc/9Xt64fQz/IMG20231227095025.jpg"
+      },
+      {
+        "id": 236948583,
+        "externalID": "122405052",
+        "title": null,
+        "orderIndex": 2,
+        "nimaScore": 9.124151999423248,
+        "url": "https://i.postimg.cc/y8WtrXXS/IMG20231227095045.jpg"
+      },
+      {
+        "id": 237985127,
+        "externalID": "122405053",
+        "title": null,
+        "orderIndex": 3,
+        "nimaScore": 8.558106826869334,
+        "url": "https://i.postimg.cc/RVg2RbfB/IMG20231227095050.jpg"
+      },
+      {
+        "id": 229835870,
+        "externalID": "122405054",
+        "title": null,
+        "orderIndex": 4,
+        "nimaScore": 8.02954588432749,
+        "url": "https://i.postimg.cc/0QGpCFzd/IMG20231227095100.jpg"
+      },
+      {
+        "id": 210676664,
+        "externalID": "122405055",
+        "title": null,
+        "orderIndex": 5,
+        "nimaScore": 6.245248390259803,
+        "url": "https://i.postimg.cc/y6QJz7C3/IMG20231227095109.jpg"
+      },
+      {
+        "id": 236901800,
+        "externalID": "122405056",
+        "title": null,
+        "orderIndex": 6,
+        "nimaScore": 8.02989644723857,
+        "url": "https://i.postimg.cc/3xD0BV64/IMG20231227095123.jpg"
+      },
+      {
+        "id": 229835872,
+        "externalID": "122405058",
+        "title": null,
+        "orderIndex": 7,
+        "nimaScore": 7.745413911975675,
+        "url": "https://i.postimg.cc/bvxDXbqq/IMG20231227095127.jpg"
+      },
+      {
+        "id": 229835873,
+        "externalID": "122405059",
+        "title": null,
+        "orderIndex": 8,
+        "nimaScore": 8.747793881753068,
+        "url": "https://i.postimg.cc/Gh44L6b7/IMG20231227095220.jpg"
+      },
+      {
+        "id": 232706396,
+        "externalID": "122405060",
+        "title": null,
+        "orderIndex": 9,
+        "nimaScore": 8.321945868523017,
+        "url": "https://i.postimg.cc/85TFT5CM/IMG20231227095223.jpg"
+      },
+      {
+        "id": 229835875,
+        "externalID": "122405061",
+        "title": null,
+        "orderIndex": 10,
+        "nimaScore": 8.122440203178485,
+        "url": "https://i.postimg.cc/fyLJ0rmb/IMG20231227095256.jpg"
+      },
+      {
+        "id": 229835876,
+        "externalID": "122405062",
+        "title": null,
+        "orderIndex": 11,
+        "nimaScore": 9.755492412641626,
+        "url": "https://i.postimg.cc/DzkJY5kC/IMG20231227095300.jpg"
+      },
+      {
+        "id": 262446867,
+        "externalID": "122405063",
+        "title": null,
+        "orderIndex": 12,
+        "nimaScore": 9.557930688636588,
+        "url": "https://i.postimg.cc/YqLSKgxT/IMG20231227095315.jpg"
+      },
+      {
+        "id": 240641191,
+        "externalID": "122405064",
+        "title": null,
+        "orderIndex": 13,
+        "nimaScore": 8.547463406189763,
+        "url": "https://i.postimg.cc/W1jtGzMK/IMG20231227095318.jpg"
+      },
+      {
+        "id": 210676673,
+        "externalID": "122405065",
+        "title": null,
+        "orderIndex": 14,
+        "nimaScore": 9.576472218547224,
+        "url": "https://i.postimg.cc/W1Wjd1S0/IMG20231227095338.jpg"
+      },
+      {
+        "id": 229835879,
+        "externalID": "122405066",
+        "title": null,
+        "orderIndex": 15,
+        "nimaScore": 9.378922055550902,
+        "url": "https://i.postimg.cc/L41sGLDw/IMG20231227095342.jpg"
+      },
+      {
+        "id": 234800091,
+        "externalID": "122405067",
+        "title": null,
+        "orderIndex": 16,
+        "nimaScore": 9.38190011017268,
+        "url": "https://i.postimg.cc/bw0FsCTb/IMG20231227095408.jpg"
+      },
+      {
+        "id": 236948587,
+        "externalID": "122405068",
+        "title": null,
+        "orderIndex": 17,
+        "nimaScore": 9.836145076490027,
+        "url": "https://i.postimg.cc/WbZsfVNv/IMG20231227095429.jpg"
+      },
+      {
+        "id": 236948588,
+        "externalID": "122405070",
+        "title": null,
+        "orderIndex": 18,
+        "nimaScore": 7.389338856372262,
+        "url": "https://i.postimg.cc/T1LTxMnn/IMG20231227095453.jpg"
+      },
+      {
+        "id": 234800094,
+        "externalID": "122405072",
+        "title": null,
+        "orderIndex": 19,
+        "nimaScore": 6.916993561666459,
+        "url": "https://i.postimg.cc/0y8263v1/IMG20231227095520.jpg"
+      },
+      {
+        "id": 229835884,
+        "externalID": "122405073",
+        "title": null,
+        "orderIndex": 20,
+        "nimaScore": 8.012061700149388,
+        "url": "https://i.postimg.cc/43jg12Dd/IMG20231227095522.jpg"
+      },
+      {
+        "id": 474899050,
+        "externalID": "128414731",
+        "title": null,
+        "orderIndex": 9,
+        "nimaScore": 6.046394741162658,
+        "url": "https://i.postimg.cc/qq94yq5W/IMG20231227101008.jpg"
+      },
+      {
+        "id": 305267941,
+        "externalID": "128414734",
+        "title": null,
+        "orderIndex": 10,
+        "nimaScore": 7.821342490035022,
+        "url": "https://i.postimg.cc/rmwVLv4Z/IMG20231227101046.jpg"
+      },
+      {
+        "id": 280929415,
+        "externalID": "128414739",
+        "title": null,
+        "orderIndex": 11,
+        "nimaScore": 7.069613726504031,
+        "url": "https://i.postimg.cc/RFpMCXQS/IMG20231227101050.jpg"
+      },
+      {
+        "id": 287305404,
+        "externalID": "128414744",
+        "title": null,
+        "orderIndex": 12,
+        "nimaScore": 7.643095144750987,
+        "url": "https://i.postimg.cc/4NDxh2Cn/IMG20231227101109.jpg"
+      },
+      {
+        "id": 268623523,
+        "externalID": "128414748",
+        "title": null,
+        "orderIndex": 13,
+        "nimaScore": 5.46010155738395,
+        "url": "https://i.postimg.cc/pdZW42mn/IMG20231227101112.jpg"
+      }
+    ],
+    "floorPlans": [],
+    "floorPlan": {
+      "id": 3518,
+      "typeIdentifier": "type",
+      "typeIdentifierValue": "D",
+      "images": [
+        {
+          "id": 9634,
+          "externalID": "94cdee74",
+          "orderIndex": 4,
+          "image2D": {
+            "id": 73165351
+          },
+          "image3D": {
+            "id": 73165352
+          },
+          "label": null
+        }
+      ],
+      "models": [
+        {
+          "id": 9036,
+          "externalID": "9d39f7846d5a476c9a23ac76bc746bb0",
+          "orderIndex": 4,
+          "placeholderImage": {
+            "id": 102588695
+          },
+          "label": null,
+          "modelURL": null
+        }
+      ]
+    },
+    "videos": [
+      {
+        "externalID": 519014,
+        "title": "BLOOM TOWER",
+        "host": "youtube",
+        "url": "https://www.youtube.com/watch?v=X8hgy8O4ddU&t=1s",
+        "orderIndex": 0
+      }
+    ],
+    "panoramas": [
+      {
+        "externalID": 425321,
+        "title": "Bloom 3D walk through",
+        "host": "3d_view",
+        "url": "https://my.matterport.com/show/?m=G5mVoYhfZ5i&play=1",
+        "orderIndex": 0
+      }
+    ],
+    "amenities": [
+      {
+        "externalGroupID": 9,
+        "groupRank": 1,
+        "text": "Features",
+        "text_l1": "مزايا",
+        "text_l2": "日托中心",
+        "text_l3": "Характеристики",
+        "amenities": [
+          {
+            "text": "Furnished",
+            "text_l1": "مفروشة",
+            "text_l2": "配备家具",
+            "text_l3": "Меблированный",
+            "value": "True",
+            "rank": 1,
+            "slug": "furnished",
+            "format": "checkbox",
+            "externalID": 20
+          },
+          {
+            "text": "Electricity Backup",
+            "text_l1": "نظام كهرباء احتياطي للطوارئ",
+            "text_l2": "备用电力",
+            "text_l3": "Резервное электричество",
+            "value": "True",
+            "rank": 2,
+            "slug": "electricity-backup",
+            "format": "checkbox",
+            "externalID": 10
+          },
+          {
+            "text": "Parking Spaces",
+            "text_l1": "مواقف سيارات",
+            "text_l2": "泊车位",
+            "text_l3": "Парковочные места",
+            "value": "2",
+            "rank": 3,
+            "slug": "parking-spaces",
+            "format": "number",
+            "externalID": 68
+          },
+          {
+            "text": "Centrally Air-Conditioned",
+            "text_l1": "نظام تبريد مركزي",
+            "text_l2": "中央空调",
+            "text_l3": "Центральное кондиционирование",
+            "value": "True",
+            "rank": 4,
+            "slug": "centrally-air-conditioned",
+            "format": "checkbox",
+            "externalID": 7
+          },
+          {
+            "text": "Central Heating",
+            "text_l1": "تدفئة مركزية",
+            "text_l2": "中央供暖",
+            "text_l3": "Центральное отопление",
+            "value": "True",
+            "rank": 5,
+            "slug": "central-heating",
+            "format": "checkbox",
+            "externalID": 8
+          },
+          {
+            "text": "Double Glazed Windows",
+            "text_l1": "نوافذ زجاجية مزدوجة",
+            "text_l2": "双层玻璃窗",
+            "text_l3": "Окна с двойным остеклением",
+            "value": "True",
+            "rank": 6,
+            "slug": "double-glazed-windows",
+            "format": "checkbox",
+            "externalID": 6
+          },
+          {
+            "text": "Storage Areas",
+            "text_l1": "مناطق تخزين",
+            "text_l2": "储物区",
+            "text_l3": "Складские помещения",
+            "value": "True",
+            "rank": 7,
+            "slug": "storage-areas",
+            "format": "checkbox",
+            "externalID": 70
+          }
+        ]
+      },
+      {
+        "externalGroupID": 5,
+        "groupRank": 2,
+        "text": "Building",
+        "text_l1": "البناء",
+        "text_l2": "入户大堂",
+        "text_l3": "Здание",
+        "amenities": [
+          {
+            "text": "Balcony or Terrace",
+            "text_l1": "شرفة أو تراس",
+            "text_l2": "阳台",
+            "text_l3": "Балкон или терраса",
+            "value": "True",
+            "rank": 1,
+            "slug": "balcony-or-terrace",
+            "format": "checkbox",
+            "externalID": 3
+          },
+          {
+            "text": "Lobby in Building",
+            "text_l1": "ردهة إستقبال",
+            "text_l2": "入户大堂",
+            "text_l3": "Лобби в здании",
+            "value": "True",
+            "rank": 2,
+            "slug": "lobby-in-building",
+            "format": "checkbox",
+            "externalID": 5
+          },
+          {
+            "text": "Reception/Waiting Room",
+            "text_l1": "غرفة استقبال /انتظار",
+            "text_l2": "桑拿",
+            "text_l3": "Прием/Зал ожидания",
+            "value": "True",
+            "rank": 8,
+            "slug": "receptionwaiting-room",
+            "format": "checkbox",
+            "externalID": 41
+          }
+        ]
+      },
+      {
+        "externalGroupID": 3,
+        "groupRank": 3,
+        "text": "Health and Fitness",
+        "text_l1": "الصحة و اللياقة",
+        "text_l2": "阳台",
+        "text_l3": "Здоровье и Фитнесс",
+        "amenities": [
+          {
+            "text": "Gym or Health Club",
+            "text_l1": "صالة رياضية أو نادي صحي",
+            "text_l2": "健身房或健身俱乐部",
+            "text_l3": "Тренажерный зал или оздоровительный клуб",
+            "value": "True",
+            "rank": 3,
+            "slug": "gym-or-health-club",
+            "format": "checkbox",
+            "externalID": 22
+          },
+          {
+            "text": "Facilities for Disabled",
+            "text_l1": "تسهيلات لأصحاب الهمم",
+            "text_l2": "残障人士设施",
+            "text_l3": "Услуги для инвалидов",
+            "value": "True",
+            "rank": 5,
+            "slug": "facilities-for-disabled",
+            "format": "checkbox",
+            "externalID": 67
+          },
+          {
+            "text": "Swimming Pool",
+            "text_l1": "مسبح",
+            "text_l2": "附近医院",
+            "text_l3": "Бассейн",
+            "value": "True",
+            "rank": 6,
+            "slug": "swimming-pool",
+            "format": "checkbox",
+            "externalID": 45
+          },
+          {
+            "text": "Sauna",
+            "text_l1": "ساونا",
+            "text_l2": "汗蒸房",
+            "text_l3": "Сауна",
+            "value": "True",
+            "rank": 10,
+            "slug": "sauna",
+            "format": "checkbox",
+            "externalID": 42
+          }
+        ]
+      },
+      {
+        "externalGroupID": 2,
+        "groupRank": 4,
+        "text": "Recreation and Family",
+        "text_l1": "الترفيه والأسرة",
+        "text_l2": "景观",
+        "text_l3": "Отдых и семья",
+        "amenities": [
+          {
+            "text": "Day Care Center",
+            "text_l1": "مركز رعاية أطفال",
+            "text_l2": "日托中心",
+            "text_l3": "Детский сад",
+            "value": "True",
+            "rank": 2,
+            "slug": "day-care-center",
+            "format": "checkbox",
+            "externalID": 9
+          },
+          {
+            "text": "Kids Play Area",
+            "text_l1": "منطقة لعب للأطفال",
+            "text_l2": "儿童娱乐区",
+            "text_l3": "Детская игровая площадка",
+            "value": "True",
+            "rank": 3,
+            "slug": "kids-play-area",
+            "format": "checkbox",
+            "externalID": 34
+          },
+          {
+            "text": "Lawn or Garden",
+            "text_l1": "حديقة",
+            "text_l2": "绿化",
+            "text_l3": "Газон или сад",
+            "value": "True",
+            "rank": 5,
+            "slug": "lawn-or-garden",
+            "format": "checkbox",
+            "externalID": 36
+          }
+        ]
+      },
+      {
+        "externalGroupID": 10,
+        "groupRank": 5,
+        "text": "Cleaning and Maintenance",
+        "text_l1": "التنظيف والصيانة",
+        "text_l2": "备用电力",
+        "text_l3": "Очистка и тех. обслуживание",
+        "amenities": [
+          {
+            "text": "Waste Disposal",
+            "text_l1": "مكبّ نفايات",
+            "text_l2": "垃圾处理",
+            "text_l3": "Утилизация отходов",
+            "value": "True",
+            "rank": 1,
+            "slug": "waste-disposal",
+            "format": "checkbox",
+            "externalID": 11
+          },
+          {
+            "text": "Maintenance Staff",
+            "text_l1": "خدمات صيانة",
+            "text_l2": "清洁服务",
+            "text_l3": "Обслуживающий персонал",
+            "value": "True",
+            "rank": 2,
+            "slug": "maintenance-staff",
+            "format": "checkbox",
+            "externalID": 61
+          },
+          {
+            "text": "Cleaning Services",
+            "text_l1": "خدمات تنظيف",
+            "text_l2": "清洁服务",
+            "text_l3": "Услуги по уборке",
+            "value": "True",
+            "rank": 3,
+            "slug": "cleaning-services",
+            "format": "checkbox",
+            "externalID": 73
+          }
+        ]
+      },
+      {
+        "externalGroupID": 6,
+        "groupRank": 6,
+        "text": "Business and Security",
+        "text_l1": "الأعمال والأمن والحماية",
+        "text_l2": "双层玻璃窗",
+        "text_l3": "Бизнес и безопасность",
+        "amenities": [
+          {
+            "text": "Security Staff",
+            "text_l1": "أمن و حماية",
+            "text_l2": "全部楼层",
+            "text_l3": "Сотрудники безопасности",
+            "value": "True",
+            "rank": 3,
+            "slug": "security-staff",
+            "format": "checkbox",
+            "externalID": 62
+          },
+          {
+            "text": "CCTV Security",
+            "text_l1": "نظام كاميرات مراقبة",
+            "text_l2": "闭路电视安全",
+            "text_l3": "Безопасность видеонаблюдения",
+            "value": "True",
+            "rank": 4,
+            "slug": "cctv-security",
+            "format": "checkbox",
+            "externalID": 63
+          }
+        ]
+      },
+      {
+        "externalGroupID": 4,
+        "groupRank": 7,
+        "text": "Laundry and Kitchen",
+        "text_l1": "الغسيل والمطبخ",
+        "text_l2": "烧烤区",
+        "text_l3": "Прачечная и кухня",
+        "amenities": [
+          {
+            "text": "Laundry Facility",
+            "text_l1": "خدمة غسيل ملابس",
+            "text_l2": "洗衣设施",
+            "text_l3": "прачечная",
+            "value": "True",
+            "rank": 3,
+            "slug": "laundry-facility",
+            "format": "checkbox",
+            "externalID": 65
+          }
+        ]
+      },
+      {
+        "externalGroupID": 8,
+        "groupRank": 8,
+        "text": "Technology",
+        "text_l1": "الخدمات التقنية",
+        "text_l2": "中央供暖",
+        "text_l3": "Технологии",
+        "amenities": [
+          {
+            "text": "Broadband Internet",
+            "text_l1": "انترنت واسع النطاق",
+            "text_l2": "宽带网络",
+            "text_l3": "Широкополосный интернет",
+            "value": "True",
+            "rank": 1,
+            "slug": "broadband-internet",
+            "format": "checkbox",
+            "externalID": 26
+          },
+          {
+            "text": "Satellite/Cable TV",
+            "text_l1": "كابل قنوات تلفزيونية",
+            "text_l2": "卫星电视/有线电视",
+            "text_l3": "Спутниковое/кабельное телевидение",
+            "value": "True",
+            "rank": 2,
+            "slug": "satellitecable-tv",
+            "format": "checkbox",
+            "externalID": 27
+          },
+          {
+            "text": "Intercom",
+            "text_l1": "اتصال داخلي",
+            "text_l2": "对讲电话",
+            "text_l3": "Внутренняя связь",
+            "value": "True",
+            "rank": 3,
+            "slug": "intercom",
+            "format": "checkbox",
+            "externalID": 30
+          }
+        ]
+      },
+      {
+        "externalGroupID": 7,
+        "groupRank": 9,
+        "text": "Miscellaneous",
+        "text_l1": "الخدمات العامة",
+        "text_l2": "中央空调",
+        "text_l3": "Разное",
+        "amenities": [
+          {
+            "text": "Freehold",
+            "text_l1": "التملك الحر",
+            "text_l2": "永久产权",
+            "text_l3": "Право собственности",
+            "value": "True",
+            "rank": 23,
+            "slug": "freehold",
+            "format": "checkbox",
+            "externalID": 19
+          }
+        ]
+      }
+    ],
+    "phoneNumber": {
+      "mobile": "+971505065919",
+      "phone": "+97145802357",
+      "whatsapp": "971545695868",
+      "phoneNumbers": ["+97145802357"],
+      "mobileNumbers": ["+971505065919"]
+    },
+    "contactName": "Negar Mohammadmahdi Eftekhari",
+    "agency": {
+      "id": 29589916,
+      "objectID": 29589916,
+      "name": "B L V D Holiday Homes",
+      "name_l1": "-",
+      "name_l2": "B L V D Holiday Homes",
+      "name_l3": "B L V D Holiday Homes",
+      "externalID": "10204",
+      "product": "premium",
+      "productScore": 2,
+      "licenses": [
+        {
+          "number": "906876",
+          "authority": "DED"
+        }
+      ],
+      "logo": {
+        "id": 99895298,
+        "url": "https://bayut-production.s3.eu-central-1.amazonaws.com/image/99895298/9fc421847605425f9f3227a49d9db7f9"
+      },
+      "slug": "b-l-v-d-holiday-homes-10204",
+      "slug_l1": "b-l-v-d-holiday-homes-10204",
+      "slug_l2": "b-l-v-d-holiday-homes-10204",
+      "slug_l3": "b-l-v-d-holiday-homes-10204",
+      "tr": 3,
+      "tier": 3,
+      "roles": [],
+      "active": true,
+      "createdAt": "2021-01-03T01:52:43+00:00",
+      "commercialNumber": null,
+      "shortNumber": null,
+      "performanceCohort": "overachieving"
+    },
+    "active": true,
+    "hasExactGeography": true,
+    "verification": {
+      "status": "review",
+      "type": "manual",
+      "eligible": true,
+      "comment": null,
+      "updatedAt": 1705325255.134066,
+      "verifiedAt": 1703160230,
+      "visitedAt": null,
+      "trucheckedAt": 0
+    },
+    "isVerified": false,
+    "completionStatus": "completed",
+    "occupancyStatus": "vacant",
+    "randBoostScore": 552,
+    "randBoostScore_l1": 463,
+    "randBoostScore_l2": 552,
+    "randBoostScore_l3": 552,
+    "furnishingStatus": "furnished",
+    "extraFields": {
+      "dldBuildingNK": "tabu-101896089",
+      "dldPropertySK": "dld|mea|ae|tabu+ejari-101908957",
+      "hasSaleTransactions": true
+    },
+    "type": "property",
+    "cityLevelScore": 1,
+    "indyScore": 552,
+    "indyScore_l1": 463,
+    "indyScore_l2": 552,
+    "indyScore_l3": 552,
     "hasMatchingFloorPlans": false,
     "hidePrice": false,
     "locationPurposeTier": 1,

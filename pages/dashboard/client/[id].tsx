@@ -1,5 +1,4 @@
 import React from "react";
-import { GetStaticProps, InferGetStaticPropsType } from "next";
 import DashboardLayout from "@/features/Layout/DashboardLayout";
 import { Box } from "@chakra-ui/react";
 import ClientDashboard from "@/features/common/modules/Dashboard/Client/ClientDashboard";

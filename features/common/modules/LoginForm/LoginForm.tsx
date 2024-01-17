@@ -47,7 +47,6 @@ const LoginForm: React.FC = () => {
     });
 
     setIsLoading(false);
-    console.log(res);
     if (res?.ok) {
       // toastsuccess
       console.info("success");
