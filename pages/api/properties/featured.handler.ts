@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import featuredProperties from "../../../lib/data/featuredProperties.json";
 
-type FeaturedProperties = {
+type FeaturedPropertiesData = {
   hits: {
     id: number;
     ownerID: number;
@@ -21,8 +21,18 @@ type FeaturedProperties = {
   // Add other properties based on your actual data structure
 };
 
-type ResponseData = FeaturedProperties | { message: string };
+type ResponseData = FeaturedPropertiesData | { message: string };
 
 export default function handler(req: NextApiRequest, res: NextApiResponse<ResponseData>) {
-  res.status(200).json(featuredProperties);
+  try {
+    // Ensure that the structure of the data matches the FeaturedPropertiesData type
+    const responseData: FeaturedPropertiesData = {
+      hits: featuredProperties.hits,
+    };
+
+    res.status(200).json(responseData);
+  } catch (error) {
+    console.error("Error fetching featured properties:", error);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
 }

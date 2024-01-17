@@ -37,7 +37,7 @@
           "id": 1,
           "level": 0,
           "externalID": "5001",
-          "name": "UAE",
+          "name": "ID",
           "name_l1": "الإمارات",
           "name_l2": "阿联酋",
           "name_l3": "ОАЭ",
@@ -50,7 +50,7 @@
           "id": 2,
           "level": 1,
           "externalID": "5002",
-          "name": "Dubai",
+          "name": "Lampung",
           "name_l1": "دبي",
           "name_l2": "迪拜",
           "name_l3": "Дубай",
@@ -63,7 +63,7 @@
           "id": 59,
           "level": 2,
           "externalID": "5416",
-          "name": "Jumeirah Village Circle (JVC)",
+          "name": "Tanjung Damai Lestari (TDL)",
           "name_l1": "قرية جميرا الدائرية",
           "name_l2": "朱美拉环形村(JVC)",
           "name_l3": "Джумейра Вилладж Серкл (ДЖВС)",
@@ -154,9 +154,9 @@
       "createdAt": 1651149236,
       "updatedAt": 1705410392,
       "reactivatedAt": 1703764733.356253,
-      "rooms": 1,
-      "baths": 1,
-      "area": 73.8096072192,
+      "rooms": 4,
+      "baths": 4,
+      "area": 120,
       "score": 75,
       "score_l1": 75,
       "score_l2": 75,
@@ -580,7 +580,7 @@
           "id": 1,
           "level": 0,
           "externalID": "5001",
-          "name": "UAE",
+          "name": "ID",
           "name_l1": "الإمارات",
           "name_l2": "阿联酋",
           "name_l3": "ОАЭ",
@@ -593,7 +593,7 @@
           "id": 2,
           "level": 1,
           "externalID": "5002",
-          "name": "Dubai",
+          "name": "Lampung",
           "name_l1": "دبي",
           "name_l2": "迪拜",
           "name_l3": "Дубай",
@@ -606,7 +606,7 @@
           "id": 59,
           "level": 2,
           "externalID": "5416",
-          "name": "Jumeirah Village Circle (JVC)",
+          "name": "Tanjung Damai Lestari (TDL)",
           "name_l1": "قرية جميرا الدائرية",
           "name_l2": "朱美拉环形村(JVC)",
           "name_l3": "Джумейра Вилладж Серкл (ДЖВС)",
@@ -684,9 +684,9 @@
       "createdAt": 1609691763,
       "updatedAt": 1705410311,
       "reactivatedAt": 1703764732.673336,
-      "rooms": 2,
-      "baths": 2,
-      "area": 88.67037749760001,
+      "rooms": 5,
+      "baths": 4,
+      "area": 140,
       "score": 75,
       "score_l1": 75,
       "score_l2": 75,
@@ -1188,6 +1188,328 @@
       }
     },
     {
+      "id": 3996354,
+      "ownerID": 1897045,
+      "userExternalID": "1897045",
+      "sourceID": 1,
+      "state": "active",
+      "_geoloc": {
+        "lat": 25.181663,
+        "lng": 55.278035
+      },
+      "geography": {
+        "lat": 25.181663,
+        "lng": 55.278035
+      },
+      "purpose": "for-sale",
+      "price": 2500000000,
+      "product": "hot",
+      "productLabel": "default",
+      "productScore": 1,
+      "rentFrequency": null,
+      "referenceNumber": "2985-Ap-S-0279",
+      "permitNumber": "7129176800",
+      "projectNumber": null,
+      "title": "1-Bedroom | Vacant | Canal View",
+      "title_l1": "شقة في برج ماي فير الخليج التجاري 1 غرف 800000 درهم - 6679108",
+      "title_l2": "1-Bedroom | Vacant | Canal View",
+      "externalID": "6679108",
+      "slug": "1-bedroom-vacant-canal-view-6679108",
+      "slug_l1": "1-bedroom-vacant-canal-view-6679108",
+      "slug_l2": "1-bedroom-vacant-canal-view-6679108",
+      "location": [
+        {
+          "id": 1,
+          "level": 0,
+          "externalID": "5001",
+          "name": "ID",
+          "name_l1": "الإمارات",
+          "name_l2": "UAE",
+          "slug": "/uae",
+          "slug_l1": "/uae",
+          "slug_l2": "/uae"
+        },
+        {
+          "id": 2,
+          "level": 1,
+          "externalID": "5002",
+          "name": "Lampung",
+          "name_l1": "دبي",
+          "name_l2": "Dubai",
+          "slug": "/dubai",
+          "slug_l1": "/dubai",
+          "slug_l2": "/dubai"
+        },
+        {
+          "id": 54,
+          "level": 2,
+          "externalID": "5093",
+          "name": "Tanjung Damai Lestari (TDL)",
+          "name_l1": "الخليج التجاري",
+          "name_l2": "Business Bay",
+          "slug": "/dubai/business-bay",
+          "slug_l1": "/dubai/business-bay",
+          "slug_l2": "/dubai/business-bay",
+          "type": "neighbourhood"
+        },
+        {
+          "id": 763,
+          "level": 3,
+          "externalID": "5120",
+          "name": "Mayfair Tower",
+          "name_l1": "برج ماي فير",
+          "name_l2": "Mayfair Tower",
+          "slug": "/dubai/business-bay/mayfair-tower",
+          "slug_l1": "/dubai/business-bay/mayfair-tower",
+          "slug_l2": "/dubai/business-bay/mayfair-tower",
+          "type": "condo-building"
+        }
+      ],
+      "category": [
+        {
+          "id": 1,
+          "level": 0,
+          "externalID": "1",
+          "name": "Tipe",
+          "name_l1": "سكني",
+          "name_l2": "Residential",
+          "slug": "residential",
+          "slug_l1": "residential",
+          "slug_l2": "residential",
+          "nameSingular": "Residential",
+          "nameSingular_l1": "سكني",
+          "nameSingular_l2": "Residential"
+        },
+        {
+          "id": 2,
+          "level": 1,
+          "externalID": "4",
+          "name": "200",
+          "name_l1": "شقق",
+          "name_l2": "Apartments",
+          "slug": "apartments",
+          "slug_l1": "apartments",
+          "slug_l2": "apartments",
+          "nameSingular": "Apartment",
+          "nameSingular_l1": "شقة",
+          "nameSingular_l2": "Apartment"
+        }
+      ],
+      "createdAt": 1671710699.0,
+      "updatedAt": 1673581818.0,
+      "reactivatedAt": 1671710699.0,
+      "rooms": 6,
+      "baths": 7,
+      "area": 170,
+      "score": 75,
+      "score_l1": 75,
+      "score_l2": 75,
+      "coverPhoto": {
+        "id": 319179042,
+        "externalID": "136029955",
+        "title": null,
+        "orderIndex": 0,
+        "nimaScore": 6.00798409433134,
+        "url": "https://i.postimg.cc/0y8263v1/IMG20231227095520.jpg",
+        "main": true
+      },
+      "coverVideo": {
+        "externalID": 423182,
+        "title": null,
+        "host": "youtube",
+        "url": "https://youtu.be/jFwDfJ6eze0",
+        "orderIndex": 0
+      },
+      "photoCount": 15,
+      "videoCount": 1,
+      "panoramaCount": 1,
+      "phoneNumber": {
+        "mobile": "+971585099030",
+        "phone": "+97145778078",
+        "whatsapp": "971545695868",
+        "proxyMobile": "+971526769790",
+        "phoneNumbers": ["+97145778078"],
+        "mobileNumbers": ["+971585099030"]
+      },
+      "contactName": "Mohammad Al Hareef",
+      "agency": {
+        "id": 29621364,
+        "objectID": 29621364,
+        "name": "Luxehomes Real Estate Buying & Selling Brokerage",
+        "name_l1": "الوساطة في بيع وشراء العقارات الفاخرة",
+        "name_l2": "Luxehomes Real Estate Buying & Selling Brokerage",
+        "externalID": "11042",
+        "product": "premium",
+        "productScore": 2,
+        "licenses": [
+          {
+            "number": "996016",
+            "authority": "DED"
+          },
+          {
+            "number": "28403",
+            "authority": "RERA"
+          }
+        ],
+        "logo": {
+          "id": 168330538,
+          "url": "https://bayut-production.s3.eu-central-1.amazonaws.com/image/168330538/79f945f5f88f4628baa1d939c8bcca77"
+        },
+        "slug": "luxehomes-real-estate-buying-selling-brokerage-11042",
+        "slug_l1": "luxehomes-real-estate-buying-selling-brokerage-11042",
+        "slug_l2": "luxehomes-real-estate-buying-selling-brokerage-11042",
+        "tr": 3,
+        "tier": 3,
+        "roles": [],
+        "active": true,
+        "createdAt": "2021-11-22T11:51:54.648754+00:00",
+        "commercialNumber": null,
+        "shortNumber": null
+      },
+      "hash": "bd5c1ba",
+      "keywords": [
+        "balcony",
+        "kitchen",
+        "مطبخ مفتوح",
+        "elevator",
+        "1 bedroom",
+        "laundry",
+        "مطبخ",
+        "open kitchen",
+        "مصعد",
+        "غرفة واحدة",
+        "غسيل",
+        "بلكونة"
+      ],
+      "isVerified": true,
+      "verification": {
+        "updatedAt": 1671790117.824156,
+        "eligible": true,
+        "status": "verified",
+        "verifiedAt": 1672898147.238998
+      },
+      "verifiedScore": 0,
+      "completionStatus": "completed",
+      "randBoostScore": 414,
+      "randBoostScore_l1": 254,
+      "randBoostScore_l2": 254,
+      "floorPlanID": 263,
+      "furnishingStatus": "furnished",
+      "extraFields": {
+        "dldBuildingNK": "tabu+ejari-291678",
+        "dldPropertySK": "dld|mea|ae|tabu+ejari-291768"
+      },
+      "type": "property",
+      "hasTransactionHistory": true,
+      "ownerAgent": {
+        "externalID": "1897045",
+        "name": "Mohammad Al Hareef",
+        "name_l1": "Mohammad Al Hareef",
+        "name_l2": "Mohammad Al Hareef",
+        "user_image": "https://bayut-production.s3.eu-central-1.amazonaws.com/image/257359556/634938a9e6e64d51bcc5de69dd21359f",
+        "user_image_id": 257359556,
+        "isTruBroker": false
+      },
+      "cityLevelScore": 1,
+      "indyScore": 414,
+      "indyScore_l1": 254,
+      "indyScore_l2": 254,
+      "hasMatchingFloorPlans": true,
+      "photoIDs": [
+        319179042, 319179043, 319179044, 319179045, 319179046, 319179047, 319179048, 319179049, 327377461, 319179051,
+        327377463, 319179053, 319179054, 319179055, 319179056
+      ],
+      "hidePrice": false,
+      "locationPurposeTier": 1,
+      "objectID": "3996354",
+      "_highlightResult": {
+        "referenceNumber": {
+          "value": "2985-Ap-S-0279",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "title": {
+          "value": "1-Bedroom | Vacant | Canal View",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "externalID": {
+          "value": "6679108",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "agency": {
+          "name": {
+            "value": "Luxehomes Real Estate Buying & Selling Brokerage",
+            "matchLevel": "none",
+            "matchedWords": []
+          }
+        },
+        "keywords": [
+          {
+            "value": "balcony",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "kitchen",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "مطبخ مفتوح",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "elevator",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "1 bedroom",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "laundry",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "مطبخ",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "open kitchen",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "مصعد",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "غرفة واحدة",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "غسيل",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "بلكونة",
+            "matchLevel": "none",
+            "matchedWords": []
+          }
+        ]
+      }
+    },
+    {
       "id": 2214408,
       "ownerID": 713291,
       "userExternalID": "713291",
@@ -1328,9 +1650,9 @@
       "createdAt": 1610179972,
       "updatedAt": 1705384824,
       "reactivatedAt": 1703764732.965582,
-      "rooms": 1,
+      "rooms": 3,
       "baths": 2,
-      "area": 92.87981424,
+      "area": 112,
       "score": 75,
       "score_l1": 75,
       "score_l2": 75,
