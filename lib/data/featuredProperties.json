@@ -14,7 +14,7 @@
         "lat": 25.066713079701,
         "lng": 55.2032152496
       },
-      "purpose": "for-rent",
+      "purpose": "for-sale",
       "price": 1700000000,
       "product": "superhot",
       "productLabel": "default",
@@ -557,7 +557,7 @@
         "lat": 25.050708,
         "lng": 55.213872
       },
-      "purpose": "for-rent",
+      "purpose": "for-sale",
       "price": 2000000000,
       "product": "superhot",
       "productLabel": "default",
@@ -1523,7 +1523,7 @@
         "lat": 25.050708,
         "lng": 55.213872
       },
-      "purpose": "for-rent",
+      "purpose": "for-sale",
       "price": 1375000000,
       "product": "superhot",
       "productLabel": "default",
