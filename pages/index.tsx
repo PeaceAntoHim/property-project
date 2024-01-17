@@ -23,8 +23,8 @@ export default function Home({ featuredProperties }: InferGetStaticPropsType<typ
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const properties = await getProperties(3);
-  // const properties = await getFeaturedProperties();
+  const properties = await getFeaturedProperties();
+
   return {
     props: {
       featuredProperties: properties,
