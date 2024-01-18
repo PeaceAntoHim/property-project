@@ -19,7 +19,7 @@ const Facilities = ({ facilities }: InferGetStaticPropsType<typeof getStaticProp
           <SimpleGrid
             columns={{ base: 1, sm: 3 }}
             gap={{ base: "0", sm: "2rem" }}>
-            {facilities.map((facility: Record<string, string>, index: number) => (
+            {facilities.map((facility: Record<string, string>, index: any) => (
               <FacilityCard
                 key={index}
                 {...facility}
