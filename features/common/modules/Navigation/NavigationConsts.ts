@@ -1,4 +1,6 @@
-import { HiCube, HiNewspaper, HiPhoneArrowUpRight } from "react-icons/hi2";
+import { FaHome } from "react-icons/fa";
+import { GiFactory } from "react-icons/gi";
+import { HiNewspaper, HiPhoneArrowUpRight } from "react-icons/hi2";
 import { IconType } from "react-icons/lib";
 import { TbLogin } from "react-icons/tb";
 
@@ -9,8 +11,9 @@ export type navigationLink = {
 };
 
 export const navigationLinks: Array<navigationLink> = [
-  { title: "Properties", link: "/properties", icon: HiCube },
+  { title: "Properties", link: "/properties", icon: FaHome },
   { title: "Contact", link: "/contact", icon: HiNewspaper },
+  { title: "Facilities", link: "/facilities", icon: GiFactory },
   {
     title: "(+62) 815-3249-5059",
     link: "tel: (+62) 815 3249 5059",
