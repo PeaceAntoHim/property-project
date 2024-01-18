@@ -35,7 +35,7 @@ const Facilities = ({ facilities }: InferGetStaticPropsType<typeof getStaticProp
 export default Facilities;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const facilities = await getFacilities();
+  const facilities = [{}];
 
   return {
     props: {

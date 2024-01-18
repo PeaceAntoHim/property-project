@@ -1,5 +1,5 @@
 import React from "react";
-import { Badge, Box, Text } from "@chakra-ui/react";
+import { Badge, Box } from "@chakra-ui/react";
 
 const FacilityCard = (facility: Record<string, string>) => {
   return (
