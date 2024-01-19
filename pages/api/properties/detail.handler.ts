@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import mappingProperty from "../../../lib/data/property.json";
+import { axios } from "@/lib/axios";
 
 type Property = {
   id: number;
@@ -8,8 +9,16 @@ type Property = {
 
 type ResponseData = Property | { message: string };
 
-export default function handler(req: NextApiRequest, res: NextApiResponse<ResponseData>) {
-  const externalID = req.query?.externalID || "4947528";
+const getLiveProperty = async (id: string): Promise<ResponseData> => {
+  const { data } = await axios.get("/properties/detail", {
+    params: { externalID: id },
+  });
+
+  return data;
+};
+
+export default async function handler(req: NextApiRequest, res: NextApiResponse<ResponseData>) {
+  const externalID = req.query?.externalID || "4947520";
 
   if (!externalID) {
     return res.status(400).json({ message: "External ID not provided" });
@@ -23,7 +32,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Respon
 
   if (!property) {
     // Property not found, send a 404 response
-    return res.status(404).json({ message: "Property not found" });
+    const getProperty = await getLiveProperty(externalID);
+    return res.status(200).json(getProperty);
   }
 
   res.status(200).json(property);
