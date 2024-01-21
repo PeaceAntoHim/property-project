@@ -4,6 +4,7 @@ import FeaturedProperties from "@/features/Home/components/FeaturedProperties";
 import HeroBanner from "@/features/Home/components/HeroBanner";
 import MeetTheTeam from "@/features/Home/components/MeetTheTeam";
 import Partners from "@/features/Home/components/Partners";
+import Socialize from "@/features/Home/components/Socialize";
 import Testimonials from "@/features/Home/components/Testimonials";
 import DefaultLayout from "@/features/Layout/DefaultLayout";
 import { InferGetStaticPropsType, GetStaticProps } from "next";
@@ -18,6 +19,7 @@ export default function Home({ featuredProperties }: InferGetStaticPropsType<typ
       <MeetTheTeam />
       <Partners />
       <Testimonials />
+      <Socialize />
     </DefaultLayout>
   );
 }
