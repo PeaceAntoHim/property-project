@@ -1,4 +1,4 @@
-import { FaHome } from "react-icons/fa";
+import { FaHome, FaUsers } from "react-icons/fa";
 import { GiFactory } from "react-icons/gi";
 import { HiNewspaper, HiPhoneArrowUpRight } from "react-icons/hi2";
 import { IconType } from "react-icons/lib";
