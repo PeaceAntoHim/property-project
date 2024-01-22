@@ -9,23 +9,15 @@ const News = () => {
       <Box
         maxWidth="1280px"
         margin="0 auto"
-        paddingY={{ base: "3rem", sm: "6rem" }}>
+        paddingY={{ base: "1rem", sm: "2rem" }}>
         <Text
           fontSize={{ base: "4xl", sm: "5xl" }}
           lineHeight="shorter"
           fontWeight="light"
-          paddingX="2rem"
-          textAlign="center">
-          Pengumuman
-        </Text>
-        <Text
-          fontSize="2xl"
-          fontWeight="light"
-          marginTop="1rem"
           marginBottom="3rem"
           paddingX="2rem"
           textAlign="center">
-          List pengumuman
+          Pengumuman
         </Text>
         <SimpleGrid
           columns={3}
