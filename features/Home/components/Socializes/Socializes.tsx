@@ -1,5 +1,5 @@
-import SocializeCard from "@/features/Home/components/Socialize/components/SocializeCard";
-import { socializes } from "@/features/Home/components/Socialize/socializeConst";
+import SocializeCard from "@/features/Home/components/Socializes/components/SocializeCard";
+import { socializes } from "@/features/Home/components/Socializes/socializeConst";
 import { Box, SimpleGrid, Text } from "@chakra-ui/react";
 import React from "react";
 

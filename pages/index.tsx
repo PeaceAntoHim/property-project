@@ -1,11 +1,10 @@
 import { getFeaturedProperties } from "@/features/common/API/getFeaturedProperties";
-import { getProperties } from "@/features/common/API/getProperties";
 import FeaturedProperties from "@/features/Home/components/FeaturedProperties";
 import HeroBanner from "@/features/Home/components/HeroBanner";
 import MeetTheTeam from "@/features/Home/components/MeetTheTeam";
 import News from "@/features/Home/components/News";
 import Partners from "@/features/Home/components/Partners";
-import Socialize from "@/features/Home/components/Socialize";
+import Socialize from "@/features/Home/components/Socializes";
 import Testimonials from "@/features/Home/components/Testimonials";
 import DefaultLayout from "@/features/Layout/DefaultLayout";
 import { InferGetStaticPropsType, GetStaticProps } from "next";
