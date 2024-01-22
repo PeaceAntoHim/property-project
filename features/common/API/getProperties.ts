@@ -1,6 +1,8 @@
 import { axios } from "@/lib/axios";
+import { getFeaturedProperties } from "./getFeaturedProperties";
 
 export const getProperties = async (num: number) => {
+  const featuredProperties: Array<Record<string, string>> = await getFeaturedProperties();
   const { data } = await axios.get("/properties/list", {
     params: {
       locationExternalIDs: "5002,6020",
@@ -14,5 +16,7 @@ export const getProperties = async (num: number) => {
       hasPanorama: true,
     },
   });
-  return data.hits;
+  const properties: Array<Record<string, string>> = data.hits;
+  const combinedProperties = [...featuredProperties, ...properties];
+  return combinedProperties;
 };
