@@ -1,4 +1,4 @@
-import SocializeCard from "@/features/Home/components/Socialize/components/TestimonialCard";
+import SocializeCard from "@/features/Home/components/Socialize/components/SocializeCard";
 import { socializes } from "@/features/Home/components/Socialize/socializeConst";
 import { Box, SimpleGrid, Text } from "@chakra-ui/react";
 import React from "react";

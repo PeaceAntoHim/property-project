@@ -1,1 +1,1 @@
-export { default } from "./Socialize";
+export { default } from "./Socializes";
