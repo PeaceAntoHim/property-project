@@ -120,7 +120,7 @@ const PropertyDetail = ({ property }: InferGetServerSidePropsType<typeof getServ
               </SimpleGrid>
             </TextContentBox>
           </GridItem>
-          <GridItem colSpan={{ base: 6, sm: 3 }}>
+          {/* <GridItem colSpan={{ base: 6, sm: 3 }}>
             <TextContentBox title="Video Walkthrough">
               <PropertyYoutubeEmbeded coverVideo={coverVideo} />
             </TextContentBox>
@@ -129,7 +129,7 @@ const PropertyDetail = ({ property }: InferGetServerSidePropsType<typeof getServ
             <TextContentBox title="3D Virtual Walkthrough">
               <PropertyMatterPortEmbed panorama={panorama} />
             </TextContentBox>
-          </GridItem>
+          </GridItem> */}
         </Grid>
       </Box>
     </DefaultLayout>
