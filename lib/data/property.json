@@ -80,7 +80,7 @@
         "id": 1935,
         "level": 3,
         "externalID": "11385",
-        "name": "JVC District 13",
+        "name": "Jalan Manggis IV",
         "name_l1": "الضاحية 13",
         "name_l2": "JVC第13区",
         "name_l3": "JVC Дистрикт 13",
@@ -89,20 +89,6 @@
         "slug_l2": "/dubai/jumeirah-village-circle-jvc/jvc-district-13",
         "slug_l3": "/dubai/jumeirah-village-circle-jvc/jvc-district-13",
         "type": "neighbourhood"
-      },
-      {
-        "id": 1967,
-        "level": 4,
-        "externalID": "11298",
-        "name": "Pantheon Boulevard",
-        "name_l1": "بانثيون بوليفارد",
-        "name_l2": "万神殿大道住宅楼",
-        "name_l3": "Пантеон Бульвар",
-        "slug": "/dubai/jumeirah-village-circle-jvc/jvc-district-13/pantheon-boulevard",
-        "slug_l1": "/dubai/jumeirah-village-circle-jvc/jvc-district-13/pantheon-boulevard",
-        "slug_l2": "/dubai/jumeirah-village-circle-jvc/jvc-district-13/pantheon-boulevard",
-        "slug_l3": "/dubai/jumeirah-village-circle-jvc/jvc-district-13/pantheon-boulevard",
-        "type": "condo-building"
       }
     ],
     "category": [
@@ -509,7 +495,7 @@
         "id": 1,
         "level": 0,
         "externalID": "5001",
-        "name": "UAE",
+        "name": "ID",
         "name_l1": "\u0627\u0644\u0625\u0645\u0627\u0631\u0627\u062a",
         "name_l2": "UAE",
         "slug": "/uae",
@@ -520,7 +506,7 @@
         "id": 2,
         "level": 1,
         "externalID": "5002",
-        "name": "Dubai",
+        "name": "Lampung",
         "name_l1": "\u062f\u0628\u064a",
         "name_l2": "Dubai",
         "slug": "/dubai",
@@ -531,7 +517,7 @@
         "id": 54,
         "level": 2,
         "externalID": "5093",
-        "name": "Business Bay",
+        "name": "Perumahan Tanjung Damai Lestari (TDL)",
         "name_l1": "\u0627\u0644\u062e\u0644\u064a\u062c \u0627\u0644\u062a\u062c\u0627\u0631\u064a",
         "name_l2": "Business Bay",
         "slug": "/dubai/business-bay",
@@ -543,7 +529,7 @@
         "id": 763,
         "level": 3,
         "externalID": "5120",
-        "name": "Mayfair Tower",
+        "name": "Jalan Manggis IV",
         "name_l1": "\u0628\u0631\u062c \u0645\u0627\u064a \u0641\u064a\u0631",
         "name_l2": "Mayfair Tower",
         "slug": "/dubai/business-bay/mayfair-tower",
@@ -943,7 +929,7 @@
         "id": 1935,
         "level": 3,
         "externalID": "11385",
-        "name": "JVC District 13",
+        "name": "Jalan Manggis IV",
         "name_l1": "الضاحية 13",
         "name_l2": "JVC第13区",
         "name_l3": "JVC Дистрикт 13",
@@ -952,20 +938,6 @@
         "slug_l2": "/dubai/jumeirah-village-circle-jvc/jvc-district-13",
         "slug_l3": "/dubai/jumeirah-village-circle-jvc/jvc-district-13",
         "type": "neighbourhood"
-      },
-      {
-        "id": 1967,
-        "level": 4,
-        "externalID": "11298",
-        "name": "Pantheon Boulevard",
-        "name_l1": "بانثيون بوليفارد",
-        "name_l2": "万神殿大道住宅楼",
-        "name_l3": "Пантеон Бульвар",
-        "slug": "/dubai/jumeirah-village-circle-jvc/jvc-district-13/pantheon-boulevard",
-        "slug_l1": "/dubai/jumeirah-village-circle-jvc/jvc-district-13/pantheon-boulevard",
-        "slug_l2": "/dubai/jumeirah-village-circle-jvc/jvc-district-13/pantheon-boulevard",
-        "slug_l3": "/dubai/jumeirah-village-circle-jvc/jvc-district-13/pantheon-boulevard",
-        "type": "condo-building"
       }
     ],
     "category": [
@@ -1402,7 +1374,7 @@
         "id": 2478,
         "level": 3,
         "externalID": "11840",
-        "name": "JVC District 10",
+        "name": "Jalan Manggis IV",
         "name_l1": "المنطقة 10",
         "name_l2": "JVC第10区",
         "name_l3": "ДжейВиСи Дистрикт 10",
@@ -1411,33 +1383,6 @@
         "slug_l2": "/dubai/jumeirah-village-circle-jvc/jvc-district-10",
         "slug_l3": "/dubai/jumeirah-village-circle-jvc/jvc-district-10",
         "type": "neighbourhood"
-      },
-      {
-        "id": 1547,
-        "level": 4,
-        "externalID": "9140",
-        "name": "Bloom Towers",
-        "name_l1": "ابراج بلووم",
-        "name_l2": "绽放大厦",
-        "name_l3": "Блум Тауэрс",
-        "slug": "/dubai/jumeirah-village-circle-jvc/jvc-district-10/bloom-towers",
-        "slug_l1": "/dubai/jumeirah-village-circle-jvc/jvc-district-10/bloom-towers",
-        "slug_l2": "/dubai/jumeirah-village-circle-jvc/jvc-district-10/bloom-towers",
-        "slug_l3": "/dubai/jumeirah-village-circle-jvc/jvc-district-10/bloom-towers"
-      },
-      {
-        "id": 80559,
-        "level": 5,
-        "externalID": "16666",
-        "name": "Bloom Tower A",
-        "name_l1": "برج بلوم A",
-        "name_l2": "绽放大厦A座",
-        "name_l3": "Тауэр Блум А",
-        "slug": "/dubai/jumeirah-village-circle-jvc/jvc-district-10/bloom-towers/bloom-tower-a",
-        "slug_l1": "/dubai/jumeirah-village-circle-jvc/jvc-district-10/bloom-towers/bloom-tower-a",
-        "slug_l2": "/dubai/jumeirah-village-circle-jvc/jvc-district-10/bloom-towers/bloom-tower-a",
-        "slug_l3": "/dubai/jumeirah-village-circle-jvc/jvc-district-10/bloom-towers/bloom-tower-a",
-        "type": "condo-building"
       }
     ],
     "category": [
