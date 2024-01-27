@@ -5,7 +5,7 @@
     "title": "Fasilitas Lapangan Futsal",
     "orderIndex": 9,
     "nimaScore": 6.046394741162658,
-    "coverUrl": "https://i.postimg.cc/qq94yq5W/IMG20231227101008.jpg"
+    "coverUrl": "./facilities/IMG20231227101008.jpg"
   },
   {
     "id": 305267941,
@@ -13,7 +13,7 @@
     "title": "Fasilitas Lapangan Futsal",
     "orderIndex": 10,
     "nimaScore": 7.821342490035022,
-    "coverUrl": "https://i.postimg.cc/rmwVLv4Z/IMG20231227101046.jpg"
+    "coverUrl": "./facilities/IMG20231227101046.jpg"
   },
   {
     "id": 280929415,
@@ -21,7 +21,7 @@
     "title": "Fasilitas Lapangan Futsal",
     "orderIndex": 11,
     "nimaScore": 7.069613726504031,
-    "coverUrl": "https://i.postimg.cc/RFpMCXQS/IMG20231227101050.jpg"
+    "coverUrl": "./facilities/IMG20231227101050.jpg"
   },
   {
     "id": 287305404,
@@ -29,7 +29,7 @@
     "title": "Fasilitas Lapangan Basket",
     "orderIndex": 12,
     "nimaScore": 7.643095144750987,
-    "coverUrl": "https://i.postimg.cc/4NDxh2Cn/IMG20231227101109.jpg"
+    "coverUrl": "./facilities/IMG20231227101109.jpg"
   },
   {
     "id": 268623523,
@@ -37,6 +37,6 @@
     "title": "Fasilitas Lapangan Basket",
     "orderIndex": 13,
     "nimaScore": 5.46010155738395,
-    "coverUrl": "https://i.postimg.cc/pdZW42mn/IMG20231227101112.jpg"
+    "coverUrl": "./facilities/IMG20231227101112.jpg"
   }
 ]
