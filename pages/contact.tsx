@@ -28,21 +28,12 @@ const Contact = () => {
               <Text
                 fontWeight="light"
                 color="gray.600"
-                fontSize="1rem"
-                marginBottom="1rem">
-                Linnet Cubin <br />
-                Public Relations Manager
-                <br />
-                774 NE 84th St Miami, FL 33879
-              </Text>
-              <Text
-                fontWeight="light"
-                color="gray.600"
                 fontSize="1rem">
-                Abraham Lincoln <br />
-                Public Relations Manager
+                Wiliam Kurniawan <br />
+                Sales Manager
                 <br />
-                774 NE 84th St Miami, FL 33879
+                081532495059 <br />
+                wiliamkurniawan07@gmail.com
               </Text>
             </TextContentBox>
           </GridItem>
