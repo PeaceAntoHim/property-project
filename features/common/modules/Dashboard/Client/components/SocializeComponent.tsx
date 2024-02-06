@@ -1,4 +1,4 @@
-import { Box, Heading, SimpleGrid } from "@chakra-ui/react";
+import { Box, SimpleGrid } from "@chakra-ui/react";
 import Socialize from "@/features/Home/components/Socializes";
 
 const SocializeComponent: React.FC = () => {

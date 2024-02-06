@@ -19,7 +19,7 @@ export default function Home({ featuredProperties }: InferGetStaticPropsType<typ
       <MeetTheTeam />
       <Partners />
       {/* <Testimonials /> */}
-      <Socialize />
+      {/* <Socialize /> */}
     </DefaultLayout>
   );
 }
