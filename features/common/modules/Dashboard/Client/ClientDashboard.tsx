@@ -13,12 +13,15 @@ import {
   useDisclosure,
   Icon,
 } from "@chakra-ui/react";
+import { FaUsers } from "react-icons/fa";
 import { FiMenu, FiHome, FiUsers } from "react-icons/fi";
 import { AiOutlineDollar, AiOutlineNotification } from "react-icons/ai";
 import DashboardComponent from "./components/DashboardComponent";
 import UserComponent from "./components/UserComponent";
 import ComplainmentComponent from "./components/complainments/ComplainmentComponent";
 import PaymentComponent from "./components/payments/PaymentComponent";
+import Socialize from "@/features/Home/components/Socializes";
+import SocializeComponent from "./components/SocializeComponent";
 
 const ClientDashboard: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -60,6 +63,8 @@ const ClientDashboard: React.FC = () => {
         return <ComplainmentComponent />;
       case "payment":
         return <PaymentComponent />;
+      case "socialize":
+        return <SocializeComponent />;
       default:
         return <DashboardComponent />;
     }
@@ -151,6 +156,19 @@ const ClientDashboard: React.FC = () => {
                       mr={2}
                     />
                     Pembayaran
+                  </Box>
+                  <Box
+                    fontSize="xl"
+                    display="flex"
+                    alignItems="center"
+                    onClick={() => handleComponentChange("socialize")}
+                    cursor="pointer">
+                    <Icon
+                      as={FaUsers}
+                      fontSize="xl"
+                      mr={2}
+                    />
+                    Sosialisasi
                   </Box>
                 </VStack>
               </VStack>
