@@ -18,7 +18,7 @@ const SignupForm = () => {
     validatePassword(password, confirmPassword);
   }, [password, confirmPassword]);
 
-  function validatePassword(pass: String, confirmPass: String) {
+  function validatePassword(pass: string, confirmPass: string) {
     let isValid = pass === confirmPass;
     setPassError(!isValid);
   }
@@ -29,7 +29,7 @@ const SignupForm = () => {
 
     if (passError) {
       // Handle password mismatch error
-      return;
+      return alert("Pass salah");;
     }
 
     const userData = {

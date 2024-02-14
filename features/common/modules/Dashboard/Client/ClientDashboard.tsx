@@ -20,7 +20,6 @@ import DashboardComponent from "./components/DashboardComponent";
 import UserComponent from "./components/UserComponent";
 import ComplainmentComponent from "./components/complainments/ComplainmentComponent";
 import PaymentComponent from "./components/payments/PaymentComponent";
-import Socialize from "@/features/Home/components/Socializes";
 import SocializeComponent from "./components/SocializeComponent";
 
 const ClientDashboard: React.FC = () => {
