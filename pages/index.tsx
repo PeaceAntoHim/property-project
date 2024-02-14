@@ -4,7 +4,6 @@ import HeroBanner from "@/features/Home/components/HeroBanner";
 import MeetTheTeam from "@/features/Home/components/MeetTheTeam";
 import News from "@/features/Home/components/News";
 import Partners from "@/features/Home/components/Partners";
-import Socialize from "@/features/Home/components/Socializes";
 import DefaultLayout from "@/features/Layout/DefaultLayout";
 import { InferGetStaticPropsType, GetStaticProps } from "next";
 
