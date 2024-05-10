@@ -15,13 +15,8 @@ class Complaint {
         data: { ...req.body },
       });
       return res.status(201).json({ complaint });
-    } catch (e) {
-      if (e instanceof Prisma.PrismaClientKnownRequestError) {
-        if (e.code === "P2002") {
-          return res.status(400).json({ message: e.message });
-        }
-        return res.status(400).json({ message: e.message });
-      }
+    } catch (e: any) {
+      return res.status(400).json({ message: e.message });
     }
   }
 
