@@ -20,13 +20,8 @@ class Signup {
         data: { ...req.body, password: this.hashPassword(req.body.password) },
       });
       return res.status(201).json({ user });
-    } catch (e) {
-      if (e instanceof Prisma.PrismaClientKnownRequestError) {
-        if (e.code === "P2002") {
-          return res.status(400).json({ message: e.message });
-        }
-        return res.status(400).json({ message: e.message });
-      }
+    } catch (e: any) {
+      return res.status(400).json({ message: e.message });
     }
   }
 

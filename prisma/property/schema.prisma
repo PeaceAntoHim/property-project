@@ -1,0 +1,121 @@
+generator client {
+  provider = "prisma-client-js"
+  output = "property"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Account {
+  id                 String  @id @default(cuid())
+  userId             String  @map("user_id")
+  type               String
+  provider           String
+  providerAccountId  String  @map("provider_account_id")
+  refresh_token      String?
+  access_token       String?
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String?
+  session_state      String?
+  oauth_token_secret String?
+  oauth_token        String?
+  user               User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique @map("session_token")
+  userId       String   @map("user_id")
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map("verificationtokens")
+}
+
+model Complaint {
+  id                String   @id @default(cuid())
+  userId            String
+  addresses         String
+  categoryComplaint String
+  notes             String
+  createdAt         DateTime @default(now()) @map("created_at")
+  updatedAt         DateTime @updatedAt @map("updated_at")
+  user              User     @relation(fields: [userId], references: [id])
+
+  @@map("complaints")
+}
+
+model Payment {
+  id              String   @id @default(cuid())
+  name            String
+  userId          String
+  paymentHours    DateTime @default(now())
+  bankAccountName String
+  createdAt       DateTime @default(now()) @map("created_at")
+  updatedAt       DateTime @updatedAt @map("updated_at")
+  addresses       String
+  bankName        String
+  transferAmount  Int
+  user            User     @relation(fields: [userId], references: [id])
+
+  @@map("payments")
+}
+
+model Booking {
+  id          String   @id @default(cuid())
+  name        String
+  phoneNumber String
+  email       String
+  message     String
+  propertyId  Int?
+  agreement   Boolean? @default(true)
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  @@map("bookings")
+}
+
+model PdfGuide {
+  id          String   @id @default(cuid())
+  name        String
+  phoneNumber String
+  email       String
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+  agreement   Boolean? @default(true)
+
+  @@map("pdfguides")
+}
+
+model User {
+  id            String      @id @default(uuid())
+  name          String
+  email         String?     @unique
+  emailVerified DateTime?   @default(now()) @map("email_verified")
+  password      String
+  role          String      @default("client")
+  createdAt     DateTime    @default(now()) @map("created_at")
+  updatedAt     DateTime    @updatedAt @map("updated_at")
+  accounts      Account[]
+  complaints    Complaint[]
+  payments      Payment[]
+  sessions      Session[]
+
+  @@map("users")
+}
